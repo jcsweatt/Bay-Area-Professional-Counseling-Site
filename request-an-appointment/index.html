@@ -563,7 +563,6 @@
     <div class="form-wrapper"
       
     >
-      
     </div>
     <style>
       #block- .form-wrapper {
@@ -780,6 +779,122 @@
     <script src="../assets/site-bundle-9c9f8786a766.js" type="text/javascript"></script>
 
     <script data-sqs-type="imageloader-bootstrapper">if(window.ImageLoader) window.ImageLoader.bootstrap({}, document);</script><script>Squarespace.afterBodyLoad(Y);</script><svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display:none" data-usage="social-icons-svg"><symbol id="facebook-unauth-icon" viewBox="0 0 64 64"><path d="M34.1,47V33.3h4.6l0.7-5.3h-5.3v-3.4c0-1.5,0.4-2.6,2.6-2.6l2.8,0v-4.8c-0.5-0.1-2.2-0.2-4.1-0.2 c-4.1,0-6.9,2.5-6.9,7V28H24v5.3h4.6V47H34.1z"/></symbol><symbol id="facebook-unauth-mask" viewBox="0 0 64 64"><path d="M0,0v64h64V0H0z M39.6,22l-2.8,0c-2.2,0-2.6,1.1-2.6,2.6V28h5.3l-0.7,5.3h-4.6V47h-5.5V33.3H24V28h4.6V24 c0-4.6,2.8-7,6.9-7c2,0,3.6,0.1,4.1,0.2V22z"/></symbol></svg>
+    <style>
+      .offline-contact-form-block {
+        margin-top: 24px;
+      }
+
+      .offline-contact-form .field-list {
+        margin: 0 0 24px;
+      }
+
+      .offline-contact-form fieldset {
+        border: 0;
+        margin: 0 0 24px;
+        padding: 0;
+      }
+
+      .offline-contact-form .form-item {
+        margin: 0 0 24px;
+      }
+
+      .offline-contact-form .title {
+        display: block;
+        font-weight: 600;
+        margin: 0 0 8px;
+      }
+
+      .offline-contact-form .caption {
+        display: block;
+        font-size: 12px;
+        margin: 0 0 4px;
+      }
+
+      .offline-contact-form .name .field {
+        display: inline-block;
+        width: 48%;
+      }
+
+      .offline-contact-form .name .first-name {
+        margin-right: 3%;
+      }
+
+      .offline-contact-form input[type="text"],
+      .offline-contact-form input[type="email"],
+      .offline-contact-form input[type="tel"],
+      .offline-contact-form textarea {
+        box-sizing: border-box;
+        max-width: 100%;
+        width: 100%;
+      }
+
+      .offline-contact-form textarea {
+        min-height: 120px;
+      }
+
+      @media (max-width: 640px) {
+        .offline-contact-form .name .field {
+          display: block;
+          width: 100%;
+        }
+
+        .offline-contact-form .name .first-name {
+          margin-right: 0;
+        }
+      }
+    </style>
+    <script>
+      (function () {
+        var formHtml = [
+          '<div class="sqs-block-content">',
+          '<form class="offline-contact-form" action="mailto:bayareacounselingmobile@gmail.com" method="post" enctype="text/plain">',
+          '<div class="field-list clear">',
+          '<fieldset class="form-item fields name required">',
+          '<legend class="title">Name <span class="required">(required)</span></legend>',
+          '<div class="field first-name"><label class="caption" for="offline-first-name">First Name</label><input id="offline-first-name" name="First Name" type="text" required></div>',
+          '<div class="field last-name"><label class="caption" for="offline-last-name">Last Name</label><input id="offline-last-name" name="Last Name" type="text" required></div>',
+          '</fieldset>',
+          '<div class="form-item field email required"><label class="title" for="offline-email">Email <span class="required">(required)</span></label><input id="offline-email" name="Email" type="email" required></div>',
+          '<div class="form-item field textarea required"><label class="title" for="offline-message">Message <span class="required">(required)</span></label><textarea id="offline-message" name="Message" required></textarea></div>',
+          '<div class="form-item field text required"><label class="title" for="offline-insurance">Insurance Type and Number <span class="required">(required)</span></label><input id="offline-insurance" name="Insurance Type and Number" type="text" required></div>',
+          '<div class="form-item field text required"><label class="title" for="offline-dob">Date of birth: <span class="required">(required)</span></label><input id="offline-dob" name="Date of birth" type="text" required></div>',
+          '<div class="form-item field text"><label class="title" for="offline-therapist">Preferred Therapist:</label><input id="offline-therapist" name="Preferred Therapist" type="text"></div>',
+          '<div class="form-item field phone"><label class="title" for="offline-phone">Phone Number for call-back:</label><input id="offline-phone" name="Phone Number for call-back" type="tel"></div>',
+          '</div>',
+          '<div class="form-button-wrapper form-button-wrapper--align-left"><input class="button sqs-system-button sqs-editable-button sqs-button-element--primary" type="submit" value="Submit"></div>',
+          '</form>',
+          '</div>'
+        ].join('');
+
+        function renderOfflineContactForm() {
+          var formBlock = document.querySelector('.sqs-block-form');
+          if (!formBlock || document.querySelector('.offline-contact-form')) return;
+
+          var formWrapper = formBlock.querySelector('.form-wrapper');
+          var realFormLoaded = formWrapper && formWrapper.querySelector('form, input, textarea, button');
+          if (realFormLoaded) return;
+
+          var fallbackBlock = document.createElement('div');
+          fallbackBlock.className = 'sqs-block html-block sqs-block-html offline-contact-form-block';
+          fallbackBlock.setAttribute('data-block-type', '2');
+          fallbackBlock.innerHTML = formHtml;
+          formBlock.insertAdjacentElement('afterend', fallbackBlock);
+        }
+
+        function scheduleRender() {
+          window.setTimeout(renderOfflineContactForm, 1200);
+          window.setTimeout(renderOfflineContactForm, 2500);
+        }
+
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', scheduleRender);
+        } else {
+          scheduleRender();
+        }
+
+        window.addEventListener('load', scheduleRender);
+      }());
+    </script>
 
   </body>
 </html>
