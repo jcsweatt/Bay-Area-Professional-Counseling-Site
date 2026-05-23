@@ -241,11 +241,12 @@ h3 {
 
 .feature-grid {
   align-items: center;
-  grid-template-columns: 0.92fr 1.08fr;
+  gap: clamp(34px, 5vw, 60px);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .feature-copy {
-  padding: clamp(20px, 5vw, 74px);
+  padding: clamp(20px, 5vw, 48px) 0;
 }
 
 .soft-card {
