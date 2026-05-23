@@ -673,14 +673,16 @@ h3 {
   color: var(--clay);
 }
 
-.soft-card .text-link {
+.soft-card .text-link,
+.therapist-card .text-link {
   display: inline-flex;
   gap: 13px;
   padding-bottom: 8px;
   position: relative;
 }
 
-.soft-card .text-link::before {
+.soft-card .text-link::before,
+.therapist-card .text-link::before {
   background: var(--clay);
   bottom: 0;
   content: "";
@@ -693,12 +695,14 @@ h3 {
   width: 100%;
 }
 
-.soft-card .text-link::after {
+.soft-card .text-link::after,
+.therapist-card .text-link::after {
   content: "\2192";
   transition: transform 240ms ease;
 }
 
-.soft-card .text-link:focus-visible::before {
+.soft-card .text-link:focus-visible::before,
+.therapist-card:focus-visible .text-link::before {
   transform: scaleX(1);
 }
 
@@ -855,11 +859,13 @@ h3 {
     transform: translateY(-2px);
   }
 
-  .soft-card .text-link:hover::before {
+  .soft-card .text-link:hover::before,
+  .therapist-card:hover .text-link::before {
     transform: scaleX(1);
   }
 
-  .soft-card .text-link:hover::after {
+  .soft-card .text-link:hover::after,
+  .therapist-card:hover .text-link::after {
     transform: translateX(5px);
   }
 }
@@ -868,13 +874,16 @@ h3 {
   .support-card,
   .pill-list li,
   .soft-card .text-link::before,
-  .soft-card .text-link::after {
+  .soft-card .text-link::after,
+  .therapist-card .text-link::before,
+  .therapist-card .text-link::after {
     transition: none;
   }
 
   .support-card:hover,
   .pill-list li:hover,
-  .soft-card .text-link:hover::after {
+  .soft-card .text-link:hover::after,
+  .therapist-card:hover .text-link::after {
     transform: none;
   }
 }
