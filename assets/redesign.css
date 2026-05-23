@@ -227,9 +227,11 @@ h3 {
 
 .support-card {
   background: rgba(255, 253, 247, 0.52);
+  border: 1px solid transparent;
   border-radius: var(--radius-sm);
   min-height: 175px;
   padding: 32px 28px;
+  transition: background-color 240ms ease, border-color 240ms ease, box-shadow 240ms ease, transform 240ms ease;
 }
 
 .support-card p,
@@ -267,6 +269,7 @@ h3 {
   border-radius: 999px;
   color: var(--olive-soft);
   padding: 8px 16px;
+  transition: background-color 180ms ease, color 180ms ease, transform 180ms ease;
 }
 
 .steps-grid {
@@ -670,6 +673,35 @@ h3 {
   color: var(--clay);
 }
 
+.soft-card .text-link {
+  display: inline-flex;
+  gap: 13px;
+  padding-bottom: 8px;
+  position: relative;
+}
+
+.soft-card .text-link::before {
+  background: var(--clay);
+  bottom: 0;
+  content: "";
+  height: 1px;
+  left: 0;
+  position: absolute;
+  transform: scaleX(0.28);
+  transform-origin: left center;
+  transition: transform 240ms ease;
+  width: 100%;
+}
+
+.soft-card .text-link::after {
+  content: "\2192";
+  transition: transform 240ms ease;
+}
+
+.soft-card .text-link:focus-visible::before {
+  transform: scaleX(1);
+}
+
 .profile-banner {
   align-items: center;
   background: var(--sage);
@@ -796,6 +828,55 @@ h3 {
   font-size: 1.25rem;
   font-weight: 400;
   margin-bottom: 8px;
+}
+
+.footer-credit {
+  border-top: 1px solid var(--line);
+  color: var(--olive-soft);
+  font-size: 0.78rem;
+  letter-spacing: 0.13em;
+  margin-top: 38px;
+  padding-top: 26px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .support-card:hover {
+    background: rgba(255, 253, 247, 0.78);
+    border-color: rgba(191, 150, 117, 0.35);
+    box-shadow: 0 16px 32px rgba(46, 56, 44, 0.08);
+    transform: translateY(-6px);
+  }
+
+  .pill-list li:hover {
+    background: var(--sage);
+    color: var(--olive);
+    transform: translateY(-2px);
+  }
+
+  .soft-card .text-link:hover::before {
+    transform: scaleX(1);
+  }
+
+  .soft-card .text-link:hover::after {
+    transform: translateX(5px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .support-card,
+  .pill-list li,
+  .soft-card .text-link::before,
+  .soft-card .text-link::after {
+    transition: none;
+  }
+
+  .support-card:hover,
+  .pill-list li:hover,
+  .soft-card .text-link:hover::after {
+    transform: none;
+  }
 }
 
 @media (max-width: 920px) {
