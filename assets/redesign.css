@@ -405,6 +405,37 @@ h3 {
   margin: 10px 0 22px;
 }
 
+.form-text-link {
+  display: inline-flex;
+  gap: 9px;
+  letter-spacing: 0.08em;
+  margin: 4px 0 0 7px;
+  padding-bottom: 4px;
+  position: relative;
+}
+
+.form-text-link::before {
+  background: var(--clay);
+  bottom: 0;
+  content: "";
+  height: 1px;
+  left: 0;
+  position: absolute;
+  transform: scaleX(0.28);
+  transform-origin: left center;
+  transition: transform 240ms ease;
+  width: 100%;
+}
+
+.form-text-link::after {
+  content: "\2192";
+  transition: transform 240ms ease;
+}
+
+.form-text-link:focus-visible::before {
+  transform: scaleX(1);
+}
+
 .checkbox-grid {
   display: grid;
   gap: 12px;
@@ -860,12 +891,14 @@ h3 {
   }
 
   .soft-card .text-link:hover::before,
-  .therapist-card:hover .text-link::before {
+  .therapist-card:hover .text-link::before,
+  .form-text-link:hover::before {
     transform: scaleX(1);
   }
 
   .soft-card .text-link:hover::after,
-  .therapist-card:hover .text-link::after {
+  .therapist-card:hover .text-link::after,
+  .form-text-link:hover::after {
     transform: translateX(5px);
   }
 }
@@ -876,14 +909,17 @@ h3 {
   .soft-card .text-link::before,
   .soft-card .text-link::after,
   .therapist-card .text-link::before,
-  .therapist-card .text-link::after {
+  .therapist-card .text-link::after,
+  .form-text-link::before,
+  .form-text-link::after {
     transition: none;
   }
 
   .support-card:hover,
   .pill-list li:hover,
   .soft-card .text-link:hover::after,
-  .therapist-card:hover .text-link::after {
+  .therapist-card:hover .text-link::after,
+  .form-text-link:hover::after {
     transform: none;
   }
 }
