@@ -878,8 +878,8 @@ a.button[href$="/request-an-appointment/"]:not(.secondary):focus-visible::after 
 
 .site-footer {
   background:
-    linear-gradient(to bottom, var(--paper) 0, rgba(245, 240, 229, 0.93) 11%, rgba(245, 240, 229, 0.6) 32%, rgba(245, 240, 229, 0.06) 64%, rgba(245, 240, 229, 0) 100%),
-    url("redesign-footer-marsh.jpg") center bottom / cover no-repeat,
+    linear-gradient(to bottom, var(--paper) 0, rgba(245, 240, 229, 0.99) 34%, rgba(245, 240, 229, 0.9) 55%, rgba(245, 240, 229, 0.46) 75%, rgba(245, 240, 229, 0) 100%),
+    url("redesign-footer-marsh.jpg") center calc(100% + 18px) / cover no-repeat,
     var(--paper);
   color: var(--muted);
   margin-top: 10px;
@@ -1073,8 +1073,8 @@ a.button[href$="/request-an-appointment/"]:not(.secondary):focus-visible::after 
 
   .site-footer {
     background:
-      linear-gradient(to bottom, var(--paper) 0, rgba(245, 240, 229, 0.96) 10%, rgba(245, 240, 229, 0.68) 31%, rgba(245, 240, 229, 0.08) 58%, rgba(245, 240, 229, 0) 100%),
-      url("redesign-footer-marsh.jpg") center bottom / auto 100% no-repeat,
+      linear-gradient(to bottom, var(--paper) 0, rgba(245, 240, 229, 0.99) 38%, rgba(245, 240, 229, 0.9) 62%, rgba(245, 240, 229, 0.38) 82%, rgba(245, 240, 229, 0) 100%),
+      url("redesign-footer-marsh.jpg") center calc(100% + 12px) / auto 100% no-repeat,
       var(--paper);
     margin: 0;
     padding: 66px 0 34px;
