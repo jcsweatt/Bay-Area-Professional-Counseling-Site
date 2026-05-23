@@ -763,4 +763,13 @@ h3 {
     align-items: flex-start;
     flex-direction: column;
   }
+
+  .contact-banner {
+    gap: 30px;
+    padding: 38px 28px 48px;
+  }
+
+  .profile-banner {
+    padding-bottom: 44px;
+  }
 }
