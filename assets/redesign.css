@@ -156,6 +156,31 @@ h3 {
   background: var(--paper-deep);
 }
 
+a.button[href$="/request-an-appointment/"]:not(.secondary) {
+  overflow: visible;
+  position: relative;
+}
+
+a.button[href$="/request-an-appointment/"]:not(.secondary)::after {
+  background: url("wildflower-sprig.svg") center bottom / contain no-repeat;
+  content: "";
+  height: 42px;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  right: 14px;
+  top: -34px;
+  transform: translateY(8px) scale(0.72);
+  transform-origin: center bottom;
+  transition: opacity 240ms ease, transform 300ms ease;
+  width: 80px;
+}
+
+a.button[href$="/request-an-appointment/"]:not(.secondary):focus-visible::after {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
 .hero {
   padding: 50px 0 78px;
 }
@@ -201,7 +226,9 @@ h3 {
 }
 
 .support-panel {
-  background: var(--sage);
+  background:
+    linear-gradient(rgba(202, 209, 181, 0.34), rgba(202, 209, 181, 0.34)),
+    var(--sage) url("redesign-moss-corner.jpg") right top / cover no-repeat;
 }
 
 .section {
@@ -742,7 +769,9 @@ h3 {
 
 .profile-banner {
   align-items: center;
-  background: var(--sage);
+  background:
+    linear-gradient(rgba(202, 209, 181, 0.84), rgba(202, 209, 181, 0.84)),
+    var(--sage) url("redesign-profile-grass.jpg") right bottom / cover no-repeat;
   border-radius: var(--radius);
   display: grid;
   gap: clamp(35px, 6vw, 72px);
@@ -848,9 +877,20 @@ h3 {
 }
 
 .site-footer {
-  border-top: 1px solid var(--line);
+  background: var(--paper-deep) url("redesign-footer-marsh.jpg") center bottom / 100% auto no-repeat;
+  border-radius: var(--radius);
+  box-shadow: 0 12px 34px rgba(48, 47, 35, 0.06);
   color: var(--muted);
-  padding: 48px 0;
+  margin: 10px auto 34px;
+  max-width: 1132px;
+  overflow: hidden;
+  padding: 48px 0 36px;
+  width: calc(100% - 68px);
+}
+
+.site-footer .container {
+  max-width: none;
+  padding: 0 clamp(30px, 5vw, 54px);
 }
 
 .footer-grid {
@@ -869,7 +909,7 @@ h3 {
 }
 
 .footer-credit {
-  border-top: 1px solid var(--line);
+  border-top: 1px solid rgba(57, 68, 55, 0.12);
   color: var(--olive-soft);
   font-size: 0.78rem;
   letter-spacing: 0.13em;
@@ -880,6 +920,11 @@ h3 {
 }
 
 @media (hover: hover) and (pointer: fine) {
+  a.button[href$="/request-an-appointment/"]:not(.secondary):hover::after {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
   .support-card:hover {
     background: rgba(255, 253, 247, 0.78);
     border-color: rgba(191, 150, 117, 0.35);
@@ -914,7 +959,8 @@ h3 {
   .therapist-card .text-link::before,
   .therapist-card .text-link::after,
   .form-text-link::before,
-  .form-text-link::after {
+  .form-text-link::after,
+  a.button[href$="/request-an-appointment/"]:not(.secondary)::after {
     transition: none;
   }
 
@@ -922,7 +968,8 @@ h3 {
   .pill-list li:hover,
   .soft-card .text-link:hover::after,
   .therapist-card:hover .text-link::after,
-  .form-text-link:hover::after {
+  .form-text-link:hover::after,
+  a.button[href$="/request-an-appointment/"]:not(.secondary):hover::after {
     transform: none;
   }
 }
@@ -1022,6 +1069,16 @@ h3 {
   .contact-banner {
     gap: 30px;
     padding: 38px 28px 48px;
+  }
+
+  .site-footer {
+    margin: 0 19px 20px;
+    padding: 38px 0 28px;
+    width: auto;
+  }
+
+  .site-footer .container {
+    padding: 0 25px;
   }
 
   .profile-banner {
