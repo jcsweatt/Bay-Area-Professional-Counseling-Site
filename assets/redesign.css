@@ -422,6 +422,58 @@ h3 {
   max-width: 690px;
 }
 
+.therapist-filter {
+  background: var(--paper-deep);
+  border-radius: var(--radius);
+  margin-bottom: 48px;
+  padding: clamp(30px, 5vw, 48px);
+  text-align: center;
+}
+
+.therapist-filter h2 {
+  margin-bottom: 12px;
+}
+
+.therapist-filter > p:not(.filter-status) {
+  color: var(--olive-soft);
+  margin: 0 auto 28px;
+  max-width: 620px;
+}
+
+.filter-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 11px;
+  justify-content: center;
+}
+
+.filter-button {
+  background: rgba(255, 253, 247, 0.7);
+  border: 1px solid transparent;
+  border-radius: 999px;
+  color: var(--olive-soft);
+  cursor: pointer;
+  font: inherit;
+  padding: 11px 18px;
+  transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease;
+}
+
+.filter-button:hover,
+.filter-button:focus-visible {
+  border-color: var(--sage-deep);
+  color: var(--olive);
+}
+
+.filter-button.is-active {
+  background: var(--olive);
+  color: var(--paper);
+}
+
+.filter-status {
+  color: var(--muted);
+  margin: 28px 0 0;
+}
+
 .therapist-grid {
   display: grid;
   gap: 30px 22px;
@@ -440,6 +492,10 @@ h3 {
 .therapist-card:hover {
   box-shadow: var(--shadow);
   transform: translateY(-3px);
+}
+
+.therapist-card[hidden] {
+  display: none;
 }
 
 .therapist-card img {
@@ -687,6 +743,19 @@ h3 {
   .profile-meta,
   .contact-options {
     grid-template-columns: 1fr;
+  }
+
+  .therapist-filter {
+    margin-bottom: 34px;
+    padding: 30px 20px;
+  }
+
+  .filter-options {
+    gap: 9px;
+  }
+
+  .filter-button {
+    padding: 10px 14px;
   }
 
   .contact-banner,

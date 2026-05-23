@@ -8,6 +8,7 @@
     <link rel="icon" href="../assets/default-favicon-76b7ed104bff.ico">
     <link rel="stylesheet" href="../assets/redesign.css">
     <script src="../assets/github-pages-paths.js" defer></script>
+    <script src="../assets/therapist-filter.js" defer></script>
   </head>
   <body>
     <header class="site-header">
@@ -36,8 +37,33 @@
       </section>
 
       <section class="section">
-        <div class="container therapist-grid">
-          <a class="therapist-card" href="/alexa/">
+        <div class="container">
+          <div class="therapist-filter" aria-label="Filter therapists by specialty">
+            <span class="eyebrow">Find A Therapist</span>
+            <h2>Explore by area of support.</h2>
+            <p>Select a featured area to see therapists whose biographies mention that population or concern.</p>
+            <div class="filter-options" role="group" aria-label="Specialty areas">
+              <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">All Therapists</button>
+              <button class="filter-button" type="button" data-filter="anxiety" aria-pressed="false">Anxiety</button>
+              <button class="filter-button" type="button" data-filter="depression" aria-pressed="false">Depression</button>
+              <button class="filter-button" type="button" data-filter="trauma" aria-pressed="false">Trauma</button>
+              <button class="filter-button" type="button" data-filter="children-teens" aria-pressed="false">Children &amp; Teens</button>
+              <button class="filter-button" type="button" data-filter="couples-families" aria-pressed="false">Couples &amp; Families</button>
+              <button class="filter-button" type="button" data-filter="adhd" aria-pressed="false">ADHD</button>
+              <button class="filter-button" type="button" data-filter="self-esteem" aria-pressed="false">Self-Esteem</button>
+              <button class="filter-button" type="button" data-filter="anger-management" aria-pressed="false">Anger Management</button>
+              <button class="filter-button" type="button" data-filter="grief" aria-pressed="false">Grief</button>
+              <button class="filter-button" type="button" data-filter="parenting" aria-pressed="false">Parenting</button>
+              <button class="filter-button" type="button" data-filter="autism-spectrum" aria-pressed="false">Autism Spectrum</button>
+              <button class="filter-button" type="button" data-filter="perinatal-infertility" aria-pressed="false">Perinatal &amp; Infertility</button>
+              <button class="filter-button" type="button" data-filter="addiction-substance-use" aria-pressed="false">Addiction &amp; Substance Use</button>
+              <button class="filter-button" type="button" data-filter="life-changes" aria-pressed="false">Life Changes &amp; Direction</button>
+              <button class="filter-button" type="button" data-filter="lgbtq" aria-pressed="false">LGBTQ+ Support</button>
+            </div>
+            <p class="filter-status" id="therapist-filter-status" aria-live="polite">Showing all 10 therapists.</p>
+          </div>
+          <div class="therapist-grid" id="therapist-grid">
+          <a class="therapist-card" data-specialties="anxiety depression trauma couples-families life-changes lgbtq addiction-substance-use" href="/alexa/">
             <img src="../assets/IMG_9906-e7cd05e5faf2.jpg" alt="Alexa Da Rosa">
             <div class="therapist-body">
               <span class="credentials">MA, LPC, ADC</span>
@@ -46,16 +72,16 @@
               <span class="text-link">View Profile</span>
             </div>
           </a>
-          <a class="therapist-card" href="/lacey/">
+          <a class="therapist-card" data-specialties="anxiety depression trauma life-changes addiction-substance-use adhd couples-families self-esteem anger-management" href="/lacey/">
             <img src="../assets/IMG_0051-99db6be59a41.jpg" alt="Lacey Moore">
             <div class="therapist-body">
               <span class="credentials">MS, LPC-S, MAC</span>
               <h2>Lacey Moore</h2>
-              <p>Specializes in anxiety, depression, adjustment and life transitions, addiction, trauma, anger, self-esteem, and family relations.</p>
+              <p>Specializes in anxiety, depression, adjustment and life transitions, addiction, trauma, anger, self-esteem, ADHD, and family relations.</p>
               <span class="text-link">View Profile</span>
             </div>
           </a>
-          <a class="therapist-card" href="/cindy/">
+          <a class="therapist-card" data-specialties="children-teens couples-families" href="/cindy/">
             <img src="../assets/IMG_0006-2-1fecee2be4a7.jpg" alt="Cindy Perronne">
             <div class="therapist-body">
               <span class="credentials">MS, ADC, LPC</span>
@@ -64,7 +90,7 @@
               <span class="text-link">View Profile</span>
             </div>
           </a>
-          <a class="therapist-card" href="/virginia-inge-gordon/">
+          <a class="therapist-card" data-specialties="anxiety depression trauma children-teens couples-families grief perinatal-infertility self-esteem parenting" href="/virginia-inge-gordon/">
             <img src="../assets/IMG_0032-6ebb79567067.jpg" alt="Virginia Inge Gordon">
             <div class="therapist-body">
               <span class="credentials">LPC</span>
@@ -73,7 +99,7 @@
               <span class="text-link">View Profile</span>
             </div>
           </a>
-          <a class="therapist-card" href="/lanya-daffin/">
+          <a class="therapist-card" data-specialties="anxiety depression addiction-substance-use life-changes self-esteem anger-management" href="/lanya-daffin/">
             <img src="../assets/IMG_9917-714c9a108972.jpg" alt="Lanya Daffin">
             <div class="therapist-body">
               <span class="credentials">LPC</span>
@@ -82,7 +108,7 @@
               <span class="text-link">View Profile</span>
             </div>
           </a>
-          <a class="therapist-card" href="/kaylawhatley/">
+          <a class="therapist-card" data-specialties="anxiety depression trauma children-teens couples-families adhd" href="/kaylawhatley/">
             <img src="../assets/Kayla-pic-ef9bd584ab26.jpg" alt="Kayla Whatley">
             <div class="therapist-body">
               <span class="credentials">LPC</span>
@@ -91,7 +117,7 @@
               <span class="text-link">View Profile</span>
             </div>
           </a>
-          <a class="therapist-card" href="/leigh-mohorn/">
+          <a class="therapist-card" data-specialties="anxiety depression trauma children-teens grief perinatal-infertility" href="/leigh-mohorn/">
             <img src="../assets/L.photo-b9534d3c0366.jpg" alt="Leigh Mohorn">
             <div class="therapist-body">
               <span class="credentials">ALC</span>
@@ -100,7 +126,7 @@
               <span class="text-link">View Profile</span>
             </div>
           </a>
-          <a class="therapist-card" href="/deena-alloul/">
+          <a class="therapist-card" data-specialties="anxiety adhd life-changes" href="/deena-alloul/">
             <img src="../assets/d.picture-8591aaa80845.jpg" alt="Deena Alloul">
             <div class="therapist-body">
               <span class="credentials">ALC</span>
@@ -109,7 +135,7 @@
               <span class="text-link">View Profile</span>
             </div>
           </a>
-          <a class="therapist-card" href="/tifani-nobles/">
+          <a class="therapist-card" data-specialties="anxiety couples-families grief children-teens life-changes" href="/tifani-nobles/">
             <img src="../assets/Tif-Pic-8b28f51f7639.JPG" alt="Tifani Nobles">
             <div class="therapist-body">
               <span class="credentials">MA, ALC</span>
@@ -118,7 +144,7 @@
               <span class="text-link">View Profile</span>
             </div>
           </a>
-          <a class="therapist-card" href="/new-page-2/">
+          <a class="therapist-card" data-specialties="anxiety depression trauma children-teens grief life-changes autism-spectrum" href="/new-page-2/">
             <img src="../assets/Madison-Pic-a91fa98fbe07.jpg" alt="Madison Ford">
             <div class="therapist-body">
               <span class="credentials">ALC</span>
@@ -127,6 +153,7 @@
               <span class="text-link">View Profile</span>
             </div>
           </a>
+          </div>
         </div>
       </section>
     </main>
