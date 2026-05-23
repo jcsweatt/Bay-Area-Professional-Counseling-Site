@@ -455,6 +455,28 @@ h3 {
   margin-top: 0;
 }
 
+.profile-quote {
+  border-left: 2px solid var(--clay);
+  color: var(--olive);
+  font-family: var(--serif);
+  font-size: clamp(1.35rem, 2vw, 1.65rem);
+  font-style: italic;
+  line-height: 1.45;
+  margin: 34px 0 44px;
+  padding: 3px 0 3px 26px;
+}
+
+.profile-quote cite {
+  color: var(--muted);
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  font-style: normal;
+  letter-spacing: 0.08em;
+  margin-top: 10px;
+  text-transform: uppercase;
+}
+
 .aside-card {
   background: var(--white);
   border-radius: var(--radius-sm);
