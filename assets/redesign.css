@@ -183,6 +183,7 @@ h3 {
 .hero-art {
   border-radius: var(--radius);
   box-shadow: var(--shadow);
+  margin: 0;
   overflow: hidden;
 }
 
