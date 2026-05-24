@@ -162,18 +162,19 @@ a.button[href$="/request-an-appointment/"]:not(.secondary) {
 }
 
 a.button[href$="/request-an-appointment/"]:not(.secondary)::after {
-  background: url("redesign-button-wildflowers.png") center / contain no-repeat;
+  background: url("redesign-button-wildflower-fan.png") left center / contain no-repeat;
+  clip-path: inset(0 0 0 9px);
   content: "";
-  height: 150px;
+  height: 108px;
   opacity: 0;
   pointer-events: none;
   position: absolute;
-  right: -46px;
+  left: calc(100% - 9px);
   top: 50%;
-  transform: translateY(-44%) scale(0.78);
+  transform: translateY(-50%) scale(0.72);
   transform-origin: left center;
   transition: opacity 260ms ease, transform 360ms ease;
-  width: 92px;
+  width: 132px;
 }
 
 a.button[href$="/request-an-appointment/"]:not(.secondary):focus-visible::after {
@@ -347,6 +348,7 @@ main > .section:last-child {
   border-color: var(--paper);
   color: var(--olive);
   flex: 0 0 auto;
+  margin-right: 76px;
 }
 
 .contact-layout {
@@ -1097,10 +1099,12 @@ main > .section:last-child {
     padding: 38px 28px 48px;
   }
 
+  .contact-banner .button {
+    margin-right: 0;
+  }
+
   a.button[href$="/request-an-appointment/"]:not(.secondary)::after {
-    height: 124px;
-    right: -15px;
-    width: 76px;
+    display: none;
   }
 
   .contact-page-banner {
