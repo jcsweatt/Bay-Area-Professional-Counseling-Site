@@ -653,8 +653,8 @@ main > .section:last-child {
 
 .gallery-page-banner {
   background:
-    linear-gradient(to left, rgba(202, 209, 181, 0.58), rgba(202, 209, 181, 0.96) 36%, var(--sage) 66%),
-    var(--sage) url("redesign-moss-corner.jpg") right top / 48% auto no-repeat;
+    linear-gradient(to left, rgba(202, 209, 181, 0.3), rgba(202, 209, 181, 0.88) 46%, var(--sage) 78%),
+    var(--sage) url("redesign-moss-corner.jpg") right top / 64% auto no-repeat;
   padding-bottom: clamp(46px, 7vw, 76px);
   padding-top: clamp(46px, 7vw, 76px);
   text-align: left;
@@ -799,6 +799,20 @@ main > .section:last-child {
 .gallery-story p {
   margin: 0 auto;
   max-width: 485px;
+}
+
+.gallery-story p a {
+  color: var(--olive);
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-color: rgba(184, 121, 93, 0.72);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+.gallery-story p a:hover,
+.gallery-story p a:focus-visible {
+  color: var(--clay);
 }
 
 .gallery-controls {
@@ -1385,8 +1399,8 @@ main > .section:last-child {
 
   .gallery-page-banner {
     background:
-      linear-gradient(rgba(202, 209, 181, 0.86), rgba(202, 209, 181, 0.93)),
-      var(--sage) url("redesign-moss-corner.jpg") right top / auto 100% no-repeat;
+      linear-gradient(rgba(202, 209, 181, 0.76), rgba(202, 209, 181, 0.9)),
+      var(--sage) url("redesign-moss-corner.jpg") right top / auto 108% no-repeat;
     padding: 40px 27px 46px;
   }
 

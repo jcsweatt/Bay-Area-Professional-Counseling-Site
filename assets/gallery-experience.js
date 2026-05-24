@@ -30,9 +30,10 @@
     image.classList.add("is-changing");
     image.src = stop.dataset.full;
     image.alt = stop.dataset.alt;
+    image.style.objectPosition = stop.dataset.position || "center";
     number.textContent = String(currentIndex + 1).padStart(2, "0");
     title.textContent = stop.dataset.title;
-    description.textContent = stop.dataset.description;
+    description.innerHTML = stop.dataset.caption;
 
     stops.forEach(function (item, itemIndex) {
       var selected = itemIndex === currentIndex;
