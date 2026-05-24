@@ -665,6 +665,12 @@ main > .section:last-child {
   max-width: 690px;
 }
 
+.therapists-page-banner {
+  background:
+    linear-gradient(rgba(202, 209, 181, 0.87), rgba(202, 209, 181, 0.87)),
+    var(--sage) url("redesign-therapists-succulents.jpg") left bottom / 62% auto no-repeat;
+}
+
 .contact-page-banner {
   background:
     linear-gradient(to right, var(--sage) 0, rgba(202, 209, 181, 0.98) 51%, rgba(202, 209, 181, 0.74) 69%, rgba(202, 209, 181, 0.35) 100%),
@@ -1450,6 +1456,12 @@ main > .section:last-child {
 
   .contact-page-banner p {
     font-size: 0.97rem;
+  }
+
+  .therapists-page-banner {
+    background:
+      linear-gradient(rgba(202, 209, 181, 0.9), rgba(202, 209, 181, 0.9)),
+      var(--sage) url("redesign-therapists-succulents.jpg") left bottom / auto 52% no-repeat;
   }
 
   .gallery-page-banner {
