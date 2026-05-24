@@ -654,7 +654,7 @@ main > .section:last-child {
 .gallery-page-banner {
   background:
     linear-gradient(rgba(202, 209, 181, 0.82), rgba(202, 209, 181, 0.82)),
-    var(--sage) url("redesign-gallery-succulents.jpg") right bottom / cover no-repeat;
+    var(--sage) url("redesign-gallery-succulents.jpg") right bottom / 75% auto no-repeat;
   padding-bottom: clamp(36px, 4.4vw, 48.5px);
   padding-top: clamp(36px, 4.4vw, 48.5px);
   text-align: left;
@@ -1400,7 +1400,7 @@ main > .section:last-child {
   .gallery-page-banner {
     background:
       linear-gradient(rgba(202, 209, 181, 0.82), rgba(202, 209, 181, 0.82)),
-      var(--sage) url("redesign-gallery-succulents.jpg") right bottom / auto 100% no-repeat;
+      var(--sage) url("redesign-gallery-succulents.jpg") right bottom / auto 75% no-repeat;
     padding: 34px 27px 48px;
   }
 
