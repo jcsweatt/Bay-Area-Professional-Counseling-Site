@@ -162,23 +162,23 @@ a.button[href$="/request-an-appointment/"]:not(.secondary) {
 }
 
 a.button[href$="/request-an-appointment/"]:not(.secondary)::after {
-  background: url("wildflower-sprig.svg") center bottom / contain no-repeat;
+  background: url("redesign-button-wildflowers.png") center / contain no-repeat;
   content: "";
-  height: 42px;
+  height: 150px;
   opacity: 0;
   pointer-events: none;
   position: absolute;
-  right: 14px;
-  top: -34px;
-  transform: translateY(8px) scale(0.72);
-  transform-origin: center bottom;
-  transition: opacity 240ms ease, transform 300ms ease;
-  width: 80px;
+  right: -46px;
+  top: 50%;
+  transform: translateY(-44%) scale(0.78);
+  transform-origin: left center;
+  transition: opacity 260ms ease, transform 360ms ease;
+  width: 92px;
 }
 
 a.button[href$="/request-an-appointment/"]:not(.secondary):focus-visible::after {
   opacity: 1;
-  transform: translateY(0) scale(1);
+  transform: translateY(-50%) scale(1);
 }
 
 .hero {
@@ -233,6 +233,10 @@ a.button[href$="/request-an-appointment/"]:not(.secondary):focus-visible::after 
 
 .section {
   padding: 38px 0 86px;
+}
+
+main > .section:last-child {
+  padding-bottom: clamp(42px, 5vw, 58px);
 }
 
 .section-header {
@@ -329,7 +333,7 @@ a.button[href$="/request-an-appointment/"]:not(.secondary):focus-visible::after 
   display: flex;
   gap: 44px;
   justify-content: space-between;
-  margin-bottom: 78px;
+  margin-bottom: 0;
   padding: clamp(38px, 6vw, 68px);
 }
 
@@ -903,7 +907,7 @@ a.button[href$="/request-an-appointment/"]:not(.secondary):focus-visible::after 
   color: var(--muted);
   margin-top: 10px;
   overflow: hidden;
-  padding: clamp(82px, 10vw, 120px) 0 38px;
+  padding: clamp(58px, 6.5vw, 78px) 0 38px;
   width: 100%;
 }
 
@@ -941,7 +945,7 @@ a.button[href$="/request-an-appointment/"]:not(.secondary):focus-visible::after 
 @media (hover: hover) and (pointer: fine) {
   a.button[href$="/request-an-appointment/"]:not(.secondary):hover::after {
     opacity: 1;
-    transform: translateY(0) scale(1);
+    transform: translateY(-50%) scale(1);
   }
 
   .support-card:hover {
@@ -987,9 +991,12 @@ a.button[href$="/request-an-appointment/"]:not(.secondary):focus-visible::after 
   .pill-list li:hover,
   .soft-card .text-link:hover::after,
   .therapist-card:hover .text-link::after,
-  .form-text-link:hover::after,
-  a.button[href$="/request-an-appointment/"]:not(.secondary):hover::after {
+  .form-text-link:hover::after {
     transform: none;
+  }
+
+  a.button[href$="/request-an-appointment/"]:not(.secondary):hover::after {
+    transform: translateY(-50%) scale(1);
   }
 }
 
@@ -1090,6 +1097,12 @@ a.button[href$="/request-an-appointment/"]:not(.secondary):focus-visible::after 
     padding: 38px 28px 48px;
   }
 
+  a.button[href$="/request-an-appointment/"]:not(.secondary)::after {
+    height: 124px;
+    right: -15px;
+    width: 76px;
+  }
+
   .contact-page-banner {
     background:
       linear-gradient(to bottom, var(--sage) 0, var(--sage) 67%, rgba(202, 209, 181, 0.86) 78%, rgba(202, 209, 181, 0.35) 100%),
@@ -1112,7 +1125,7 @@ a.button[href$="/request-an-appointment/"]:not(.secondary):focus-visible::after 
       url("redesign-footer-marsh.jpg") center calc(100% + 12px) / auto 100% no-repeat,
       var(--paper);
     margin: 0;
-    padding: 66px 0 34px;
+    padding: 50px 0 34px;
   }
 
   .site-footer .container {
