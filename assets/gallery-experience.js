@@ -30,6 +30,7 @@
     image.classList.add("is-changing");
     image.src = stop.dataset.full;
     image.alt = stop.dataset.alt;
+    image.style.objectFit = stop.dataset.fit || "cover";
     image.style.objectPosition = stop.dataset.position || "center";
     number.textContent = String(currentIndex + 1).padStart(2, "0");
     title.textContent = stop.dataset.title;
