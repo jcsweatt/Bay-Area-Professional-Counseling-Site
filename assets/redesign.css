@@ -651,6 +651,245 @@ main > .section:last-child {
   max-width: 485px;
 }
 
+.gallery-page-banner {
+  background:
+    linear-gradient(to left, rgba(202, 209, 181, 0.58), rgba(202, 209, 181, 0.96) 36%, var(--sage) 66%),
+    var(--sage) url("redesign-moss-corner.jpg") right top / 48% auto no-repeat;
+  padding-bottom: clamp(46px, 7vw, 76px);
+  padding-top: clamp(46px, 7vw, 76px);
+  text-align: left;
+}
+
+.gallery-page-banner h1 {
+  max-width: 720px;
+}
+
+.gallery-page-banner p {
+  margin: 0;
+  max-width: 610px;
+}
+
+.gallery-section {
+  padding-bottom: clamp(40px, 5vw, 52px);
+  padding-top: 20px;
+}
+
+.gallery-section + .section {
+  padding-top: 0;
+}
+
+.gallery-intro {
+  margin: 0 auto 45px;
+  max-width: 700px;
+  text-align: center;
+}
+
+.gallery-experience {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: clamp(24px, 5vw, 52px);
+  position: relative;
+}
+
+.gallery-experience::after {
+  background: url("redesign-profile-grass.jpg") center bottom / cover no-repeat;
+  bottom: 0;
+  content: "";
+  height: 105px;
+  left: 0;
+  opacity: 0.13;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+}
+
+.gallery-view {
+  align-items: center;
+  display: grid;
+  grid-template-columns: minmax(70px, 0.17fr) minmax(280px, 1fr) minmax(70px, 0.17fr);
+  margin: 0 auto;
+  max-width: 760px;
+  position: relative;
+  z-index: 1;
+}
+
+.gallery-feature {
+  background: var(--paper-deep);
+  border: 11px solid var(--paper);
+  border-radius: 28px;
+  box-shadow: 0 22px 38px rgba(48, 47, 35, 0.16);
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+}
+
+.gallery-feature img {
+  aspect-ratio: 1 / 1.14;
+  height: min(610px, 63vw);
+  object-fit: cover;
+  object-position: center;
+  opacity: 1;
+  transition: opacity 260ms ease, transform 380ms ease;
+  width: 100%;
+}
+
+.gallery-feature img.is-changing {
+  opacity: 0.54;
+  transform: scale(1.015);
+}
+
+.gallery-peek {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  padding: 0;
+  position: relative;
+  transition: transform 220ms ease;
+  z-index: 1;
+}
+
+.gallery-peek img {
+  aspect-ratio: 0.76;
+  border-radius: 17px;
+  box-shadow: 0 12px 28px rgba(48, 47, 35, 0.11);
+  height: min(295px, 29vw);
+  object-fit: cover;
+  opacity: 0.7;
+  width: 100%;
+}
+
+.gallery-peek-previous {
+  margin-right: -22px;
+  transform: rotate(-3deg);
+}
+
+.gallery-peek-next {
+  margin-left: -22px;
+  transform: rotate(3deg);
+}
+
+.gallery-peek:hover,
+.gallery-peek:focus-visible {
+  transform: translateY(-5px) rotate(0);
+}
+
+.gallery-story {
+  margin: 34px auto 44px;
+  max-width: 660px;
+  position: relative;
+  text-align: center;
+  z-index: 1;
+}
+
+.gallery-counter {
+  color: var(--clay);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  margin-bottom: 16px;
+}
+
+.gallery-story h3 {
+  font-size: clamp(1.7rem, 3vw, 2.15rem);
+  margin-bottom: 12px;
+}
+
+.gallery-story p {
+  margin: 0 auto;
+  max-width: 485px;
+}
+
+.gallery-controls {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 27px;
+}
+
+.gallery-controls button {
+  align-items: center;
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--olive);
+  cursor: pointer;
+  display: inline-flex;
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+  gap: 10px;
+  letter-spacing: 0.1em;
+  padding: 11px 19px;
+  text-transform: uppercase;
+  transition: background-color 180ms ease, border-color 180ms ease;
+}
+
+.gallery-controls button:hover,
+.gallery-controls button:focus-visible {
+  background: var(--paper-deep);
+  border-color: var(--sage-deep);
+}
+
+.gallery-path {
+  display: flex;
+  gap: clamp(10px, 1.4vw, 17px);
+  justify-content: center;
+  padding: 33px 4px 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.gallery-path::before {
+  border-top: 1px dashed rgba(141, 153, 117, 0.48);
+  content: "";
+  left: 24px;
+  position: absolute;
+  right: 24px;
+  top: 62px;
+}
+
+.gallery-stop {
+  background: var(--paper);
+  border: 2px solid transparent;
+  border-radius: 999px;
+  cursor: pointer;
+  flex: 0 1 64px;
+  height: clamp(52px, 6vw, 66px);
+  overflow: hidden;
+  padding: 4px;
+  position: relative;
+  transition: border-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+  width: clamp(52px, 6vw, 66px);
+}
+
+.gallery-stop:nth-child(3n + 1) {
+  transform: translateY(-9px);
+}
+
+.gallery-stop:nth-child(3n + 2) {
+  transform: translateY(8px);
+}
+
+.gallery-stop img {
+  border-radius: 999px;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.gallery-stop:hover,
+.gallery-stop:focus-visible {
+  border-color: var(--sage-deep);
+  box-shadow: 0 8px 18px rgba(48, 47, 35, 0.12);
+}
+
+.gallery-stop.is-selected {
+  border-color: var(--clay);
+  box-shadow: 0 8px 20px rgba(184, 121, 93, 0.2);
+}
+
 .therapist-filter {
   background: var(--paper-deep);
   border-radius: var(--radius);
@@ -995,6 +1234,9 @@ main > .section:last-child {
 @media (prefers-reduced-motion: reduce) {
   .support-card,
   .pill-list li,
+  .gallery-feature img,
+  .gallery-peek,
+  .gallery-stop,
   .soft-card .text-link::before,
   .soft-card .text-link::after,
   .therapist-card .text-link::before,
@@ -1007,6 +1249,7 @@ main > .section:last-child {
 
   .support-card:hover,
   .pill-list li:hover,
+  .gallery-peek:hover,
   .soft-card .text-link:hover::after,
   .therapist-card:hover .text-link::after,
   .form-text-link:hover::after {
@@ -1138,6 +1381,75 @@ main > .section:last-child {
 
   .contact-page-banner p {
     font-size: 0.97rem;
+  }
+
+  .gallery-page-banner {
+    background:
+      linear-gradient(rgba(202, 209, 181, 0.86), rgba(202, 209, 181, 0.93)),
+      var(--sage) url("redesign-moss-corner.jpg") right top / auto 100% no-repeat;
+    padding: 40px 27px 46px;
+  }
+
+  .gallery-page-banner h1 {
+    font-size: clamp(2.55rem, 11vw, 3.15rem);
+  }
+
+  .gallery-experience {
+    padding: 22px 15px 28px;
+  }
+
+  .gallery-view {
+    grid-template-columns: 35px minmax(0, 1fr) 35px;
+  }
+
+  .gallery-feature {
+    border-width: 7px;
+    border-radius: 22px;
+  }
+
+  .gallery-feature img {
+    height: min(490px, 116vw);
+  }
+
+  .gallery-peek img {
+    border-radius: 11px;
+    height: 124px;
+  }
+
+  .gallery-peek-previous {
+    margin-right: -14px;
+  }
+
+  .gallery-peek-next {
+    margin-left: -14px;
+  }
+
+  .gallery-story {
+    margin: 28px auto 24px;
+    padding: 0 8px;
+  }
+
+  .gallery-path {
+    gap: 10px;
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding: 26px 9px 27px;
+    scroll-snap-type: x proximity;
+  }
+
+  .gallery-path::before {
+    left: 22px;
+    min-width: 700px;
+    right: auto;
+    top: 54px;
+    width: calc(100% - 44px);
+  }
+
+  .gallery-stop {
+    flex: 0 0 56px;
+    height: 56px;
+    scroll-snap-align: center;
+    width: 56px;
   }
 
   .site-footer {
