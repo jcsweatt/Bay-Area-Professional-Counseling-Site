@@ -610,6 +610,22 @@ a.button[href$="/request-an-appointment/"]:not(.secondary):focus-visible::after 
   max-width: 690px;
 }
 
+.contact-page-banner {
+  background:
+    linear-gradient(rgba(202, 209, 181, 0.42), rgba(202, 209, 181, 0.42)),
+    var(--sage) url("redesign-contact-growth.jpg") right bottom / auto 94% no-repeat;
+  text-align: left;
+}
+
+.contact-page-banner h1 {
+  max-width: 560px;
+}
+
+.contact-page-banner p {
+  margin: 0;
+  max-width: 510px;
+}
+
 .therapist-filter {
   background: var(--paper-deep);
   border-radius: var(--radius);
@@ -1069,6 +1085,13 @@ a.button[href$="/request-an-appointment/"]:not(.secondary):focus-visible::after 
   .contact-banner {
     gap: 30px;
     padding: 38px 28px 48px;
+  }
+
+  .contact-page-banner {
+    background:
+      linear-gradient(rgba(202, 209, 181, 0.48), rgba(202, 209, 181, 0.48)),
+      var(--sage) url("redesign-contact-growth.jpg") right bottom / auto 43% no-repeat;
+    padding-bottom: clamp(168px, 47vw, 194px);
   }
 
   .site-footer {
