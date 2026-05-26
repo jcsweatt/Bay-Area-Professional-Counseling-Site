@@ -87,6 +87,55 @@ h3 {
   text-transform: uppercase;
 }
 
+.after-hours-banner {
+  background: var(--paper);
+  color: var(--olive);
+  font-size: 0.9rem;
+  padding-top: 14px;
+}
+
+.after-hours-inner {
+  padding-bottom: 0;
+}
+
+.after-hours-notice {
+  align-items: baseline;
+  background: rgba(202, 209, 181, 0.4);
+  border: 1px solid rgba(85, 98, 77, 0.1);
+  border-radius: 18px;
+  display: flex;
+  gap: 14px 20px;
+  justify-content: center;
+  padding: 13px clamp(18px, 3vw, 27px);
+  text-align: center;
+}
+
+.after-hours-notice strong {
+  color: var(--olive-soft);
+  flex: 0 0 auto;
+  font-size: 0.7rem;
+  font-weight: 650;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.after-hours-notice span {
+  color: var(--olive-soft);
+}
+
+.after-hours-notice a {
+  color: var(--olive);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: rgba(57, 68, 55, 0.32);
+  text-underline-offset: 2px;
+}
+
+.after-hours-notice a:hover,
+.after-hours-notice a:focus-visible {
+  text-decoration-color: currentColor;
+}
+
 .site-header {
   background: var(--paper);
   padding: 26px 0 8px;
@@ -1298,6 +1347,15 @@ main > .section:last-child {
 }
 
 @media (max-width: 920px) {
+  .after-hours-notice {
+    align-items: center;
+    flex-direction: column;
+    gap: 6px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    text-align: left;
+  }
+
   .header-inner {
     align-items: flex-start;
     flex-direction: column;
