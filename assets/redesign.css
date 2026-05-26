@@ -435,17 +435,32 @@ main > .section:last-child {
 
 .appointment-form input[type="text"],
 .appointment-form input[type="tel"],
-.appointment-form input[type="date"] {
+.appointment-form input[type="date"],
+.appointment-form textarea {
   background: var(--paper);
   border: 1px solid var(--line);
   border-radius: 12px;
   color: var(--olive);
   font: inherit;
-  min-height: 52px;
   padding: 12px 14px;
 }
 
-.appointment-form input:disabled {
+.appointment-form input[type="text"],
+.appointment-form input[type="tel"],
+.appointment-form input[type="date"] {
+  min-height: 52px;
+}
+
+.appointment-form textarea {
+  line-height: 1.6;
+  margin-top: 24px;
+  min-height: 154px;
+  resize: vertical;
+  width: 100%;
+}
+
+.appointment-form input:disabled,
+.appointment-form textarea:disabled {
   cursor: not-allowed;
   opacity: 0.72;
 }
