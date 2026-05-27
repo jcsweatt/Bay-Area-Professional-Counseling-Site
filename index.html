@@ -1,3 +1,6 @@
+---
+nav_current: home
+---
 <!doctype html>
 <html lang="en">
   <head>
@@ -22,19 +25,7 @@
     <script src="assets/after-hours-banner.js?v=20260526-32" defer></script>
   </head>
   <body>
-    <header class="site-header">
-      <div class="container header-inner">
-        <a class="brand" href="/">
-          <img class="brand-logo" src="assets/Full-Color_Bay-Area_logo-4803542f60cc.jpg" alt="Bay Area Professional Counseling">
-        </a>
-        <nav class="site-nav" aria-label="Main navigation">
-          <a aria-current="page" href="/">Home</a>
-          <a href="/our-staff/">Our Therapists</a>
-          <a href="/gallery/">Gallery</a>
-          <a class="button" href="/request-an-appointment/">Request an Appointment</a>
-        </nav>
-      </div>
-    </header>
+    {% include header.html %}
 
     <main>
       <section class="hero">
@@ -138,22 +129,6 @@
       </section>
     </main>
 
-    <footer class="site-footer">
-      <div class="container footer-grid">
-        <div>
-          <strong>Bay Area Professional Counseling</strong>
-          <div>6576 Airport Boulevard, Suite C 200<br>Mobile, AL 36608</div>
-        </div>
-        <div>
-          <strong>Connect</strong>
-          <a href="tel:+12514590200">(251) 459-0200</a><br>
-          <a href="mailto:bayareacounselingmobile@gmail.com">bayareacounselingmobile@gmail.com</a>
-        </div>
-      </div>
-      <div class="container footer-credit">
-        <span class="footer-design-credit">Designed with Love in San Francisco.</span>
-        <span class="footer-copyright">&copy; 2026 Bay Area Professional Counseling. All rights reserved.</span>
-      </div>
-    </footer>
+    {% include footer.html %}
   </body>
 </html>
