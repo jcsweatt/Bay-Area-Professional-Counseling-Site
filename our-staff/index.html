@@ -1,28 +1,13 @@
 ---
 nav_current: staff
+title: Our Therapists | Bay Area Professional Counseling
+description: Meet the counselors at Bay Area Professional Counseling in Mobile, Alabama.
+script: therapist-filter
 ---
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7HQSVYSK66"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-7HQSVYSK66');
-    </script>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Our Therapists | Bay Area Professional Counseling</title>
-    <meta name="description" content="Meet the counselors at Bay Area Professional Counseling in Mobile, Alabama.">
-    <link rel="icon" type="image/png" sizes="64x64" href="../assets/bay-area-favicon-64.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="../assets/bay-area-apple-touch-icon.png">
-    <link rel="stylesheet" href="../assets/redesign.css?v=20260526-34">
-    <script src="../assets/github-pages-paths.js" defer></script>
-    <script src="../assets/after-hours-banner.js?v=20260526-32" defer></script>
-    <script src="../assets/therapist-filter.js?v=20260526-31" defer></script>
+    {% include head.html %}
   </head>
   <body>
     {% include header.html %}
@@ -65,7 +50,7 @@ nav_current: staff
             <p class="filter-status" id="therapist-filter-status" aria-live="polite">Showing all 10 therapists.</p>
           </div>
           <div class="therapist-grid" id="therapist-grid">
-          <a class="therapist-card" data-specialties="anxiety depression trauma couples-families life-changes lgbtq addiction-substance-use" href="/alexa/">
+          <a class="therapist-card" data-specialties="anxiety depression trauma couples-families life-changes lgbtq addiction-substance-use" href="{{ '/alexa/' | relative_url }}">
             <img src="../assets/IMG_9906-e7cd05e5faf2.jpg" alt="Alexa Da Rosa">
             <div class="therapist-body">
               <span class="credentials">MA, LPC, ADC</span>
@@ -74,7 +59,7 @@ nav_current: staff
               <span class="text-link">View Profile</span>
             </div>
           </a>
-          <a class="therapist-card" data-specialties="anxiety depression trauma life-changes addiction-substance-use adhd couples-families self-esteem anger-management" href="/lacey/">
+          <a class="therapist-card" data-specialties="anxiety depression trauma life-changes addiction-substance-use adhd couples-families self-esteem anger-management" href="{{ '/lacey/' | relative_url }}">
             <img src="../assets/IMG_0051-99db6be59a41.jpg" alt="Lacey Moore">
             <div class="therapist-body">
               <span class="credentials">MS, LPC-S, MAC</span>
@@ -83,7 +68,7 @@ nav_current: staff
               <span class="text-link">View Profile</span>
             </div>
           </a>
-          <a class="therapist-card" data-specialties="children-teens couples-families" href="/cindy/">
+          <a class="therapist-card" data-specialties="children-teens couples-families" href="{{ '/cindy/' | relative_url }}">
             <img src="../assets/IMG_0006-2-1fecee2be4a7.jpg" alt="Cindy Perronne">
             <div class="therapist-body">
               <span class="credentials">MS, ADC, LPC</span>
@@ -92,7 +77,7 @@ nav_current: staff
               <span class="text-link">View Profile</span>
             </div>
           </a>
-          <a class="therapist-card" data-specialties="anxiety depression trauma children-teens couples-families grief perinatal-infertility self-esteem parenting" href="/virginia/">
+          <a class="therapist-card" data-specialties="anxiety depression trauma children-teens couples-families grief perinatal-infertility self-esteem parenting" href="{{ '/virginia/' | relative_url }}">
             <img src="../assets/IMG_0032-6ebb79567067.jpg" alt="Virginia Inge Gordon">
             <div class="therapist-body">
               <span class="credentials">LPC</span>
@@ -101,7 +86,7 @@ nav_current: staff
               <span class="text-link">View Profile</span>
             </div>
           </a>
-          <a class="therapist-card" data-specialties="anxiety depression addiction-substance-use life-changes self-esteem anger-management" href="/lanya/">
+          <a class="therapist-card" data-specialties="anxiety depression addiction-substance-use life-changes self-esteem anger-management" href="{{ '/lanya/' | relative_url }}">
             <img src="../assets/IMG_9917-714c9a108972.jpg" alt="Lanya Daffin">
             <div class="therapist-body">
               <span class="credentials">LPC</span>
@@ -110,7 +95,7 @@ nav_current: staff
               <span class="text-link">View Profile</span>
             </div>
           </a>
-          <a class="therapist-card" data-specialties="anxiety depression trauma children-teens couples-families adhd" href="/kayla/">
+          <a class="therapist-card" data-specialties="anxiety depression trauma children-teens couples-families adhd" href="{{ '/kayla/' | relative_url }}">
             <img src="../assets/Kayla-pic-ef9bd584ab26.jpg" alt="Kayla Whatley">
             <div class="therapist-body">
               <span class="credentials">LPC</span>
@@ -119,7 +104,7 @@ nav_current: staff
               <span class="text-link">View Profile</span>
             </div>
           </a>
-          <a class="therapist-card" data-specialties="anxiety depression trauma children-teens grief perinatal-infertility" href="/leigh/">
+          <a class="therapist-card" data-specialties="anxiety depression trauma children-teens grief perinatal-infertility" href="{{ '/leigh/' | relative_url }}">
             <img src="../assets/L.photo-b9534d3c0366.jpg" alt="Leigh Mohorn">
             <div class="therapist-body">
               <span class="credentials">ALC</span>
@@ -128,7 +113,7 @@ nav_current: staff
               <span class="text-link">View Profile</span>
             </div>
           </a>
-          <a class="therapist-card" data-specialties="anxiety adhd life-changes" href="/deena/">
+          <a class="therapist-card" data-specialties="anxiety adhd life-changes" href="{{ '/deena/' | relative_url }}">
             <img src="../assets/d.picture-8591aaa80845.jpg" alt="Deena Alloul">
             <div class="therapist-body">
               <span class="credentials">ALC</span>
@@ -137,7 +122,7 @@ nav_current: staff
               <span class="text-link">View Profile</span>
             </div>
           </a>
-          <a class="therapist-card" data-specialties="anxiety couples-families grief children-teens life-changes" href="/tifani/">
+          <a class="therapist-card" data-specialties="anxiety couples-families grief children-teens life-changes" href="{{ '/tifani/' | relative_url }}">
             <img src="../assets/Tif-Pic-8b28f51f7639.JPG" alt="Tifani Nobles">
             <div class="therapist-body">
               <span class="credentials">MA, ALC</span>
@@ -146,7 +131,7 @@ nav_current: staff
               <span class="text-link">View Profile</span>
             </div>
           </a>
-          <a class="therapist-card" data-specialties="anxiety depression trauma children-teens grief life-changes autism-spectrum" href="/madison/">
+          <a class="therapist-card" data-specialties="anxiety depression trauma children-teens grief life-changes autism-spectrum" href="{{ '/madison/' | relative_url }}">
             <img src="../assets/Madison-Pic-a91fa98fbe07.jpg" alt="Madison Ford">
             <div class="therapist-body">
               <span class="credentials">ALC</span>
