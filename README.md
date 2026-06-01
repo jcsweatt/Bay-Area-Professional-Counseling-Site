@@ -102,7 +102,6 @@ Custom redesign artwork is kept in `assets/`, including:
 | `redesign-gallery-succulents.jpg` | Gallery page banner accent |
 | `redesign-therapists-succulents.jpg` | Therapist directory banner accent |
 | `redesign-profile-grass.jpg` | Therapist profile header texture |
-| `redesign-button-bloom-collar.png` | Floral hover detail on primary action buttons |
 
 Therapist and gallery photographs are actual practice photos. Decorative non-staff imagery may be illustrated.
 
