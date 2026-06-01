@@ -4,7 +4,6 @@
       <img class="brand-logo" src="{{ '/assets/Full-Color_Bay-Area_logo-4803542f60cc.jpg' | relative_url }}" alt="Bay Area Professional Counseling">
     </a>
     <nav class="site-nav" aria-label="Main navigation">
-      <a{% if page.nav_current == 'home' %} aria-current="page"{% endif %} href="{{ '/' | relative_url }}">Home</a>
       <a{% if page.nav_current == 'staff' %} aria-current="page"{% endif %} href="{{ '/our-staff/' | relative_url }}">Our Therapists</a>
       <a{% if page.nav_current == 'gallery' %} aria-current="page"{% endif %} href="{{ '/gallery/' | relative_url }}">Gallery</a>
       <a class="button" href="{{ '/request-an-appointment/' | relative_url }}">Request an Appointment</a>
