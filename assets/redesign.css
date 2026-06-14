@@ -752,12 +752,17 @@ main > .section:last-child {
 
 .about-line-art path,
 .constellation-lines path {
-  animation: about-line-draw 2.2s ease forwards;
   fill: none;
   stroke: rgba(85, 98, 77, 0.42);
   stroke-dasharray: 9 12;
+  stroke-dashoffset: 220;
   stroke-linecap: round;
   stroke-width: 2;
+}
+
+.about-arrival-map.is-visible .about-line-art path,
+.about-constellation.is-visible .constellation-lines path {
+  animation: about-line-draw 2.2s ease forwards;
 }
 
 .about-line-art path:nth-child(2),
@@ -957,31 +962,31 @@ main > .section:last-child {
   margin-bottom: 13px;
 }
 
-.about-person-alexa {
+.about-person-one {
   left: 0;
   top: 58px;
   transform: rotate(-3deg);
 }
 
-.about-person-lacey {
+.about-person-two {
   left: 22%;
   top: 242px;
   transform: rotate(2deg);
 }
 
-.about-person-cindy {
+.about-person-three {
   left: 43%;
   top: 78px;
   transform: rotate(-2deg);
 }
 
-.about-person-lanya {
+.about-person-four {
   right: 18%;
   top: 244px;
   transform: rotate(3deg);
 }
 
-.about-person-virginia {
+.about-person-five {
   right: 0;
   top: 82px;
   transform: rotate(-2deg);
@@ -1703,6 +1708,7 @@ main > .section:last-child {
   .about-line-art path,
   .constellation-lines path {
     animation: none;
+    stroke-dashoffset: 0;
   }
 
   .support-card:hover,

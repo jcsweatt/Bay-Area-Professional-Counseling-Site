@@ -75,6 +75,7 @@ Supported optional front-matter settings currently include:
 - `google_site_verification: true`: currently enabled only on the homepage.
 - `script: therapist-filter`: loads the therapist-directory interaction.
 - `script: gallery-experience`: loads the interactive gallery behavior.
+- `script: about-experience`: loads About page scroll-triggered line animation and rotating therapist callouts.
 
 ### Public Pages
 
@@ -119,6 +120,7 @@ A future maintenance pass should identify actively referenced assets, remove unu
 | `assets/after-hours-banner.js` | Displays an after-hours crisis-support banner outside general office hours |
 | `assets/therapist-filter.js` | Filters and smoothly rearranges therapist cards by area of support |
 | `assets/gallery-experience.js` | Controls the interactive photo tour, captions, thumbnails, and keyboard navigation |
+| `assets/about-experience.js` | Triggers About page line-art motion on scroll and rotates therapist callouts on refresh |
 
 ### After-Hours Notice
 
