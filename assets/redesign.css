@@ -697,206 +697,359 @@ main > .section:last-child {
   max-width: 610px;
 }
 
-.about-page-banner {
-  background:
-    linear-gradient(105deg, rgba(202, 209, 181, 0.92) 0, rgba(202, 209, 181, 0.86) 48%, rgba(202, 209, 181, 0.46) 100%),
-    var(--sage) url("redesign-profile-grass.jpg") right bottom / 72% auto no-repeat;
-  overflow: hidden;
-  position: relative;
-  text-align: left;
+.about-hero {
+  padding-bottom: 34px;
 }
 
-.about-page-banner::after {
-  background: radial-gradient(circle, rgba(255, 253, 247, 0.72) 0 2px, transparent 3px);
-  background-size: 28px 28px;
-  content: "";
-  inset: 18px;
-  opacity: 0.22;
+.about-hero-grid {
+  align-items: center;
+  background:
+    linear-gradient(112deg, rgba(202, 209, 181, 0.93) 0, rgba(202, 209, 181, 0.84) 51%, rgba(202, 209, 181, 0.42) 100%),
+    var(--sage) url("redesign-profile-grass.jpg") right bottom / 58% auto no-repeat;
+  border-radius: var(--radius);
+  display: grid;
+  gap: clamp(34px, 5vw, 72px);
+  grid-template-columns: minmax(0, 0.78fr) minmax(420px, 0.88fr);
+  overflow: hidden;
+  padding: clamp(38px, 6vw, 72px);
+}
+
+.about-hero-copy {
+  position: relative;
+  z-index: 1;
+}
+
+.about-hero-copy h1 {
+  max-width: 700px;
+}
+
+.about-hero-copy p {
+  color: var(--olive-soft);
+  font-size: 1.08rem;
+  max-width: 560px;
+}
+
+.about-hero-actions,
+.about-next-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.about-arrival-map {
+  aspect-ratio: 1.22;
+  min-height: 390px;
+  position: relative;
+}
+
+.about-line-art,
+.constellation-lines {
+  inset: 0;
+  overflow: visible;
   pointer-events: none;
   position: absolute;
 }
 
-.about-page-banner h1,
-.about-page-banner p,
-.about-page-banner .eyebrow {
-  position: relative;
-  z-index: 1;
+.about-line-art path,
+.constellation-lines path {
+  animation: about-line-draw 2.2s ease forwards;
+  fill: none;
+  stroke: rgba(85, 98, 77, 0.42);
+  stroke-dasharray: 9 12;
+  stroke-linecap: round;
+  stroke-width: 2;
 }
 
-.about-page-banner h1 {
-  max-width: 780px;
+.about-line-art path:nth-child(2),
+.constellation-lines path:nth-child(2) {
+  animation-delay: 220ms;
+  stroke: rgba(184, 121, 93, 0.4);
 }
 
-.about-page-banner p {
-  margin: 0;
-  max-width: 610px;
+.about-line-art path:nth-child(3),
+.constellation-lines path:nth-child(3) {
+  animation-delay: 420ms;
 }
 
-.about-intro-section {
-  padding-top: 10px;
-}
-
-.about-intro-grid {
-  align-items: center;
-  display: grid;
-  gap: clamp(34px, 7vw, 86px);
-  grid-template-columns: minmax(0, 0.92fr) minmax(320px, 0.72fr);
-}
-
-.about-intro-copy {
-  max-width: 640px;
-}
-
-.about-orbit-card {
-  align-items: center;
-  aspect-ratio: 1;
-  background:
-    radial-gradient(circle at center, rgba(255, 253, 247, 0.94) 0 26%, rgba(255, 253, 247, 0.34) 27% 28%, transparent 29%),
-    radial-gradient(circle at center, transparent 0 45%, rgba(191, 150, 117, 0.28) 46% 47%, transparent 48%),
-    radial-gradient(circle at center, transparent 0 68%, rgba(85, 98, 77, 0.18) 69% 70%, transparent 71%),
-    rgba(202, 209, 181, 0.44);
+.about-map-card {
+  background: rgba(255, 253, 247, 0.9);
   border: 1px solid rgba(57, 68, 55, 0.1);
-  border-radius: 50%;
-  box-shadow: var(--shadow);
-  display: grid;
-  justify-items: center;
-  min-height: 340px;
-  position: relative;
-}
-
-.orbit-center {
-  color: var(--olive);
-  font-family: var(--serif);
-  font-size: clamp(1.55rem, 3vw, 2.25rem);
-  letter-spacing: -0.035em;
-  line-height: 1.05;
-  text-align: center;
-}
-
-.orbit-note {
-  background: var(--white);
-  border: 1px solid rgba(57, 68, 55, 0.1);
-  border-radius: 999px;
-  box-shadow: 0 12px 30px rgba(48, 47, 35, 0.07);
-  color: var(--olive-soft);
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.11em;
-  padding: 9px 16px;
+  border-radius: 24px;
+  box-shadow: 0 18px 38px rgba(48, 47, 35, 0.08);
+  max-width: 190px;
+  padding: 19px 20px;
   position: absolute;
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.about-map-card:hover,
+.about-person:hover {
+  box-shadow: 0 22px 48px rgba(48, 47, 35, 0.12);
+  transform: translateY(-5px) rotate(0deg);
+}
+
+.about-map-card span,
+.about-step-river span,
+.about-moment-stack span,
+.about-constellation-note span {
+  color: var(--clay);
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  margin-bottom: 8px;
   text-transform: uppercase;
 }
 
-.orbit-note-one {
-  left: 7%;
-  top: 22%;
+.about-map-card strong,
+.about-person span {
+  color: var(--olive);
+  display: block;
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  line-height: 1.08;
 }
 
-.orbit-note-two {
-  right: 5%;
-  top: 30%;
-}
-
-.orbit-note-three {
-  bottom: 22%;
-  left: 11%;
-}
-
-.orbit-note-four {
-  bottom: 14%;
-  right: 10%;
-}
-
-.about-path-section {
-  padding-top: 28px;
-}
-
-.about-timeline {
-  display: grid;
-  gap: 0;
-  grid-template-columns: repeat(4, 1fr);
-  position: relative;
-}
-
-.about-timeline::before {
-  background: linear-gradient(to right, transparent, rgba(184, 121, 93, 0.52), transparent);
-  content: "";
-  height: 1px;
-  left: 6%;
-  position: absolute;
-  right: 6%;
-  top: 46px;
-}
-
-.about-timeline-item {
-  padding: 0 clamp(14px, 2.4vw, 28px);
-  position: relative;
-}
-
-.about-timeline-item span {
-  align-items: center;
-  background: var(--paper);
-  border: 1px solid rgba(184, 121, 93, 0.36);
-  border-radius: 50%;
-  color: var(--clay);
-  display: flex;
-  font-size: 0.78rem;
-  font-weight: 700;
-  height: 92px;
-  justify-content: center;
-  letter-spacing: 0.14em;
-  margin-bottom: 24px;
-  position: relative;
-  width: 92px;
-  z-index: 1;
-}
-
-.about-timeline-item h3 {
-  margin-bottom: 14px;
-}
-
-.about-timeline-item p {
+.about-map-card small,
+.about-person small {
   color: var(--muted);
-  font-size: 0.96rem;
+  display: block;
+  line-height: 1.45;
+  margin-top: 7px;
 }
 
-.about-values-panel {
-  background:
-    linear-gradient(rgba(255, 253, 247, 0.88), rgba(255, 253, 247, 0.88)),
-    url("redesign-moss-corner.jpg") right top / 48% auto no-repeat,
-    var(--white);
+.about-map-card-one {
+  left: 3%;
+  top: 54%;
+  transform: rotate(-4deg);
+}
+
+.about-map-card-two {
+  left: 34%;
+  top: 8%;
+  transform: rotate(3deg);
+}
+
+.about-map-card-three {
+  right: 0;
+  top: 36%;
+  transform: rotate(-2deg);
+}
+
+.about-map-photo {
+  border: 10px solid rgba(255, 253, 247, 0.68);
+  border-radius: 50%;
+  bottom: 6%;
+  box-shadow: var(--shadow);
+  height: 148px;
+  overflow: hidden;
+  position: absolute;
+  right: 19%;
+  width: 148px;
+}
+
+.about-map-photo img,
+.about-person img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.about-discovery-section {
+  padding-top: 24px;
+}
+
+.about-discovery-panel {
+  align-items: center;
+  background: var(--white);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   display: grid;
-  gap: clamp(34px, 6vw, 72px);
-  grid-template-columns: minmax(0, 0.72fr) minmax(0, 1fr);
-  padding: clamp(38px, 6vw, 72px);
+  gap: clamp(32px, 6vw, 76px);
+  grid-template-columns: minmax(0, 0.82fr) minmax(320px, 0.7fr);
+  overflow: hidden;
+  padding: clamp(36px, 6vw, 68px);
+  position: relative;
 }
 
-.about-values-copy p {
+.about-discovery-panel::after {
+  background: url("redesign-moss-corner.jpg") right top / contain no-repeat;
+  content: "";
+  height: 260px;
+  opacity: 0.3;
+  pointer-events: none;
+  position: absolute;
+  right: -34px;
+  top: -42px;
+  width: 310px;
+}
+
+.about-discovery-copy {
+  position: relative;
+  z-index: 1;
+}
+
+.about-discovery-copy p {
   color: var(--muted);
+  max-width: 620px;
 }
 
-.about-values-grid {
+.about-moment-stack {
   display: grid;
-  gap: 16px;
+  gap: 15px;
+  position: relative;
+  z-index: 1;
 }
 
-.about-values-grid article {
+.about-moment-stack article {
   background: rgba(245, 240, 229, 0.78);
   border: 1px solid rgba(57, 68, 55, 0.08);
-  border-radius: var(--radius-sm);
-  padding: 25px 26px;
+  border-radius: 22px;
+  padding: 24px 25px;
+  transition: transform 220ms ease;
 }
 
-.about-values-grid h3 {
-  font-size: 1.48rem;
-  margin-bottom: 10px;
+.about-moment-stack article:nth-child(2) {
+  transform: translateX(-34px);
 }
 
-.about-values-grid p {
+.about-moment-stack article:nth-child(3) {
+  transform: translateX(22px);
+}
+
+.about-moment-stack article:hover {
+  transform: translateX(0) translateY(-4px);
+}
+
+.about-moment-stack p {
   color: var(--muted);
   margin-bottom: 0;
+}
+
+.about-constellation-section {
+  padding-top: 20px;
+}
+
+.about-constellation {
+  min-height: 520px;
+  position: relative;
+}
+
+.about-person {
+  background: rgba(255, 253, 247, 0.92);
+  border: 1px solid rgba(57, 68, 55, 0.1);
+  border-radius: 28px;
+  box-shadow: 0 18px 38px rgba(48, 47, 35, 0.08);
+  color: inherit;
+  display: block;
+  padding: 16px;
+  position: absolute;
+  transition: transform 220ms ease, box-shadow 220ms ease;
+  width: 190px;
+}
+
+.about-person img {
+  aspect-ratio: 1;
+  border-radius: 22px;
+  display: block;
+  margin-bottom: 13px;
+}
+
+.about-person-alexa {
+  left: 0;
+  top: 58px;
+  transform: rotate(-3deg);
+}
+
+.about-person-lacey {
+  left: 22%;
+  top: 242px;
+  transform: rotate(2deg);
+}
+
+.about-person-cindy {
+  left: 43%;
+  top: 78px;
+  transform: rotate(-2deg);
+}
+
+.about-person-lanya {
+  right: 18%;
+  top: 244px;
+  transform: rotate(3deg);
+}
+
+.about-person-virginia {
+  right: 0;
+  top: 82px;
+  transform: rotate(-2deg);
+}
+
+.about-constellation-note {
+  background: var(--olive);
+  border-radius: 28px;
+  bottom: 18px;
+  color: var(--paper);
+  left: 50%;
+  max-width: 340px;
+  padding: 28px 30px;
+  position: absolute;
+  transform: translateX(-50%);
+}
+
+.about-constellation-note p {
+  color: rgba(245, 240, 229, 0.78);
+  margin-bottom: 0;
+}
+
+.about-path-section {
+  padding-top: 24px;
+}
+
+.about-path-panel {
+  align-items: start;
+  display: grid;
+  gap: clamp(34px, 6vw, 72px);
+  grid-template-columns: minmax(0, 0.68fr) minmax(0, 1fr);
+}
+
+.about-step-river {
+  display: grid;
+  gap: 14px;
+}
+
+.about-step-river article {
+  background: rgba(202, 209, 181, 0.45);
+  border: 1px solid rgba(85, 98, 77, 0.12);
+  border-radius: 999px;
+  padding: 23px 30px;
+  transition: background-color 220ms ease, transform 220ms ease;
+}
+
+.about-step-river article:nth-child(even) {
+  margin-left: clamp(28px, 5vw, 80px);
+}
+
+.about-step-river article:hover {
+  background: rgba(202, 209, 181, 0.66);
+  transform: translateX(8px);
+}
+
+.about-step-river h3 {
+  font-size: clamp(1.18rem, 2vw, 1.52rem);
+  margin-bottom: 0;
+}
+
+@keyframes about-line-draw {
+  from {
+    stroke-dashoffset: 220;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
 }
 
 .about-next-card {
@@ -1539,13 +1692,26 @@ main > .section:last-child {
   .therapist-card .text-link::before,
   .therapist-card .text-link::after,
   .form-text-link::before,
-  .form-text-link::after {
+  .form-text-link::after,
+  .about-map-card,
+  .about-person,
+  .about-moment-stack article,
+  .about-step-river article {
     transition: none;
+  }
+
+  .about-line-art path,
+  .constellation-lines path {
+    animation: none;
   }
 
   .support-card:hover,
   .pill-list li:hover,
   .gallery-peek:hover,
+  .about-map-card:hover,
+  .about-person:hover,
+  .about-moment-stack article:hover,
+  .about-step-river article:hover,
   .soft-card .text-link:hover::after,
   .therapist-card:hover .text-link::after,
   .form-text-link:hover::after {
@@ -1575,8 +1741,9 @@ main > .section:last-child {
 
   .hero-grid,
   .feature-grid,
-  .about-intro-grid,
-  .about-values-panel,
+  .about-hero-grid,
+  .about-discovery-panel,
+  .about-path-panel,
   .profile-banner,
   .profile-layout,
   .contact-layout {
@@ -1589,30 +1756,38 @@ main > .section:last-child {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .about-orbit-card {
+  .about-arrival-map {
     margin: 0 auto;
-    max-width: 430px;
+    max-width: 570px;
     width: 100%;
   }
 
-  .about-timeline {
-    gap: 24px;
-    grid-template-columns: repeat(2, 1fr);
+  .about-discovery-panel {
+    overflow: visible;
   }
 
-  .about-timeline::before {
+  .about-moment-stack article:nth-child(2),
+  .about-moment-stack article:nth-child(3) {
+    transform: none;
+  }
+
+  .about-constellation {
+    display: grid;
+    gap: 18px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    min-height: 0;
+  }
+
+  .constellation-lines {
     display: none;
   }
 
-  .about-timeline-item {
-    border-top: 1px solid var(--line);
-    padding: 24px 18px 0 0;
-  }
-
-  .about-timeline-item span {
-    height: 70px;
-    margin-bottom: 18px;
-    width: 70px;
+  .about-person,
+  .about-constellation-note {
+    inset: auto;
+    position: relative;
+    transform: none;
+    width: auto;
   }
 
   .about-next-card {
@@ -1730,29 +1905,51 @@ main > .section:last-child {
     padding: 34px 27px 48px;
   }
 
-  .about-page-banner {
+  .about-hero-grid {
     background:
-      linear-gradient(rgba(202, 209, 181, 0.88), rgba(202, 209, 181, 0.88)),
-      var(--sage) url("redesign-profile-grass.jpg") center bottom / auto 58% no-repeat;
-    padding: 38px 27px 58px;
+      linear-gradient(rgba(202, 209, 181, 0.9), rgba(202, 209, 181, 0.9)),
+      var(--sage) url("redesign-profile-grass.jpg") center bottom / auto 42% no-repeat;
+    padding: 35px 24px;
   }
 
-  .about-orbit-card {
-    min-height: 295px;
+  .about-arrival-map {
+    aspect-ratio: auto;
+    display: grid;
+    gap: 15px;
+    min-height: 0;
   }
 
-  .orbit-note {
-    font-size: 0.68rem;
-    padding: 8px 12px;
+  .about-line-art,
+  .about-map-photo {
+    display: none;
   }
 
-  .about-timeline {
+  .about-map-card {
+    max-width: none;
+    position: relative;
+    transform: none;
+  }
+
+  .about-map-card-one,
+  .about-map-card-two,
+  .about-map-card-three {
+    inset: auto;
+  }
+
+  .about-constellation {
     grid-template-columns: 1fr;
   }
 
-  .about-values-panel,
+  .about-discovery-panel,
+  .about-path-panel,
   .about-next-card {
     padding: 31px 23px;
+  }
+
+  .about-step-river article,
+  .about-step-river article:nth-child(even) {
+    border-radius: 24px;
+    margin-left: 0;
   }
 
   .gallery-page-banner h1 {
