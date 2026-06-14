@@ -81,6 +81,7 @@ Supported optional front-matter settings currently include:
 | Path | Purpose |
 | --- | --- |
 | `/` | Homepage and primary practice introduction |
+| `/about/` | Draft About page mockup with practice story, values, and timeline sections |
 | `/our-staff/` | Therapist directory with specialty filters |
 | `/gallery/` | Interactive practice/team photo gallery |
 | `/request-an-appointment/` | Appointment/contact page with disabled staging form preview |
