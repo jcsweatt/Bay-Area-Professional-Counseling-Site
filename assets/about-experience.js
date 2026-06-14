@@ -1,9 +1,45 @@
 (function () {
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var motionTargets = document.querySelectorAll(".about-arrival-map, .about-constellation");
+  var scrollTargets = [];
+  var ticking = false;
 
   function reveal(target) {
     target.classList.add("is-visible");
+    if (!reduceMotion) {
+      window.setTimeout(function () {
+        target.classList.add("is-scroll-linked");
+        if (scrollTargets.indexOf(target) === -1) {
+          scrollTargets.push(target);
+        }
+        requestScrollUpdate();
+      }, 2400);
+    }
+  }
+
+  function clamp(value, min, max) {
+    return Math.min(Math.max(value, min), max);
+  }
+
+  function updateLineScroll() {
+    ticking = false;
+
+    scrollTargets.forEach(function (target) {
+      var rect = target.getBoundingClientRect();
+      var viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+      var travel = viewportHeight + rect.height;
+      var progress = clamp((viewportHeight - rect.top) / travel, 0, 1);
+      var offset = 120 - (progress * 240);
+
+      target.style.setProperty("--about-line-scroll-offset", offset.toFixed(2));
+    });
+  }
+
+  function requestScrollUpdate() {
+    if (!ticking) {
+      ticking = true;
+      window.requestAnimationFrame(updateLineScroll);
+    }
   }
 
   if (reduceMotion || !("IntersectionObserver" in window)) {
@@ -24,6 +60,11 @@
     motionTargets.forEach(function (target) {
       observer.observe(target);
     });
+  }
+
+  if (!reduceMotion) {
+    window.addEventListener("scroll", requestScrollUpdate, { passive: true });
+    window.addEventListener("resize", requestScrollUpdate);
   }
 
   var therapists = [
@@ -106,8 +147,8 @@
 
   var start = Math.floor(Math.random() * therapists.length);
   try {
-    var previousStart = Number(sessionStorage.getItem("aboutTherapistStart"));
-    if (therapists.length > 1 && previousStart === start) {
+    var previousStart = sessionStorage.getItem("aboutTherapistStart");
+    if (therapists.length > 1 && previousStart !== null && Number(previousStart) === start) {
       start = (start + 1) % therapists.length;
     }
     sessionStorage.setItem("aboutTherapistStart", String(start));

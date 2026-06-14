@@ -709,7 +709,7 @@ main > .section:last-child {
   border-radius: var(--radius);
   display: grid;
   gap: clamp(26px, 4vw, 52px);
-  grid-template-columns: minmax(0, 0.95fr) minmax(330px, 0.62fr);
+  grid-template-columns: minmax(0, 0.9fr) minmax(390px, 0.72fr);
   overflow: hidden;
   padding: clamp(34px, 4.8vw, 58px);
 }
@@ -739,7 +739,7 @@ main > .section:last-child {
 
 .about-arrival-map {
   aspect-ratio: 1.22;
-  min-height: 315px;
+  min-height: 350px;
   position: relative;
 }
 
@@ -766,6 +766,13 @@ main > .section:last-child {
   animation: about-line-draw 2.2s ease forwards;
 }
 
+.about-arrival-map.is-scroll-linked .about-line-art path,
+.about-constellation.is-scroll-linked .constellation-lines path {
+  animation: none;
+  stroke-dashoffset: var(--about-line-scroll-offset, 0);
+  transition: stroke-dashoffset 90ms linear;
+}
+
 .about-line-art path:nth-child(2),
 .constellation-lines path:nth-child(2) {
   animation-delay: 220ms;
@@ -782,8 +789,8 @@ main > .section:last-child {
   border: 1px solid rgba(57, 68, 55, 0.1);
   border-radius: 24px;
   box-shadow: 0 18px 38px rgba(48, 47, 35, 0.08);
-  max-width: 176px;
-  padding: 17px 18px;
+  max-width: 168px;
+  padding: 16px 17px;
   position: absolute;
   transition: transform 220ms ease, box-shadow 220ms ease;
 }
@@ -827,32 +834,32 @@ main > .section:last-child {
 }
 
 .about-map-card-one {
-  left: 3%;
-  top: 54%;
+  left: 1%;
+  top: 57%;
   transform: rotate(-4deg);
 }
 
 .about-map-card-two {
-  left: 34%;
-  top: 8%;
+  left: 41%;
+  top: 4%;
   transform: rotate(3deg);
 }
 
 .about-map-card-three {
-  right: 0;
-  top: 36%;
+  right: 1%;
+  top: 47%;
   transform: rotate(-2deg);
 }
 
 .about-map-photo {
   border: 10px solid rgba(255, 253, 247, 0.68);
   border-radius: 50%;
-  bottom: 6%;
+  bottom: 10%;
   box-shadow: var(--shadow);
   height: 124px;
   overflow: hidden;
   position: absolute;
-  right: 19%;
+  right: 32%;
   width: 124px;
 }
 
