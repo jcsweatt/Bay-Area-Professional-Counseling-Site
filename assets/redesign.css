@@ -708,8 +708,8 @@ main > .section:last-child {
     var(--sage) url("redesign-profile-grass.jpg") right bottom / 46% auto no-repeat;
   border-radius: var(--radius);
   display: grid;
-  gap: clamp(26px, 4vw, 52px);
-  grid-template-columns: minmax(0, 0.9fr) minmax(390px, 0.72fr);
+  gap: clamp(34px, 4.8vw, 68px);
+  grid-template-columns: minmax(0, 0.82fr) minmax(440px, 0.88fr);
   overflow: hidden;
   padding: clamp(34px, 4.8vw, 58px);
 }
@@ -739,7 +739,7 @@ main > .section:last-child {
 
 .about-arrival-map {
   aspect-ratio: 1.22;
-  min-height: 350px;
+  min-height: 400px;
   position: relative;
 }
 
@@ -834,32 +834,32 @@ main > .section:last-child {
 }
 
 .about-map-card-one {
-  left: 1%;
-  top: 57%;
+  left: 0;
+  top: 62%;
   transform: rotate(-4deg);
 }
 
 .about-map-card-two {
-  left: 41%;
-  top: 4%;
+  left: 45%;
+  top: 1%;
   transform: rotate(3deg);
 }
 
 .about-map-card-three {
-  right: 1%;
-  top: 47%;
+  right: 0;
+  top: 52%;
   transform: rotate(-2deg);
 }
 
 .about-map-photo {
   border: 10px solid rgba(255, 253, 247, 0.68);
   border-radius: 50%;
-  bottom: 10%;
+  bottom: 4%;
   box-shadow: var(--shadow);
   height: 124px;
   overflow: hidden;
   position: absolute;
-  right: 32%;
+  right: 39%;
   width: 124px;
 }
 
