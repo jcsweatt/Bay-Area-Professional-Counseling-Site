@@ -880,15 +880,19 @@ main > .section:last-child {
 }
 
 .about-discovery-panel::after {
-  background: url("redesign-moss-corner.jpg") right top / contain no-repeat;
+  background:
+    radial-gradient(circle at 78% 18%, rgba(202, 209, 181, 0.46) 0 9%, transparent 10%),
+    radial-gradient(circle at 90% 42%, rgba(184, 121, 93, 0.16) 0 7%, transparent 8%),
+    linear-gradient(132deg, transparent 0 46%, rgba(85, 98, 77, 0.12) 47% 48%, transparent 49% 100%);
+  border-radius: 0 var(--radius) 0 80%;
   content: "";
-  height: 260px;
-  opacity: 0.3;
+  height: 230px;
+  opacity: 0.75;
   pointer-events: none;
   position: absolute;
-  right: -34px;
-  top: -42px;
-  width: 310px;
+  right: 0;
+  top: 0;
+  width: 270px;
 }
 
 .about-discovery-copy {
@@ -1779,10 +1783,6 @@ main > .section:last-child {
     margin: 0 auto;
     max-width: 570px;
     width: 100%;
-  }
-
-  .about-discovery-panel {
-    overflow: visible;
   }
 
   .about-moment-stack article:nth-child(2),
