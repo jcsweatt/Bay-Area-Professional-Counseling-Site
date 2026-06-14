@@ -1009,6 +1009,19 @@ main > .section:last-child {
   margin-bottom: 0;
 }
 
+.about-constellation-note a {
+  color: var(--paper);
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: rgba(245, 240, 229, 0.46);
+  text-underline-offset: 4px;
+}
+
+.about-constellation-note a:hover,
+.about-constellation-note a:focus-visible {
+  text-decoration-color: currentColor;
+}
+
 .about-path-section {
   padding-top: 24px;
 }
