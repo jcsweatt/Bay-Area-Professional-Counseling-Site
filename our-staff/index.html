@@ -28,29 +28,23 @@ script: therapist-filter
           <div class="therapist-filter" aria-label="Filter therapists by specialty">
             <span class="eyebrow">Find A Therapist</span>
             <h2>Explore by area of support.</h2>
-            <p>Select a featured area to see therapists whose biographies mention that population or concern.</p>
+            <p>Select a broad support area to see therapists whose profiles mention that population, concern, or clinical focus.</p>
             <div class="filter-options" role="group" aria-label="Specialty areas">
               <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">All Therapists</button>
-              <button class="filter-button" type="button" data-filter="anxiety" aria-pressed="false">Anxiety</button>
-              <button class="filter-button" type="button" data-filter="depression" aria-pressed="false">Depression</button>
-              <button class="filter-button" type="button" data-filter="trauma" aria-pressed="false">Trauma</button>
+              <button class="filter-button" type="button" data-filter="anxiety-mood" aria-pressed="false">Anxiety &amp; Mood</button>
+              <button class="filter-button" type="button" data-filter="trauma-grief" aria-pressed="false">Trauma &amp; Grief</button>
               <button class="filter-button" type="button" data-filter="children-teens" aria-pressed="false">Children &amp; Teens</button>
               <button class="filter-button" type="button" data-filter="couples-families" aria-pressed="false">Couples &amp; Families</button>
-              <button class="filter-button" type="button" data-filter="adhd" aria-pressed="false">ADHD</button>
-              <button class="filter-button" type="button" data-filter="self-esteem" aria-pressed="false">Self-Esteem</button>
-              <button class="filter-button" type="button" data-filter="anger-management" aria-pressed="false">Anger Management</button>
-              <button class="filter-button" type="button" data-filter="grief" aria-pressed="false">Grief</button>
-              <button class="filter-button" type="button" data-filter="parenting" aria-pressed="false">Parenting</button>
-              <button class="filter-button" type="button" data-filter="autism-spectrum" aria-pressed="false">Autism Spectrum</button>
-              <button class="filter-button" type="button" data-filter="perinatal-infertility" aria-pressed="false">Perinatal &amp; Infertility</button>
-              <button class="filter-button" type="button" data-filter="addiction-substance-use" aria-pressed="false">Addiction &amp; Substance Use</button>
-              <button class="filter-button" type="button" data-filter="life-changes" aria-pressed="false">Life Changes &amp; Direction</button>
-              <button class="filter-button" type="button" data-filter="lgbtq" aria-pressed="false">LGBTQ+ Support</button>
+              <button class="filter-button" type="button" data-filter="neurodiversity-learning" aria-pressed="false">Neurodiversity &amp; Learning</button>
+              <button class="filter-button" type="button" data-filter="addiction-recovery" aria-pressed="false">Addiction &amp; Recovery</button>
+              <button class="filter-button" type="button" data-filter="relationships-self-worth" aria-pressed="false">Relationships &amp; Self-Worth</button>
+              <button class="filter-button" type="button" data-filter="identity-life-transitions" aria-pressed="false">Identity &amp; Life Transitions</button>
+              <button class="filter-button" type="button" data-filter="parenting-perinatal" aria-pressed="false">Parenting &amp; Perinatal</button>
             </div>
             <p class="filter-status" id="therapist-filter-status" aria-live="polite">Showing all 10 therapists.</p>
           </div>
           <div class="therapist-grid" id="therapist-grid">
-          <a class="therapist-card" data-specialties="adhd anger-management children-teens couples-families depression grief life-changes lgbtq parenting trauma addiction-substance-use" href="{{ '/alexa/' | relative_url }}">
+          <a class="therapist-card" data-specialties="anxiety-mood trauma-grief children-teens couples-families neurodiversity-learning addiction-recovery relationships-self-worth identity-life-transitions parenting-perinatal" href="{{ '/alexa/' | relative_url }}">
             <img src="../assets/IMG_9906-e7cd05e5faf2.jpg" alt="Alexa Da Rosa">
             <div class="therapist-body">
               <span class="credentials">MA, LPC, ADC</span>
@@ -59,7 +53,7 @@ script: therapist-filter
               <span class="text-link">View Profile</span>
             </div>
           </a>
-          <a class="therapist-card" data-specialties="children-teens couples-families" href="{{ '/cindy/' | relative_url }}">
+          <a class="therapist-card" data-specialties="children-teens couples-families relationships-self-worth" href="{{ '/cindy/' | relative_url }}">
             <img src="../assets/IMG_0006-2-1fecee2be4a7.jpg" alt="Cindy Perronne">
             <div class="therapist-body">
               <span class="credentials">MS, ADC, LPC</span>
@@ -68,7 +62,7 @@ script: therapist-filter
               <span class="text-link">View Profile</span>
             </div>
           </a>
-          <a class="therapist-card" data-specialties="adhd anger-management anxiety autism-spectrum children-teens couples-families depression grief life-changes self-esteem" href="{{ '/deena/' | relative_url }}">
+          <a class="therapist-card" data-specialties="anxiety-mood trauma-grief children-teens couples-families neurodiversity-learning relationships-self-worth identity-life-transitions" href="{{ '/deena/' | relative_url }}">
             <img src="../assets/d.picture-8591aaa80845.jpg" alt="Deena Alloul">
             <div class="therapist-body">
               <span class="credentials">ALC, MS, NCC</span>
@@ -77,7 +71,7 @@ script: therapist-filter
               <span class="text-link">View Profile</span>
             </div>
           </a>
-          <a class="therapist-card" data-specialties="adhd anger-management anxiety children-teens grief lgbtq self-esteem trauma" href="{{ '/kayla/' | relative_url }}">
+          <a class="therapist-card" data-specialties="anxiety-mood trauma-grief children-teens neurodiversity-learning relationships-self-worth identity-life-transitions" href="{{ '/kayla/' | relative_url }}">
             <img src="../assets/Kayla-pic-ef9bd584ab26.jpg" alt="Kayla Whatley">
             <div class="therapist-body">
               <span class="credentials">LPC</span>
@@ -86,7 +80,7 @@ script: therapist-filter
               <span class="text-link">View Profile</span>
             </div>
           </a>
-          <a class="therapist-card" data-specialties="anxiety depression trauma life-changes addiction-substance-use adhd couples-families self-esteem anger-management" href="{{ '/lacey/' | relative_url }}">
+          <a class="therapist-card" data-specialties="anxiety-mood trauma-grief couples-families neurodiversity-learning addiction-recovery relationships-self-worth identity-life-transitions" href="{{ '/lacey/' | relative_url }}">
             <img src="../assets/IMG_0051-99db6be59a41.jpg" alt="Lacey Moore">
             <div class="therapist-body">
               <span class="credentials">MS, LPC-S, MAC</span>
@@ -95,7 +89,7 @@ script: therapist-filter
               <span class="text-link">View Profile</span>
             </div>
           </a>
-          <a class="therapist-card" data-specialties="anger-management anxiety depression grief life-changes lgbtq self-esteem addiction-substance-use couples-families" href="{{ '/lanya/' | relative_url }}">
+          <a class="therapist-card" data-specialties="anxiety-mood trauma-grief children-teens couples-families addiction-recovery relationships-self-worth identity-life-transitions" href="{{ '/lanya/' | relative_url }}">
             <img src="../assets/lanya-daffin-headshot.jpg" alt="Lanya Daffin">
             <div class="therapist-body">
               <span class="credentials">LPC, MS</span>
@@ -104,7 +98,7 @@ script: therapist-filter
               <span class="text-link">View Profile</span>
             </div>
           </a>
-          <a class="therapist-card" data-specialties="anxiety depression trauma children-teens grief perinatal-infertility" href="{{ '/leigh/' | relative_url }}">
+          <a class="therapist-card" data-specialties="anxiety-mood trauma-grief children-teens parenting-perinatal" href="{{ '/leigh/' | relative_url }}">
             <img src="../assets/L.photo-b9534d3c0366.jpg" alt="Leigh Mohorn">
             <div class="therapist-body">
               <span class="credentials">ALC</span>
@@ -113,7 +107,7 @@ script: therapist-filter
               <span class="text-link">View Profile</span>
             </div>
           </a>
-          <a class="therapist-card" data-specialties="anxiety autism-spectrum children-teens couples-families depression grief life-changes self-esteem trauma addiction-substance-use" href="{{ '/madison/' | relative_url }}">
+          <a class="therapist-card" data-specialties="anxiety-mood trauma-grief children-teens couples-families neurodiversity-learning addiction-recovery relationships-self-worth identity-life-transitions parenting-perinatal" href="{{ '/madison/' | relative_url }}">
             <img src="../assets/Madison-Pic-a91fa98fbe07.jpg" alt="Madison Ford">
             <div class="therapist-body">
               <span class="credentials">ALC, MS</span>
@@ -122,7 +116,7 @@ script: therapist-filter
               <span class="text-link">View Profile</span>
             </div>
           </a>
-          <a class="therapist-card" data-specialties="anxiety children-teens couples-families depression grief life-changes lgbtq parenting self-esteem addiction-substance-use" href="{{ '/tifani/' | relative_url }}">
+          <a class="therapist-card" data-specialties="anxiety-mood trauma-grief children-teens couples-families addiction-recovery relationships-self-worth identity-life-transitions parenting-perinatal" href="{{ '/tifani/' | relative_url }}">
             <img src="../assets/Tif-Pic-8b28f51f7639.JPG" alt="Tifani Nobles">
             <div class="therapist-body">
               <span class="credentials">MA, ALC</span>
@@ -131,7 +125,7 @@ script: therapist-filter
               <span class="text-link">View Profile</span>
             </div>
           </a>
-          <a class="therapist-card" data-specialties="anxiety depression trauma children-teens couples-families grief perinatal-infertility self-esteem parenting" href="{{ '/virginia/' | relative_url }}">
+          <a class="therapist-card" data-specialties="anxiety-mood trauma-grief children-teens couples-families relationships-self-worth identity-life-transitions parenting-perinatal" href="{{ '/virginia/' | relative_url }}">
             <img src="../assets/IMG_0032-6ebb79567067.jpg" alt="Virginia Inge Gordon">
             <div class="therapist-body">
               <span class="credentials">LPC</span>
