@@ -851,19 +851,6 @@ main > .section:last-child {
   transform: rotate(-2deg);
 }
 
-.about-map-photo {
-  border: 10px solid rgba(255, 253, 247, 0.68);
-  border-radius: 50%;
-  bottom: 4%;
-  box-shadow: var(--shadow);
-  height: 124px;
-  overflow: hidden;
-  position: absolute;
-  right: 39%;
-  width: 124px;
-}
-
-.about-map-photo img,
 .about-person img {
   height: 100%;
   object-fit: cover;
@@ -1946,8 +1933,7 @@ main > .section:last-child {
     min-height: 0;
   }
 
-  .about-line-art,
-  .about-map-photo {
+  .about-line-art {
     display: none;
   }
 
