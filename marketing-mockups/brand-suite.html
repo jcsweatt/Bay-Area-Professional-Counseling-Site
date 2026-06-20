@@ -76,7 +76,8 @@
 
       .hero {
         background:
-          linear-gradient(110deg, rgba(245, 240, 229, 0.94) 0 52%, rgba(202, 209, 181, 0.88) 52% 100%),
+          radial-gradient(circle at 78% 18%, rgba(202, 209, 181, 0.86), transparent 42%),
+          linear-gradient(112deg, rgba(245, 240, 229, 0.96) 0 42%, rgba(245, 240, 229, 0.88) 58%, rgba(202, 209, 181, 0.82) 100%),
           var(--sage);
         border-radius: 46px;
         box-shadow: var(--shadow);
@@ -91,11 +92,11 @@
 
       .hero::before {
         background:
-          linear-gradient(rgba(245, 240, 229, 0.28), rgba(245, 240, 229, 0.44)),
+          linear-gradient(to top, rgba(245, 240, 229, 0.54), rgba(245, 240, 229, 0.32) 58%, rgba(245, 240, 229, 0)),
           url("../assets/redesign-footer-marsh.jpg") center bottom / cover no-repeat;
-        bottom: -28px;
+        bottom: -34px;
         content: "";
-        height: 210px;
+        height: 250px;
         left: 0;
         opacity: 0.52;
         position: absolute;
@@ -180,6 +181,15 @@
         overflow: hidden;
         padding: 62px 10px 10px;
         position: relative;
+        transform-origin: center bottom;
+        transition: box-shadow 220ms ease, transform 220ms ease;
+      }
+
+      .swatch:hover,
+      .swatch:focus-within {
+        box-shadow: 0 16px 34px rgba(48, 47, 35, 0.13);
+        transform: translateY(-7px) scale(1.12);
+        z-index: 5;
       }
 
       .swatch::before {
@@ -392,6 +402,33 @@
         min-height: 238px;
         overflow: hidden;
         position: relative;
+        transform-origin: center center;
+        transition: box-shadow 240ms ease, transform 240ms ease;
+      }
+
+      .business-card:hover {
+        animation: card-rock 820ms ease-in-out;
+        box-shadow: 0 30px 68px rgba(48, 47, 35, 0.2);
+        transform: translateY(-8px) rotate(-0.7deg);
+        z-index: 4;
+      }
+
+      @keyframes card-rock {
+        0% {
+          transform: translateY(-8px) rotate(0deg);
+        }
+
+        28% {
+          transform: translateY(-8px) rotate(-1.15deg);
+        }
+
+        58% {
+          transform: translateY(-8px) rotate(0.9deg);
+        }
+
+        100% {
+          transform: translateY(-8px) rotate(-0.7deg);
+        }
       }
 
       .rack-card::before,
@@ -639,7 +676,8 @@
       .flyer {
         aspect-ratio: 8.5 / 11;
         background:
-          radial-gradient(circle at 88% 10%, rgba(134, 201, 207, 0.17), transparent 24%),
+          radial-gradient(circle at 92% 8%, rgba(134, 201, 207, 0.13), transparent 26%),
+          radial-gradient(circle at 100% 100%, rgba(202, 209, 181, 0.18), transparent 34%),
           var(--white);
         border-radius: 28px;
         box-shadow: var(--shadow);
@@ -696,13 +734,13 @@
 
       .flyer-bottom {
         align-items: end;
-        border-top: 1px solid rgba(57, 68, 55, 0.14);
+        background: linear-gradient(to bottom, rgba(255, 253, 247, 0), rgba(255, 253, 247, 0.82) 24%, rgba(255, 253, 247, 0.96));
         bottom: 42px;
         display: flex;
         gap: 28px;
         justify-content: space-between;
         left: 42px;
-        padding-top: 22px;
+        padding-top: 38px;
         position: absolute;
         right: 42px;
         z-index: 1;
@@ -721,7 +759,8 @@
       .social {
         aspect-ratio: 1 / 1;
         background:
-          linear-gradient(rgba(57, 68, 55, 0.52), rgba(57, 68, 55, 0.64)),
+          radial-gradient(circle at 24% 15%, rgba(245, 240, 229, 0.78), rgba(245, 240, 229, 0.28) 18%, transparent 32%),
+          linear-gradient(rgba(57, 68, 55, 0.5), rgba(57, 68, 55, 0.66)),
           url("../assets/redesign-hero-coastal-porch.jpg") center / cover no-repeat;
         border-radius: 38px;
         box-shadow: var(--shadow);
@@ -759,10 +798,10 @@
 
       .social-logo {
         filter:
-          drop-shadow(0 14px 24px rgba(48, 47, 35, 0.18))
-          drop-shadow(0 2px 1px rgba(255, 253, 247, 0.5));
+          drop-shadow(0 18px 28px rgba(48, 47, 35, 0.24))
+          drop-shadow(0 2px 1px rgba(255, 253, 247, 0.72));
         position: relative;
-        width: 245px;
+        width: 260px;
         z-index: 1;
       }
 
