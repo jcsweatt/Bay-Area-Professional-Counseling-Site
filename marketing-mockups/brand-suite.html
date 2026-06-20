@@ -763,19 +763,190 @@
         background: rgba(255, 253, 247, 0.72);
         border: 1px solid rgba(57, 68, 55, 0.055);
         border-radius: 18px;
+        display: grid;
+        gap: 12px;
+        grid-template-columns: 92px 1fr;
+        min-height: 116px;
         padding: 15px 16px;
+      }
+
+      .piece::before {
+        align-self: start;
+        background:
+          linear-gradient(135deg, rgba(255, 253, 247, 0.9), rgba(245, 240, 229, 0.74)),
+          var(--white);
+        border: 1px solid rgba(57, 68, 55, 0.08);
+        border-radius: 12px;
+        box-shadow:
+          inset 0 1px 0 rgba(255, 253, 247, 0.72),
+          0 10px 22px rgba(48, 47, 35, 0.08);
+        color: var(--olive-2);
+        content: "";
+        display: block;
+        height: 72px;
+        position: relative;
+        width: 82px;
+      }
+
+      .piece > span {
+        display: block;
       }
 
       .piece strong {
         color: var(--olive);
         display: block;
         font-size: 0.95rem;
+        grid-column: 2;
         margin-bottom: 6px;
       }
 
       .piece p {
         color: var(--olive-2);
         font-size: 0.78rem;
+        grid-column: 2;
+      }
+
+      .piece-sheet::before,
+      .piece-pdf::before,
+      .piece-policy::before,
+      .piece-faq::before,
+      .piece-resource::before {
+        background:
+          linear-gradient(90deg, transparent 0 12px, rgba(57, 68, 55, 0.13) 12px 13px, transparent 13px),
+          linear-gradient(rgba(57, 68, 55, 0.12) 0 2px, transparent 2px 12px),
+          radial-gradient(circle at 78% 82%, rgba(202, 209, 181, 0.32), transparent 26%),
+          var(--white);
+        background-size: auto, 52px 12px, auto, auto;
+      }
+
+      .piece-digital::before,
+      .piece-newsletter::before,
+      .piece-website::before,
+      .piece-team::before {
+        background:
+          linear-gradient(var(--olive) 0 16px, transparent 16px),
+          linear-gradient(90deg, rgba(202, 209, 181, 0.7) 0 30%, transparent 30%),
+          linear-gradient(rgba(57, 68, 55, 0.12) 0 2px, transparent 2px 12px),
+          var(--white);
+        background-size: auto, auto, 48px 12px, auto;
+      }
+
+      .piece-envelope::before {
+        background:
+          linear-gradient(150deg, transparent 49%, rgba(57, 68, 55, 0.1) 50%, transparent 51%),
+          linear-gradient(30deg, transparent 49%, rgba(57, 68, 55, 0.1) 50%, transparent 51%),
+          linear-gradient(rgba(255, 253, 247, 0.95), rgba(245, 240, 229, 0.78));
+        height: 54px;
+        margin-top: 10px;
+      }
+
+      .piece-envelope.confidential::before {
+        background:
+          linear-gradient(150deg, transparent 49%, rgba(57, 68, 55, 0.13) 50%, transparent 51%),
+          linear-gradient(30deg, transparent 49%, rgba(57, 68, 55, 0.13) 50%, transparent 51%),
+          repeating-linear-gradient(90deg, rgba(57, 68, 55, 0.08) 0 2px, transparent 2px 6px),
+          linear-gradient(rgba(255, 253, 247, 0.95), rgba(245, 240, 229, 0.78));
+      }
+
+      .piece-note::before,
+      .piece-card::before {
+        background:
+          radial-gradient(circle at 78% 78%, rgba(202, 209, 181, 0.45), transparent 25%),
+          linear-gradient(135deg, rgba(255, 253, 247, 0.95), rgba(245, 240, 229, 0.82));
+        height: 58px;
+        margin-top: 7px;
+      }
+
+      .piece-card::after,
+      .piece-note::after {
+        background: rgba(57, 68, 55, 0.16);
+        border-radius: 999px;
+        content: "";
+        height: 4px;
+        left: 32px;
+        position: absolute;
+        top: 56px;
+        width: 34px;
+      }
+
+      .piece-folder::before {
+        background:
+          linear-gradient(90deg, rgba(57, 68, 55, 0.12), transparent 52%),
+          linear-gradient(160deg, rgba(202, 209, 181, 0.76) 0 64%, rgba(245, 240, 229, 0.95) 64%),
+          var(--sage);
+        border-radius: 10px 10px 16px 16px;
+      }
+
+      .piece-insert::before {
+        background:
+          linear-gradient(90deg, rgba(134, 201, 207, 0.32) 0 24%, transparent 24%),
+          linear-gradient(rgba(57, 68, 55, 0.1) 0 2px, transparent 2px 11px),
+          var(--white);
+        background-size: auto, 48px 11px, auto;
+      }
+
+      .piece-sign::before {
+        background:
+          linear-gradient(var(--olive) 0 18px, transparent 18px),
+          linear-gradient(90deg, transparent 0 16px, rgba(57, 68, 55, 0.13) 16px 18px, transparent 18px),
+          radial-gradient(circle at 76% 72%, rgba(202, 209, 181, 0.42), transparent 24%),
+          linear-gradient(135deg, rgba(255, 253, 247, 0.94), rgba(245, 240, 229, 0.74));
+      }
+
+      .piece-wall::before {
+        background:
+          linear-gradient(rgba(57, 68, 55, 0.22), rgba(57, 68, 55, 0.38)),
+          url("../assets/redesign-hero-coastal-porch.jpg") center / cover no-repeat;
+      }
+
+      .piece-decor::before {
+        background:
+          linear-gradient(var(--olive) 0 8px, transparent 8px),
+          radial-gradient(circle at 50% 56%, rgba(202, 209, 181, 0.46), transparent 30%),
+          var(--white);
+        border: 8px solid rgba(57, 68, 55, 0.2);
+      }
+
+      .piece-logo::before {
+        background:
+          url("assets/bapc-logo-transparent.png") center / 72% auto no-repeat,
+          linear-gradient(135deg, rgba(255, 253, 247, 0.96), rgba(245, 240, 229, 0.8));
+      }
+
+      .piece-logo.icon::before {
+        background:
+          radial-gradient(circle at 50% 40%, var(--sage) 0 18%, transparent 19%),
+          radial-gradient(circle at 50% 64%, var(--aqua) 0 18%, transparent 19%),
+          var(--white);
+      }
+
+      .piece-logo.mono::before {
+        filter: grayscale(1);
+      }
+
+      .piece-social::before {
+        background:
+          linear-gradient(var(--olive) 0 24px, transparent 24px),
+          radial-gradient(circle at 20% 34%, var(--sage) 0 11px, transparent 12px),
+          linear-gradient(rgba(57, 68, 55, 0.12) 0 2px, transparent 2px 12px),
+          var(--white);
+        background-size: auto, auto, 48px 12px, auto;
+      }
+
+      .piece-email::before {
+        background:
+          linear-gradient(90deg, var(--sage) 0 28%, transparent 28%),
+          linear-gradient(var(--olive) 0 4px, transparent 4px 12px),
+          var(--white);
+        background-size: auto, 50px 12px, auto;
+      }
+
+      .piece {
+        position: relative;
+      }
+
+      .piece::after {
+        pointer-events: none;
       }
 
       .system-card.dark {
@@ -1001,9 +1172,9 @@
             <p>Letterhead gives clinical, referral, and administrative communication a consistent identity without making it feel cold or corporate.</p>
           </div>
           <div class="piece-grid">
-            <div class="piece"><strong>Printed letterhead</strong><p>Needed for mailed correspondence, referral communication, and formal office documentation.</p></div>
-            <div class="piece"><strong>Digital letterhead template</strong><p>Needed so staff can create polished letters without rebuilding the layout each time.</p></div>
-            <div class="piece"><strong>Branded PDF template</strong><p>Needed for downloadable resources, policies, and client-facing documents that should feel official.</p></div>
+            <div class="piece piece-sheet"><strong>Printed letterhead</strong><p>Needed for mailed correspondence, referral communication, and formal office documentation.</p></div>
+            <div class="piece piece-digital"><strong>Digital letterhead template</strong><p>Needed so staff can create polished letters without rebuilding the layout each time.</p></div>
+            <div class="piece piece-pdf"><strong>Branded PDF template</strong><p>Needed for downloadable resources, policies, and client-facing documents that should feel official.</p></div>
           </div>
         </article>
 
@@ -1014,9 +1185,9 @@
             <p>Envelopes are small, but in healthcare-adjacent settings they signal professionalism, discretion, and care before the document is opened.</p>
           </div>
           <div class="piece-grid">
-            <div class="piece"><strong>#10 envelopes</strong><p>Needed for everyday mail, statements, letters, and referral correspondence.</p></div>
-            <div class="piece"><strong>Confidential document envelopes</strong><p>Needed for sensitive paperwork where privacy and seriousness should be immediately clear.</p></div>
-            <div class="piece"><strong>Thank-you note envelopes</strong><p>Needed to make referral appreciation and relationship-building feel complete, not improvised.</p></div>
+            <div class="piece piece-envelope"><strong>#10 envelopes</strong><p>Needed for everyday mail, statements, letters, and referral correspondence.</p></div>
+            <div class="piece piece-envelope confidential"><strong>Confidential document envelopes</strong><p>Needed for sensitive paperwork where privacy and seriousness should be immediately clear.</p></div>
+            <div class="piece piece-envelope"><strong>Thank-you note envelopes</strong><p>Needed to make referral appreciation and relationship-building feel complete, not improvised.</p></div>
           </div>
         </article>
 
@@ -1027,9 +1198,9 @@
             <p>Handwritten and semi-formal notes help the practice feel human while keeping community outreach aligned with the visual brand.</p>
           </div>
           <div class="piece-grid">
-            <div class="piece"><strong>Blank branded note cards</strong><p>Needed for flexible staff use: quick notes, community thanks, or special touchpoints.</p></div>
-            <div class="piece"><strong>Thank-you cards</strong><p>Needed for warm follow-up with referral partners, vendors, and community collaborators.</p></div>
-            <div class="piece"><strong>Referral appreciation cards</strong><p>Needed to nurture professional relationships without making outreach feel transactional.</p></div>
+            <div class="piece piece-note"><strong>Blank branded note cards</strong><p>Needed for flexible staff use: quick notes, community thanks, or special touchpoints.</p></div>
+            <div class="piece piece-card"><strong>Thank-you cards</strong><p>Needed for warm follow-up with referral partners, vendors, and community collaborators.</p></div>
+            <div class="piece piece-card"><strong>Referral appreciation cards</strong><p>Needed to nurture professional relationships without making outreach feel transactional.</p></div>
           </div>
         </article>
 
@@ -1040,12 +1211,12 @@
             <p>Welcome materials reduce uncertainty. They help clients understand what to expect, how to reach the office, and where to turn in urgent situations.</p>
           </div>
           <div class="piece-grid">
-            <div class="piece"><strong>Welcome letter</strong><p>Needed to make the first interaction feel personal, reassuring, and clear.</p></div>
-            <div class="piece"><strong>Practice overview</strong><p>Needed to explain who the practice serves, how care is approached, and what makes the team distinct.</p></div>
-            <div class="piece"><strong>Contact information</strong><p>Needed so clients always know how to reach the office for scheduling and general questions.</p></div>
-            <div class="piece"><strong>Office policies</strong><p>Needed to set expectations around appointments, communication, privacy, and administrative details.</p></div>
-            <div class="piece"><strong>Crisis resources</strong><p>Needed because clients should have immediate, clear support options outside routine office contact.</p></div>
-            <div class="piece"><strong>FAQ sheet</strong><p>Needed to answer common questions before anxiety has a chance to fill in the blanks.</p></div>
+            <div class="piece piece-sheet"><strong>Welcome letter</strong><p>Needed to make the first interaction feel personal, reassuring, and clear.</p></div>
+            <div class="piece piece-pdf"><strong>Practice overview</strong><p>Needed to explain who the practice serves, how care is approached, and what makes the team distinct.</p></div>
+            <div class="piece piece-card"><strong>Contact information</strong><p>Needed so clients always know how to reach the office for scheduling and general questions.</p></div>
+            <div class="piece piece-policy"><strong>Office policies</strong><p>Needed to set expectations around appointments, communication, privacy, and administrative details.</p></div>
+            <div class="piece piece-card"><strong>Crisis resources</strong><p>Needed because clients should have immediate, clear support options outside routine office contact.</p></div>
+            <div class="piece piece-faq"><strong>FAQ sheet</strong><p>Needed to answer common questions before anxiety has a chance to fill in the blanks.</p></div>
           </div>
         </article>
       </section>
@@ -1058,9 +1229,9 @@
             <p>An intake folder turns forms, resources, and policy sheets into a single guided experience. It helps the office feel prepared and helps clients feel oriented.</p>
           </div>
           <div class="piece-grid two">
-            <div class="piece"><strong>Branded presentation folder</strong><p>Needed to hold client paperwork and make the handoff feel polished and intentional.</p></div>
-            <div class="piece"><strong>Pocket inserts</strong><p>Needed to separate forms, resources, and next-step instructions without overwhelming the client.</p></div>
-            <div class="piece"><strong>Resource sheets</strong><p>Needed for crisis support, community referrals, insurance notes, and practical care information.</p></div>
+            <div class="piece piece-folder"><strong>Branded presentation folder</strong><p>Needed to hold client paperwork and make the handoff feel polished and intentional.</p></div>
+            <div class="piece piece-insert"><strong>Pocket inserts</strong><p>Needed to separate forms, resources, and next-step instructions without overwhelming the client.</p></div>
+            <div class="piece piece-resource"><strong>Resource sheets</strong><p>Needed for crisis support, community referrals, insurance notes, and practical care information.</p></div>
           </div>
         </article>
       </section>
@@ -1081,11 +1252,11 @@
             <p>Clear signage helps clients know they are in the right place and makes the office feel steady before the first conversation begins.</p>
           </div>
           <div class="piece-grid">
-            <div class="piece"><strong>Exterior door sign</strong><p>Needed so clients can confidently identify the practice from the hallway or entrance.</p></div>
-            <div class="piece"><strong>Suite directory sign</strong><p>Needed for buildings where visitors may need confirmation before arriving at the office.</p></div>
-            <div class="piece"><strong>Reception desk sign</strong><p>Needed to create a warm branded moment at the first in-person touchpoint.</p></div>
-            <div class="piece"><strong>Waiting room information sign</strong><p>Needed for office hours, privacy reminders, crisis resources, and simple next steps.</p></div>
-            <div class="piece"><strong>Branded vinyl wall wrap</strong><p>Needed for an elegant, immersive office feature that supports the Southern botanical theme without overpowering the room.</p></div>
+            <div class="piece piece-sign"><strong>Exterior door sign</strong><p>Needed so clients can confidently identify the practice from the hallway or entrance.</p></div>
+            <div class="piece piece-sign"><strong>Suite directory sign</strong><p>Needed for buildings where visitors may need confirmation before arriving at the office.</p></div>
+            <div class="piece piece-sign"><strong>Reception desk sign</strong><p>Needed to create a warm branded moment at the first in-person touchpoint.</p></div>
+            <div class="piece piece-sign"><strong>Waiting room information sign</strong><p>Needed for office hours, privacy reminders, crisis resources, and simple next steps.</p></div>
+            <div class="piece piece-wall"><strong>Branded vinyl wall wrap</strong><p>Needed for an elegant, immersive office feature that supports the Southern botanical theme without overpowering the room.</p></div>
           </div>
         </article>
 
@@ -1096,9 +1267,9 @@
             <p>Appointment pieces are practical, but they also give clients something calm, simple, and easy to reference after they leave.</p>
           </div>
           <div class="piece-grid">
-            <div class="piece"><strong>Appointment reminder cards</strong><p>Needed for date, time, therapist, and office contact details.</p></div>
-            <div class="piece"><strong>Appointment policies card</strong><p>Needed to make expectations clear without burying clients in a packet.</p></div>
-            <div class="piece"><strong>Cancellation policy card</strong><p>Needed to communicate scheduling boundaries in a clean, non-punitive way.</p></div>
+            <div class="piece piece-card"><strong>Appointment reminder cards</strong><p>Needed for date, time, therapist, and office contact details.</p></div>
+            <div class="piece piece-card"><strong>Appointment policies card</strong><p>Needed to make expectations clear without burying clients in a packet.</p></div>
+            <div class="piece piece-card"><strong>Cancellation policy card</strong><p>Needed to communicate scheduling boundaries in a clean, non-punitive way.</p></div>
           </div>
         </article>
 
@@ -1109,9 +1280,9 @@
             <p>Branded decor can make the office feel emotionally grounded while reinforcing the practice's voice and values.</p>
           </div>
           <div class="piece-grid">
-            <div class="piece"><strong>Framed mission statement</strong><p>Needed to make the practice's purpose visible to clients, staff, and visitors.</p></div>
-            <div class="piece"><strong>Branded artwork</strong><p>Needed to carry the calm botanical and Gulf Coast visual language into the physical space.</p></div>
-            <div class="piece"><strong>Values statement display</strong><p>Needed to communicate safety, respect, professionalism, and compassion in the office environment.</p></div>
+            <div class="piece piece-decor"><strong>Framed mission statement</strong><p>Needed to make the practice's purpose visible to clients, staff, and visitors.</p></div>
+            <div class="piece piece-decor"><strong>Branded artwork</strong><p>Needed to carry the calm botanical and Gulf Coast visual language into the physical space.</p></div>
+            <div class="piece piece-decor"><strong>Values statement display</strong><p>Needed to communicate safety, respect, professionalism, and compassion in the office environment.</p></div>
           </div>
         </article>
       </section>
@@ -1132,11 +1303,11 @@
             <p>A logo package keeps the practice from stretching, cropping, or improvising the mark in different contexts.</p>
           </div>
           <div class="piece-grid">
-            <div class="piece"><strong>Full logo</strong><p>Needed for formal brand use and most printed materials.</p></div>
-            <div class="piece"><strong>Horizontal logo</strong><p>Needed for headers, email signatures, and narrow spaces.</p></div>
-            <div class="piece"><strong>Vertical logo</strong><p>Needed for social profiles, signage, and stacked layouts.</p></div>
-            <div class="piece"><strong>Icon mark</strong><p>Needed for favicons, small spaces, stickers, and subtle brand moments.</p></div>
-            <div class="piece"><strong>Monochrome versions</strong><p>Needed for single-color printing, embossing, debossing, and high-contrast use.</p></div>
+            <div class="piece piece-logo"><strong>Full logo</strong><p>Needed for formal brand use and most printed materials.</p></div>
+            <div class="piece piece-logo"><strong>Horizontal logo</strong><p>Needed for headers, email signatures, and narrow spaces.</p></div>
+            <div class="piece piece-logo"><strong>Vertical logo</strong><p>Needed for social profiles, signage, and stacked layouts.</p></div>
+            <div class="piece piece-logo icon"><strong>Icon mark</strong><p>Needed for favicons, small spaces, stickers, and subtle brand moments.</p></div>
+            <div class="piece piece-logo mono"><strong>Monochrome versions</strong><p>Needed for single-color printing, embossing, debossing, and high-contrast use.</p></div>
           </div>
         </article>
 
@@ -1147,10 +1318,10 @@
             <p>Social templates help the practice post with polish while keeping content approachable, recognizable, and easy to maintain.</p>
           </div>
           <div class="piece-grid">
-            <div class="piece"><strong>Profile images</strong><p>Needed for consistent identity across platforms.</p></div>
-            <div class="piece"><strong>Cover images</strong><p>Needed for branded first impressions on social pages.</p></div>
-            <div class="piece"><strong>Post templates</strong><p>Needed for announcements, reminders, therapist features, and educational content.</p></div>
-            <div class="piece"><strong>Story templates</strong><p>Needed for quick, polished updates that still feel on brand.</p></div>
+            <div class="piece piece-social"><strong>Profile images</strong><p>Needed for consistent identity across platforms.</p></div>
+            <div class="piece piece-social"><strong>Cover images</strong><p>Needed for branded first impressions on social pages.</p></div>
+            <div class="piece piece-social"><strong>Post templates</strong><p>Needed for announcements, reminders, therapist features, and educational content.</p></div>
+            <div class="piece piece-social"><strong>Story templates</strong><p>Needed for quick, polished updates that still feel on brand.</p></div>
           </div>
         </article>
 
@@ -1161,8 +1332,8 @@
             <p>Email branding helps routine communication feel official, warm, and easy to recognize.</p>
           </div>
           <div class="piece-grid">
-            <div class="piece"><strong>Email signature</strong><p>Needed for staff consistency, contact details, and a polished everyday presence.</p></div>
-            <div class="piece"><strong>Newsletter template</strong><p>Needed for future updates, community education, and practice announcements.</p></div>
+            <div class="piece piece-email"><strong>Email signature</strong><p>Needed for staff consistency, contact details, and a polished everyday presence.</p></div>
+            <div class="piece piece-newsletter"><strong>Newsletter template</strong><p>Needed for future updates, community education, and practice announcements.</p></div>
           </div>
         </article>
 
@@ -1173,10 +1344,10 @@
             <p>Website assets keep future pages, updates, and therapist content from drifting away from the redesigned brand.</p>
           </div>
           <div class="piece-grid">
-            <div class="piece"><strong>Homepage graphics</strong><p>Needed to extend the soft Southern botanical language without rethinking the hero every time.</p></div>
-            <div class="piece"><strong>Service icons</strong><p>Needed to explain areas of support in a simple, warm, scannable way.</p></div>
-            <div class="piece"><strong>Team bio templates</strong><p>Needed so new therapist profiles stay consistent with the redesigned staff pages.</p></div>
-            <div class="piece"><strong>Contact page graphics</strong><p>Needed to keep the request/intake experience visually aligned with the rest of the site.</p></div>
+            <div class="piece piece-website"><strong>Homepage graphics</strong><p>Needed to extend the soft Southern botanical language without rethinking the hero every time.</p></div>
+            <div class="piece piece-logo icon"><strong>Service icons</strong><p>Needed to explain areas of support in a simple, warm, scannable way.</p></div>
+            <div class="piece piece-team"><strong>Team bio templates</strong><p>Needed so new therapist profiles stay consistent with the redesigned staff pages.</p></div>
+            <div class="piece piece-website"><strong>Contact page graphics</strong><p>Needed to keep the request/intake experience visually aligned with the rest of the site.</p></div>
           </div>
         </article>
       </section>
