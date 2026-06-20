@@ -464,8 +464,7 @@
         background:
           radial-gradient(ellipse at 90% 78%, rgba(202, 209, 181, 0.16), transparent 28%),
           linear-gradient(135deg, rgba(255, 255, 255, 0.18), transparent 37%),
-          linear-gradient(100deg, rgba(245, 240, 229, 0.96) 0 68%, rgba(57, 68, 55, 0.82) 68% 100%),
-          url("../assets/redesign-profile-grass.jpg") right bottom / cover no-repeat;
+          linear-gradient(100deg, rgba(245, 240, 229, 0.96) 0 68%, rgba(57, 68, 55, 0.88) 68% 100%);
         color: var(--olive);
         display: grid;
         place-items: center start;
@@ -473,35 +472,57 @@
 
       .botanical-accent::before {
         background: url("assets/watercolor-succulent-accent.png") center / contain no-repeat;
-        bottom: -30px;
+        bottom: -38px;
         content: "";
-        height: 150px;
-        opacity: 0.065;
+        filter:
+          saturate(0.38)
+          contrast(0.86)
+          drop-shadow(1px 1px 0 rgba(255, 253, 247, 0.18))
+          drop-shadow(-1px -1px 0 rgba(57, 68, 55, 0.13));
+        height: 154px;
+        opacity: 0.1;
         pointer-events: none;
         position: absolute;
-        right: -42px;
+        right: -50px;
         transform: rotate(-2deg);
-        width: 226px;
+        width: 232px;
         z-index: 0;
       }
 
       .business-front.botanical-accent::before {
-        bottom: -36px;
-        height: 136px;
-        opacity: 0.055;
-        right: -36px;
-        width: 210px;
+        bottom: -42px;
+        height: 146px;
+        opacity: 0.105;
+        right: -54px;
+        width: 224px;
       }
 
       .business-front.deep.botanical-accent::before {
-        filter: saturate(0.74) brightness(0.78);
-        opacity: 0.06;
-        right: -42px;
+        bottom: -34px;
+        filter:
+          grayscale(0.5)
+          brightness(0.88)
+          contrast(0.94)
+          drop-shadow(1px 1px 0 rgba(245, 240, 229, 0.11))
+          drop-shadow(-1px -1px 0 rgba(23, 32, 24, 0.28));
+        height: 162px;
+        opacity: 0.12;
+        right: -50px;
+        width: 240px;
       }
 
       .business-back.dark.botanical-accent::before {
-        filter: grayscale(0.3) brightness(1.28);
-        opacity: 0.05;
+        bottom: -34px;
+        filter:
+          grayscale(0.5)
+          brightness(1.15)
+          contrast(0.86)
+          drop-shadow(1px 1px 0 rgba(245, 240, 229, 0.08))
+          drop-shadow(-1px -1px 0 rgba(20, 28, 22, 0.3));
+        height: 160px;
+        opacity: 0.13;
+        right: -50px;
+        width: 238px;
       }
 
       .business-logo {
@@ -532,14 +553,16 @@
 
       .business-photo {
         border-radius: 0 0.18in 0.18in 30px;
-        bottom: 0;
-        height: 100%;
+        bottom: -1px;
+        clip-path: inset(0 round 0 0.18in 0.18in 30px);
+        display: block;
+        height: calc(100% + 2px);
         object-fit: cover;
         object-position: center 17%;
         position: absolute;
-        right: 0;
-        top: 0;
-        width: 38%;
+        right: -1px;
+        top: -1px;
+        width: calc(38% + 2px);
         z-index: 2;
       }
 
