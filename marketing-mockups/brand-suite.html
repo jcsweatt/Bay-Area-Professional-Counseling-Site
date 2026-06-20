@@ -345,6 +345,17 @@
         z-index: 1;
       }
 
+      .finish-note {
+        color: var(--olive-2);
+        font-size: 0.9rem;
+        margin: -8px 0 22px;
+        max-width: 760px;
+      }
+
+      .finish-note strong {
+        color: var(--olive);
+      }
+
       .suite-header {
         align-items: end;
         display: flex;
@@ -389,7 +400,10 @@
       .business-card {
         aspect-ratio: 3.5 / 2;
         border-radius: 0.18in;
-        box-shadow: var(--shadow);
+        box-shadow:
+          0 2px 0 rgba(57, 68, 55, 0.16),
+          0 9px 0 rgba(223, 204, 176, 0.5),
+          0 28px 56px rgba(48, 47, 35, 0.15);
         min-height: 238px;
         overflow: hidden;
         position: relative;
@@ -399,7 +413,10 @@
       }
 
       .business-card:hover {
-        box-shadow: 0 30px 68px rgba(48, 47, 35, 0.2);
+        box-shadow:
+          0 3px 0 rgba(57, 68, 55, 0.16),
+          0 12px 0 rgba(223, 204, 176, 0.48),
+          0 38px 76px rgba(48, 47, 35, 0.24);
         transform:
           perspective(900px)
           rotateY(calc(var(--tilt-x, 0) * 1deg))
@@ -420,6 +437,8 @@
 
       .business-front {
         background:
+          linear-gradient(135deg, rgba(255, 255, 255, 0.18), transparent 36%),
+          radial-gradient(circle at 98% 96%, rgba(184, 121, 93, 0.09), transparent 30%),
           linear-gradient(120deg, rgba(255, 253, 247, 0.98) 0 63%, rgba(202, 209, 181, 0.58) 63%),
           var(--white);
         padding: 22px 23px;
@@ -427,6 +446,7 @@
 
       .business-front.alt {
         background:
+          linear-gradient(135deg, rgba(255, 255, 255, 0.22), transparent 40%),
           radial-gradient(circle at 92% 12%, rgba(202, 209, 181, 0.44), transparent 28%),
           linear-gradient(135deg, var(--paper-2), var(--white));
         display: grid;
@@ -435,6 +455,7 @@
 
       .business-front.deep {
         background:
+          linear-gradient(135deg, rgba(255, 255, 255, 0.18), transparent 37%),
           linear-gradient(100deg, rgba(245, 240, 229, 0.96) 0 68%, rgba(57, 68, 55, 0.82) 68% 100%),
           url("../assets/redesign-profile-grass.jpg") right bottom / cover no-repeat;
         color: var(--olive);
@@ -506,9 +527,25 @@
         opacity: 0.82;
       }
 
+      .website-line {
+        color: var(--olive);
+        display: block;
+        font-size: 0.61rem;
+        font-weight: 800;
+        letter-spacing: 0.14em;
+        margin-top: 15px;
+        opacity: 0.78;
+        text-transform: uppercase;
+      }
+
+      .dark .website-line {
+        color: var(--paper);
+      }
+
       .business-back {
         align-content: space-between;
         background:
+          linear-gradient(135deg, rgba(255, 255, 255, 0.16), transparent 42%),
           linear-gradient(150deg, rgba(245, 240, 229, 0.94), rgba(255, 253, 247, 0.8)),
           var(--paper);
         display: grid;
@@ -581,6 +618,45 @@
         color: rgba(245, 240, 229, 0.84);
       }
 
+      .line-botanical {
+        bottom: 12px;
+        height: 96px;
+        opacity: 0.38;
+        pointer-events: none;
+        position: absolute;
+        right: 12px;
+        width: 132px;
+        z-index: 0;
+      }
+
+      .line-botanical::before {
+        background:
+          radial-gradient(ellipse at 50% 100%, transparent 0 38%, rgba(85, 98, 77, 0.45) 39% 41%, transparent 42%),
+          radial-gradient(ellipse at 18% 74%, transparent 0 38%, rgba(85, 98, 77, 0.36) 39% 41%, transparent 42%),
+          radial-gradient(ellipse at 82% 74%, transparent 0 38%, rgba(85, 98, 77, 0.36) 39% 41%, transparent 42%),
+          radial-gradient(ellipse at 36% 55%, transparent 0 38%, rgba(85, 98, 77, 0.32) 39% 41%, transparent 42%),
+          radial-gradient(ellipse at 64% 55%, transparent 0 38%, rgba(85, 98, 77, 0.32) 39% 41%, transparent 42%);
+        content: "";
+        inset: 0;
+        position: absolute;
+      }
+
+      .line-botanical::after {
+        border-bottom: 1px solid rgba(184, 121, 93, 0.45);
+        border-radius: 50%;
+        bottom: 12px;
+        content: "";
+        height: 42px;
+        left: 18px;
+        position: absolute;
+        transform: rotate(-9deg);
+        width: 96px;
+      }
+
+      .line-botanical.light {
+        opacity: 0.24;
+      }
+
       .print-suite {
         display: grid;
         gap: 28px;
@@ -650,6 +726,7 @@
       .flyer {
         aspect-ratio: 8.5 / 11;
         background:
+          radial-gradient(circle at 8% 92%, rgba(184, 121, 93, 0.08), transparent 24%),
           radial-gradient(circle at 92% 8%, rgba(134, 201, 207, 0.13), transparent 26%),
           radial-gradient(circle at 100% 100%, rgba(202, 209, 181, 0.18), transparent 34%),
           var(--white);
@@ -770,7 +847,9 @@
 
       .letterhead {
         aspect-ratio: 8.5 / 11;
-        background: var(--white);
+        background:
+          radial-gradient(circle at 100% 100%, rgba(202, 209, 181, 0.16), transparent 32%),
+          var(--white);
         border-radius: 28px;
         box-shadow: var(--shadow);
         overflow: hidden;
@@ -823,6 +902,7 @@
 
       .mini-piece {
         background:
+          radial-gradient(circle at 12% 95%, rgba(184, 121, 93, 0.08), transparent 22%),
           radial-gradient(circle at 100% 100%, rgba(202, 209, 181, 0.24), transparent 34%),
           linear-gradient(rgba(255, 253, 247, 0.9), rgba(255, 253, 247, 0.98)),
           var(--white);
@@ -968,25 +1048,30 @@
         </div>
         <p>Each card has a front and back. These are designed as premium rounded-corner cards, not square-edged office cards.</p>
       </header>
+      <p class="finish-note"><strong>Print finish direction:</strong> 32pt soft-touch stock, rounded corners, subtle deboss on the therapist name, and a quiet spot gloss or blind emboss on the lotus/water mark. The mockup shadows exaggerate the paper edge slightly so the cards feel physical on the presentation board.</p>
 
       <section class="card-suite">
         <article class="stack">
           <span class="label">01 / Portrait + calm texture</span>
           <div class="business-card business-front">
+            <span class="line-botanical light" aria-hidden="true"></span>
             <div class="business-info">
               <img class="business-logo" src="assets/bapc-logo-transparent.png" alt="">
               <h3>Lanya Daffin</h3>
               <p class="credentials">LPC, MS</p>
               <p>Client-centered therapy in a safe, judgment-free setting.</p>
+              <span class="website-line">bayareaprofessionalcounseling.com</span>
             </div>
             <img class="business-photo" src="../assets/lanya-daffin-headshot.jpg" alt="Lanya Daffin">
           </div>
           <div class="business-card business-back">
+            <span class="line-botanical light" aria-hidden="true"></span>
             <p class="tagline">Show up exactly as you are.</p>
             <div class="contact-lines">
               <span><strong>Direct</strong> (251) 347-5412, phone or text</span>
               <span><strong>Office</strong> 6576 Airport Boulevard, Suite C 200, Mobile, AL 36608</span>
               <span><strong>Practice</strong> (251) 459-0200</span>
+              <span><strong>Web</strong> bayareaprofessionalcounseling.com</span>
             </div>
             <div class="pill-row"><span>Addiction</span><span>Alcohol Use</span><span>Anxiety</span><span>Life Transitions</span></div>
           </div>
@@ -995,19 +1080,23 @@
         <article class="stack">
           <span class="label">02 / Botanical practice card</span>
           <div class="business-card business-front alt">
+            <span class="line-botanical" aria-hidden="true"></span>
             <div class="business-info">
               <img class="business-logo" src="assets/bapc-logo-transparent.png" alt="">
               <h3>Lacey Moore</h3>
               <p class="credentials">MS, LPC-S, MAC</p>
               <p>Holistic support for emotional, relational, and addiction concerns.</p>
+              <span class="website-line">bayareaprofessionalcounseling.com</span>
             </div>
           </div>
           <div class="business-card business-back dark">
+            <span class="line-botanical light" aria-hidden="true"></span>
             <p class="tagline">A calm place to begin healing.</p>
             <div class="contact-lines">
               <span><strong>Bay Area Professional Counseling</strong></span>
               <span>6576 Airport Boulevard, Suite C 200, Mobile, AL 36608</span>
               <span>(251) 459-0200 · bayareacounselingmobile@gmail.com</span>
+              <span>bayareaprofessionalcounseling.com</span>
             </div>
             <div class="pill-row"><span>Trauma</span><span>Relationships</span><span>Addiction</span><span>Supervision</span></div>
           </div>
@@ -1016,19 +1105,23 @@
         <article class="stack">
           <span class="label">03 / Deep green premium</span>
           <div class="business-card business-front deep">
+            <span class="line-botanical light" aria-hidden="true"></span>
             <div class="business-info">
               <img class="business-logo" src="assets/bapc-logo-transparent.png" alt="">
               <h3>Cindy Perronne</h3>
               <p class="credentials">MS, ADC, LPC</p>
               <p>Experienced counseling for adults, couples, and adolescents.</p>
+              <span class="website-line">bayareaprofessionalcounseling.com</span>
             </div>
           </div>
           <div class="business-card business-back">
+            <span class="line-botanical light" aria-hidden="true"></span>
             <p class="tagline">Support that feels steady, thoughtful, and human.</p>
             <div class="contact-lines">
               <span><strong>Office</strong> 6576 Airport Boulevard, Suite C 200</span>
               <span><strong>Phone</strong> (251) 459-0200</span>
               <span><strong>Email</strong> bayareacounselingmobile@gmail.com</span>
+              <span><strong>Web</strong> bayareaprofessionalcounseling.com</span>
             </div>
             <p class="micro">Rounded-corner card with subtle spot-varnish potential on the logo.</p>
           </div>
