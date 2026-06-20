@@ -237,6 +237,9 @@
         bottom: -30px;
         content: "";
         height: 210px;
+        mix-blend-mode: multiply;
+        -webkit-mask-image: radial-gradient(ellipse at 70% 76%, #000 0 34%, rgba(0, 0, 0, 0.58) 52%, transparent 76%);
+        mask-image: radial-gradient(ellipse at 70% 76%, #000 0 34%, rgba(0, 0, 0, 0.58) 52%, transparent 76%);
         opacity: 0.11;
         position: absolute;
         right: -26px;
@@ -400,12 +403,14 @@
       .business-card {
         aspect-ratio: 3.5 / 2;
         background: var(--white);
+        border: 1px solid rgba(57, 68, 55, 0.1);
         border-radius: 0.18in;
         box-shadow:
-          0 1px 0 rgba(255, 253, 247, 0.9),
-          0 4px 0 #e4d8c3,
-          0 7px 0 #d2c3aa,
-          0 28px 58px rgba(48, 47, 35, 0.18);
+          0 1px 0 rgba(255, 253, 247, 0.95),
+          0 5px 0 #eee4d3,
+          0 9px 0 #dacbb4,
+          0 13px 0 #c7b89e,
+          0 34px 64px rgba(48, 47, 35, 0.2);
         min-height: 238px;
         overflow: hidden;
         position: relative;
@@ -414,12 +419,25 @@
         transition: box-shadow 220ms ease, transform 160ms ease;
       }
 
+      .business-card::after {
+        border-radius: inherit;
+        box-shadow:
+          inset 0 1px 0 rgba(255, 253, 247, 0.86),
+          inset 0 -1px 0 rgba(57, 68, 55, 0.08);
+        content: "";
+        inset: 0;
+        pointer-events: none;
+        position: absolute;
+        z-index: 6;
+      }
+
       .business-card:hover {
         box-shadow:
-          0 1px 0 rgba(255, 253, 247, 0.9),
-          0 5px 0 #e4d8c3,
-          0 9px 0 #d2c3aa,
-          0 40px 82px rgba(48, 47, 35, 0.26);
+          0 1px 0 rgba(255, 253, 247, 0.95),
+          0 6px 0 #eee4d3,
+          0 11px 0 #dacbb4,
+          0 16px 0 #c7b89e,
+          0 46px 88px rgba(48, 47, 35, 0.28);
         transform:
           perspective(900px)
           rotateY(calc(var(--tilt-x, 0) * 1deg))
@@ -432,6 +450,9 @@
         background: url("../assets/redesign-gallery-succulents.jpg") right bottom / 74% auto no-repeat;
         content: "";
         inset: auto -18px -20px auto;
+        mix-blend-mode: multiply;
+        -webkit-mask-image: radial-gradient(ellipse at 72% 72%, #000 0 38%, rgba(0, 0, 0, 0.52) 58%, transparent 82%);
+        mask-image: radial-gradient(ellipse at 72% 72%, #000 0 38%, rgba(0, 0, 0, 0.52) 58%, transparent 82%);
         opacity: 0.16;
         position: absolute;
         height: 220px;
@@ -471,6 +492,47 @@
         place-items: center start;
       }
 
+      .botanical-accent::before {
+        background: url("../assets/redesign-therapists-succulents.jpg") left bottom / auto 128% no-repeat;
+        bottom: -26px;
+        content: "";
+        height: 164px;
+        mix-blend-mode: multiply;
+        opacity: 0.18;
+        pointer-events: none;
+        position: absolute;
+        right: -34px;
+        transform: rotate(-2deg);
+        width: 258px;
+        z-index: 0;
+        -webkit-mask-image:
+          radial-gradient(ellipse at 64% 72%, #000 0 34%, rgba(0, 0, 0, 0.64) 52%, transparent 78%),
+          linear-gradient(120deg, transparent 0 8%, #000 30% 100%);
+        mask-image:
+          radial-gradient(ellipse at 64% 72%, #000 0 34%, rgba(0, 0, 0, 0.64) 52%, transparent 78%),
+          linear-gradient(120deg, transparent 0 8%, #000 30% 100%);
+      }
+
+      .business-front.botanical-accent::before {
+        height: 150px;
+        opacity: 0.14;
+        right: 0;
+        bottom: -30px;
+        width: 240px;
+      }
+
+      .business-front.deep.botanical-accent::before {
+        filter: saturate(0.74) brightness(0.78);
+        opacity: 0.2;
+        right: -12px;
+      }
+
+      .business-back.dark.botanical-accent::before {
+        filter: grayscale(0.3) brightness(1.28);
+        mix-blend-mode: screen;
+        opacity: 0.12;
+      }
+
       .business-logo {
         height: 58px;
         margin-bottom: 18px;
@@ -489,7 +551,7 @@
         max-width: 58%;
         padding-bottom: 24px;
         position: relative;
-        z-index: 1;
+        z-index: 2;
       }
 
       .business-front.alt .business-info,
@@ -507,13 +569,16 @@
         right: 0;
         top: 0;
         width: 38%;
-        z-index: 1;
+        z-index: 2;
       }
 
       .business-info h3 {
         color: inherit;
         font-size: 1.5rem;
         margin-bottom: 5px;
+        text-shadow:
+          0 1px 0 rgba(255, 253, 247, 0.78),
+          0 -1px 0 rgba(57, 68, 55, 0.08);
       }
 
       .credentials {
@@ -536,52 +601,18 @@
         opacity: 0.82;
       }
 
-      .website-line {
-        align-items: center;
-        background: rgba(255, 253, 247, 0.72);
-        border-top: 1px solid rgba(57, 68, 55, 0.08);
-        bottom: 0;
+      .card-url {
         color: var(--olive-2);
-        display: flex;
-        font-size: 0.58rem;
+        display: block;
+        font-size: clamp(0.48rem, 0.72vw, 0.56rem);
         font-weight: 800;
-        justify-content: flex-start;
-        left: 0;
-        letter-spacing: 0.02em;
-        line-height: 1;
-        padding: 8px 23px;
-        position: absolute;
-        right: 38%;
-        z-index: 3;
-      }
-
-      .business-front.alt .website-line,
-      .business-front.deep .website-line {
-        right: 0;
-      }
-
-      .botanical-svg {
-        bottom: 14px;
-        color: rgba(85, 98, 77, 0.26);
-        height: 92px;
-        pointer-events: none;
-        position: absolute;
-        right: 16px;
-        width: 148px;
-        z-index: 0;
-      }
-
-      .business-back.dark .botanical-svg {
-        color: rgba(245, 240, 229, 0.18);
-      }
-
-      .botanical-svg path,
-      .botanical-svg ellipse {
-        fill: none;
-        stroke: currentColor;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-        stroke-width: 1.6;
+        letter-spacing: 0.05em;
+        line-height: 1.1;
+        margin-top: 12px;
+        max-width: 100%;
+        opacity: 0.9;
+        overflow-wrap: anywhere;
+        text-transform: lowercase;
       }
 
       .business-back {
@@ -985,11 +1016,11 @@
           <p>A more elevated collateral direction for Bay Area Professional Counseling: rounded corners, tactile paper tones, quiet succulents, warm mossy greens, and enough structure to feel professional without becoming sterile.</p>
           <div class="palette" aria-label="Color palette">
             <span class="swatch" style="--tone:#f5f0e5"><strong>Warm Paper</strong><span>#F5F0E5</span></span>
-            <span class="swatch" style="--tone:#cad1b5"><strong>Soft Sage</strong><span>#CAD1B5</span></span>
-            <span class="swatch" style="--tone:#394437"><strong>Moss Ink</strong><span>#394437</span></span>
-            <span class="swatch" style="--tone:#55624d"><strong>Olive Soft</strong><span>#55624D</span></span>
-            <span class="swatch" style="--tone:#b8795d"><strong>Clay Bloom</strong><span>#B8795D</span></span>
             <span class="swatch" style="--tone:#86c9cf"><strong>Gulf Aqua</strong><span>#86C9CF</span></span>
+            <span class="swatch" style="--tone:#cad1b5"><strong>Soft Sage</strong><span>#CAD1B5</span></span>
+            <span class="swatch" style="--tone:#b8795d"><strong>Clay Bloom</strong><span>#B8795D</span></span>
+            <span class="swatch" style="--tone:#55624d"><strong>Soft Olive</strong><span>#55624D</span></span>
+            <span class="swatch" style="--tone:#394437"><strong>Moss Ink</strong><span>#394437</span></span>
           </div>
         </div>
         <div class="hero-specimen">
@@ -1017,11 +1048,11 @@
           <p>The palette keeps the therapy brand warm and grounded while preserving the original logo's blue-green water note. Colors are named so the suite can become a repeatable system instead of one-off pieces.</p>
           <div class="color-table">
             <div class="color-row"><span class="color-dot" style="--tone:#f5f0e5"></span><span><strong>Warm Paper</strong>Primary background for calm, printable warmth.</span><code>#F5F0E5</code></div>
-            <div class="color-row"><span class="color-dot" style="--tone:#cad1b5"></span><span><strong>Soft Sage</strong>Gentle panels, therapy warmth, growth symbolism.</span><code>#CAD1B5</code></div>
-            <div class="color-row"><span class="color-dot" style="--tone:#394437"></span><span><strong>Moss Ink</strong>Primary text and premium dark-card moments.</span><code>#394437</code></div>
-            <div class="color-row"><span class="color-dot" style="--tone:#55624d"></span><span><strong>Olive Soft</strong>Secondary copy and quiet structure.</span><code>#55624D</code></div>
-            <div class="color-row"><span class="color-dot" style="--tone:#b8795d"></span><span><strong>Clay Bloom</strong>Small accents for warmth and humanity.</span><code>#B8795D</code></div>
             <div class="color-row"><span class="color-dot" style="--tone:#86c9cf"></span><span><strong>Gulf Aqua</strong>Restrained nod to the logo's water element.</span><code>#86C9CF</code></div>
+            <div class="color-row"><span class="color-dot" style="--tone:#cad1b5"></span><span><strong>Soft Sage</strong>Gentle panels, therapy warmth, growth symbolism.</span><code>#CAD1B5</code></div>
+            <div class="color-row"><span class="color-dot" style="--tone:#b8795d"></span><span><strong>Clay Bloom</strong>Small accents for warmth and humanity.</span><code>#B8795D</code></div>
+            <div class="color-row"><span class="color-dot" style="--tone:#55624d"></span><span><strong>Soft Olive</strong>Secondary copy and quiet structure.</span><code>#55624D</code></div>
+            <div class="color-row"><span class="color-dot" style="--tone:#394437"></span><span><strong>Moss Ink</strong>Primary text and premium dark-card moments.</span><code>#394437</code></div>
           </div>
         </article>
       </section>
@@ -1062,19 +1093,11 @@
               <h3>Lanya Daffin</h3>
               <p class="credentials">LPC, MS</p>
               <p>Client-centered therapy in a safe, judgment-free setting.</p>
-              <span class="website-line">bayareaprofessionalcounseling.com</span>
+              <span class="card-url">bayareaprofessionalcounseling.com</span>
             </div>
             <img class="business-photo" src="../assets/lanya-daffin-headshot.jpg" alt="Lanya Daffin">
           </div>
-          <div class="business-card business-back">
-            <svg class="botanical-svg" viewBox="0 0 150 95" aria-hidden="true">
-              <path d="M15 82 C38 68, 58 68, 76 82 C95 67, 119 66, 139 82"></path>
-              <path d="M75 78 C70 57, 71 38, 75 16 C82 38, 83 58, 75 78"></path>
-              <ellipse cx="55" cy="65" rx="11" ry="31" transform="rotate(-34 55 65)"></ellipse>
-              <ellipse cx="96" cy="65" rx="11" ry="31" transform="rotate(34 96 65)"></ellipse>
-              <ellipse cx="38" cy="72" rx="8" ry="24" transform="rotate(-58 38 72)"></ellipse>
-              <ellipse cx="113" cy="72" rx="8" ry="24" transform="rotate(58 113 72)"></ellipse>
-            </svg>
+          <div class="business-card business-back botanical-accent">
             <p class="tagline">Show up exactly as you are.</p>
             <div class="contact-lines">
               <span><strong>Direct</strong> (251) 347-5412, phone or text</span>
@@ -1088,32 +1111,16 @@
 
         <article class="stack">
           <span class="label">02 / Botanical practice card</span>
-          <div class="business-card business-front alt">
-            <svg class="botanical-svg" viewBox="0 0 150 95" aria-hidden="true">
-              <path d="M15 82 C38 68, 58 68, 76 82 C95 67, 119 66, 139 82"></path>
-              <path d="M75 78 C70 57, 71 38, 75 16 C82 38, 83 58, 75 78"></path>
-              <ellipse cx="55" cy="65" rx="11" ry="31" transform="rotate(-34 55 65)"></ellipse>
-              <ellipse cx="96" cy="65" rx="11" ry="31" transform="rotate(34 96 65)"></ellipse>
-              <ellipse cx="38" cy="72" rx="8" ry="24" transform="rotate(-58 38 72)"></ellipse>
-              <ellipse cx="113" cy="72" rx="8" ry="24" transform="rotate(58 113 72)"></ellipse>
-            </svg>
+          <div class="business-card business-front alt botanical-accent">
             <div class="business-info">
               <img class="business-logo" src="assets/bapc-logo-transparent.png" alt="">
               <h3>Lacey Moore</h3>
               <p class="credentials">MS, LPC-S, MAC</p>
               <p>Holistic support for emotional, relational, and addiction concerns.</p>
-              <span class="website-line">bayareaprofessionalcounseling.com</span>
+              <span class="card-url">bayareaprofessionalcounseling.com</span>
             </div>
           </div>
-          <div class="business-card business-back dark">
-            <svg class="botanical-svg" viewBox="0 0 150 95" aria-hidden="true">
-              <path d="M15 82 C38 68, 58 68, 76 82 C95 67, 119 66, 139 82"></path>
-              <path d="M75 78 C70 57, 71 38, 75 16 C82 38, 83 58, 75 78"></path>
-              <ellipse cx="55" cy="65" rx="11" ry="31" transform="rotate(-34 55 65)"></ellipse>
-              <ellipse cx="96" cy="65" rx="11" ry="31" transform="rotate(34 96 65)"></ellipse>
-              <ellipse cx="38" cy="72" rx="8" ry="24" transform="rotate(-58 38 72)"></ellipse>
-              <ellipse cx="113" cy="72" rx="8" ry="24" transform="rotate(58 113 72)"></ellipse>
-            </svg>
+          <div class="business-card business-back dark botanical-accent">
             <p class="tagline">A calm place to begin healing.</p>
             <div class="contact-lines">
               <span><strong>Bay Area Professional Counseling</strong></span>
@@ -1127,32 +1134,16 @@
 
         <article class="stack">
           <span class="label">03 / Deep green premium</span>
-          <div class="business-card business-front deep">
-            <svg class="botanical-svg" viewBox="0 0 150 95" aria-hidden="true">
-              <path d="M15 82 C38 68, 58 68, 76 82 C95 67, 119 66, 139 82"></path>
-              <path d="M75 78 C70 57, 71 38, 75 16 C82 38, 83 58, 75 78"></path>
-              <ellipse cx="55" cy="65" rx="11" ry="31" transform="rotate(-34 55 65)"></ellipse>
-              <ellipse cx="96" cy="65" rx="11" ry="31" transform="rotate(34 96 65)"></ellipse>
-              <ellipse cx="38" cy="72" rx="8" ry="24" transform="rotate(-58 38 72)"></ellipse>
-              <ellipse cx="113" cy="72" rx="8" ry="24" transform="rotate(58 113 72)"></ellipse>
-            </svg>
+          <div class="business-card business-front deep botanical-accent">
             <div class="business-info">
               <img class="business-logo" src="assets/bapc-logo-transparent.png" alt="">
               <h3>Cindy Perronne</h3>
               <p class="credentials">MS, ADC, LPC</p>
               <p>Experienced counseling for adults, couples, and adolescents.</p>
-              <span class="website-line">bayareaprofessionalcounseling.com</span>
+              <span class="card-url">bayareaprofessionalcounseling.com</span>
             </div>
           </div>
-          <div class="business-card business-back">
-            <svg class="botanical-svg" viewBox="0 0 150 95" aria-hidden="true">
-              <path d="M15 82 C38 68, 58 68, 76 82 C95 67, 119 66, 139 82"></path>
-              <path d="M75 78 C70 57, 71 38, 75 16 C82 38, 83 58, 75 78"></path>
-              <ellipse cx="55" cy="65" rx="11" ry="31" transform="rotate(-34 55 65)"></ellipse>
-              <ellipse cx="96" cy="65" rx="11" ry="31" transform="rotate(34 96 65)"></ellipse>
-              <ellipse cx="38" cy="72" rx="8" ry="24" transform="rotate(-58 38 72)"></ellipse>
-              <ellipse cx="113" cy="72" rx="8" ry="24" transform="rotate(58 113 72)"></ellipse>
-            </svg>
+          <div class="business-card business-back botanical-accent">
             <p class="tagline">Support that feels steady, thoughtful, and human.</p>
             <div class="contact-lines">
               <span><strong>Office</strong> 6576 Airport Boulevard, Suite C 200</span>
