@@ -394,14 +394,12 @@
       .business-card {
         aspect-ratio: 3.5 / 2;
         background: var(--white);
-        border: 1px solid rgba(57, 68, 55, 0.1);
+        border: 1px solid rgba(57, 68, 55, 0.035);
         border-radius: 0.18in;
         box-shadow:
-          0 1px 0 rgba(255, 253, 247, 0.95),
-          0 5px 0 #eee4d3,
-          0 9px 0 #dacbb4,
-          0 13px 0 #c7b89e,
-          0 34px 64px rgba(48, 47, 35, 0.2);
+          0 1px 0 rgba(255, 253, 247, 0.78),
+          0 2px 0 rgba(218, 203, 180, 0.34),
+          0 18px 42px rgba(48, 47, 35, 0.14);
         min-height: 238px;
         overflow: hidden;
         position: relative;
@@ -411,12 +409,19 @@
       }
 
       .business-card::after {
+        background:
+          radial-gradient(circle at 18% 22%, rgba(255, 253, 247, 0.52) 0 1px, transparent 1.5px),
+          radial-gradient(circle at 72% 66%, rgba(57, 68, 55, 0.05) 0 1px, transparent 1.5px),
+          linear-gradient(135deg, rgba(255, 253, 247, 0.14), transparent 34%, rgba(57, 68, 55, 0.025));
+        background-size: 16px 16px, 22px 22px, auto;
         border-radius: inherit;
         box-shadow:
-          inset 0 1px 0 rgba(255, 253, 247, 0.86),
-          inset 0 -1px 0 rgba(57, 68, 55, 0.08);
+          inset 0 1px 0 rgba(255, 253, 247, 0.52),
+          inset 0 -1px 0 rgba(57, 68, 55, 0.035);
         content: "";
         inset: 0;
+        mix-blend-mode: soft-light;
+        opacity: 0.58;
         pointer-events: none;
         position: absolute;
         z-index: 6;
@@ -424,11 +429,9 @@
 
       .business-card:hover {
         box-shadow:
-          0 1px 0 rgba(255, 253, 247, 0.95),
-          0 6px 0 #eee4d3,
-          0 11px 0 #dacbb4,
-          0 16px 0 #c7b89e,
-          0 46px 88px rgba(48, 47, 35, 0.28);
+          0 1px 0 rgba(255, 253, 247, 0.82),
+          0 3px 0 rgba(218, 203, 180, 0.28),
+          0 30px 68px rgba(48, 47, 35, 0.2);
         transform:
           perspective(900px)
           rotateY(calc(var(--tilt-x, 0) * 1deg))
@@ -1062,7 +1065,7 @@
         </div>
         <p>Each card has a front and back. These are designed as premium rounded-corner cards, not square-edged office cards.</p>
       </header>
-      <p class="finish-note"><strong>Print finish direction:</strong> 32pt soft-touch stock, rounded corners, subtle deboss on the therapist name, and a quiet spot gloss or blind emboss on the lotus/water mark. The mockup shadows exaggerate the paper edge slightly so the cards feel physical on the presentation board.</p>
+      <p class="finish-note"><strong>Print finish direction:</strong> 32pt soft-touch stock, rounded corners, subtle deboss on the therapist name, and a quiet spot gloss or blind emboss on the lotus/water mark. The mockup uses a fine paper-grain overlay and soft lift so the cards feel tactile without a heavy outline.</p>
 
       <section class="card-suite">
         <article class="stack">
