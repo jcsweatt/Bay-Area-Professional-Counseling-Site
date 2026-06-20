@@ -95,14 +95,7 @@
       }
 
       .hero::after {
-        background: url("../assets/redesign-moss-corner.jpg") top right / contain no-repeat;
-        content: "";
-        height: 260px;
-        opacity: 0.2;
-        position: absolute;
-        right: 0;
-        top: 0;
-        width: 420px;
+        display: none;
       }
 
       .hero-copy,
@@ -233,17 +226,15 @@
       .story-card::before,
       .palette-card::before,
       .intent-card::before {
-        background: url("../assets/redesign-therapists-succulents.jpg") right bottom / 52% auto no-repeat;
+        background: url("assets/watercolor-succulent-accent.png") center / contain no-repeat;
         bottom: -30px;
         content: "";
-        height: 210px;
-        mix-blend-mode: multiply;
-        -webkit-mask-image: radial-gradient(ellipse at 70% 76%, #000 0 34%, rgba(0, 0, 0, 0.58) 52%, transparent 76%);
-        mask-image: radial-gradient(ellipse at 70% 76%, #000 0 34%, rgba(0, 0, 0, 0.58) 52%, transparent 76%);
-        opacity: 0.11;
+        height: 170px;
+        opacity: 0.055;
         position: absolute;
-        right: -26px;
-        width: 360px;
+        right: -44px;
+        transform: rotate(-2deg);
+        width: 250px;
       }
 
       .story-card h2,
@@ -447,16 +438,13 @@
       }
 
       .rack-card::before {
-        background: url("../assets/redesign-gallery-succulents.jpg") right bottom / 74% auto no-repeat;
+        background: url("assets/watercolor-succulent-accent.png") center / contain no-repeat;
         content: "";
-        inset: auto -18px -20px auto;
-        mix-blend-mode: multiply;
-        -webkit-mask-image: radial-gradient(ellipse at 72% 72%, #000 0 38%, rgba(0, 0, 0, 0.52) 58%, transparent 82%);
-        mask-image: radial-gradient(ellipse at 72% 72%, #000 0 38%, rgba(0, 0, 0, 0.52) 58%, transparent 82%);
-        opacity: 0.16;
+        inset: auto -36px -34px auto;
+        opacity: 0.08;
         position: absolute;
-        height: 220px;
-        width: 320px;
+        height: 230px;
+        width: 280px;
       }
 
       .business-front {
@@ -493,44 +481,36 @@
       }
 
       .botanical-accent::before {
-        background: url("../assets/redesign-therapists-succulents.jpg") left bottom / auto 128% no-repeat;
-        bottom: -26px;
+        background: url("assets/watercolor-succulent-accent.png") center / contain no-repeat;
+        bottom: -30px;
         content: "";
-        height: 164px;
-        mix-blend-mode: multiply;
-        opacity: 0.18;
+        height: 150px;
+        opacity: 0.065;
         pointer-events: none;
         position: absolute;
-        right: -34px;
+        right: -42px;
         transform: rotate(-2deg);
-        width: 258px;
+        width: 226px;
         z-index: 0;
-        -webkit-mask-image:
-          radial-gradient(ellipse at 64% 72%, #000 0 34%, rgba(0, 0, 0, 0.64) 52%, transparent 78%),
-          linear-gradient(120deg, transparent 0 8%, #000 30% 100%);
-        mask-image:
-          radial-gradient(ellipse at 64% 72%, #000 0 34%, rgba(0, 0, 0, 0.64) 52%, transparent 78%),
-          linear-gradient(120deg, transparent 0 8%, #000 30% 100%);
       }
 
       .business-front.botanical-accent::before {
-        height: 150px;
-        opacity: 0.14;
-        right: 0;
-        bottom: -30px;
-        width: 240px;
+        bottom: -36px;
+        height: 136px;
+        opacity: 0.055;
+        right: -36px;
+        width: 210px;
       }
 
       .business-front.deep.botanical-accent::before {
         filter: saturate(0.74) brightness(0.78);
-        opacity: 0.2;
-        right: -12px;
+        opacity: 0.06;
+        right: -42px;
       }
 
       .business-back.dark.botanical-accent::before {
         filter: grayscale(0.3) brightness(1.28);
-        mix-blend-mode: screen;
-        opacity: 0.12;
+        opacity: 0.05;
       }
 
       .business-logo {
