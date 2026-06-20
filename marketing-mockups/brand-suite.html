@@ -1601,6 +1601,222 @@
         transform: rotate(3deg);
       }
 
+      .photo-stage {
+        background:
+          linear-gradient(135deg, rgba(255, 253, 247, 0.08), rgba(57, 68, 55, 0.08)),
+          var(--photo) center / cover no-repeat;
+        border: 1px solid rgba(57, 68, 55, 0.08);
+        border-radius: 32px;
+        box-shadow:
+          0 28px 64px rgba(48, 47, 35, 0.18),
+          inset 0 1px 0 rgba(255, 253, 247, 0.28);
+        min-height: 470px;
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+      }
+
+      .photo-stage::before {
+        background:
+          linear-gradient(180deg, rgba(255, 253, 247, 0.22), transparent 32%),
+          radial-gradient(circle at 18% 18%, rgba(255, 253, 247, 0.28), transparent 28%);
+        content: "";
+        inset: 0;
+        pointer-events: none;
+        position: absolute;
+      }
+
+      .photo-brand {
+        background: rgba(255, 253, 247, 0.78);
+        border: 1px solid rgba(57, 68, 55, 0.08);
+        border-radius: 22px;
+        box-shadow: 0 14px 34px rgba(48, 47, 35, 0.14);
+        display: grid;
+        gap: 8px;
+        padding: 16px 18px;
+        position: absolute;
+        z-index: 3;
+      }
+
+      .photo-brand img {
+        display: block;
+        height: auto;
+        width: 120px;
+      }
+
+      .photo-brand strong {
+        color: var(--olive);
+        display: block;
+        font-family: var(--serif);
+        font-size: 1.1rem;
+        letter-spacing: -0.03em;
+      }
+
+      .photo-brand span {
+        color: var(--olive-2);
+        font-size: 0.68rem;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .photo-chip {
+        backdrop-filter: blur(10px);
+        background: rgba(255, 253, 247, 0.78);
+        border: 1px solid rgba(57, 68, 55, 0.08);
+        border-radius: 999px;
+        box-shadow: 0 10px 24px rgba(48, 47, 35, 0.12);
+        color: var(--olive);
+        font-size: 0.66rem;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        padding: 10px 13px;
+        position: absolute;
+        text-transform: uppercase;
+        z-index: 3;
+      }
+
+      .photo-chip.dark {
+        background: rgba(57, 68, 55, 0.82);
+        color: var(--paper);
+      }
+
+      .vinyl-preview {
+        align-items: center;
+        background:
+          linear-gradient(135deg, rgba(57, 68, 55, 0.82), rgba(85, 98, 77, 0.72)),
+          url("assets/watercolor-succulent-accent.png") right bottom / 60% auto no-repeat;
+        border: 1px solid rgba(245, 240, 229, 0.25);
+        border-radius: 26px;
+        box-shadow: 0 18px 42px rgba(48, 47, 35, 0.2);
+        color: var(--paper);
+        display: grid;
+        font-family: var(--serif);
+        font-size: 1.55rem;
+        height: 160px;
+        justify-items: center;
+        letter-spacing: -0.04em;
+        padding: 28px;
+        position: absolute;
+        right: 36px;
+        text-align: center;
+        top: 44px;
+        width: 260px;
+        z-index: 3;
+      }
+
+      .screen-overlay {
+        background:
+          linear-gradient(var(--olive) 0 42px, transparent 42px),
+          linear-gradient(90deg, rgba(202, 209, 181, 0.72) 0 36%, transparent 36%),
+          linear-gradient(rgba(57, 68, 55, 0.1) 0 3px, transparent 3px 18px),
+          rgba(255, 253, 247, 0.82);
+        background-size: auto, auto, 180px 18px, auto;
+        border: 1px solid rgba(57, 68, 55, 0.08);
+        border-radius: 18px;
+        box-shadow: 0 18px 40px rgba(48, 47, 35, 0.14);
+        position: absolute;
+        z-index: 3;
+      }
+
+      .stationery-photo {
+        --photo: url("assets/real-stationery-mockup.jpg");
+      }
+
+      .welcome-photo {
+        --photo: url("assets/real-welcome-folder-mockup.jpg");
+      }
+
+      .office-photo {
+        --photo: url("assets/real-office-signage-mockup.jpg");
+      }
+
+      .digital-photo {
+        --photo: url("assets/real-digital-mockup.jpg");
+      }
+
+      .stationery-photo .photo-brand {
+        left: 44px;
+        top: 54px;
+      }
+
+      .stationery-photo .chip-a {
+        left: 430px;
+        top: 96px;
+      }
+
+      .stationery-photo .chip-b {
+        right: 46px;
+        top: 230px;
+      }
+
+      .stationery-photo .chip-c {
+        bottom: 54px;
+        left: 120px;
+      }
+
+      .welcome-photo .photo-brand {
+        left: 64px;
+        top: 56px;
+      }
+
+      .welcome-photo .chip-a {
+        bottom: 92px;
+        left: 66px;
+      }
+
+      .welcome-photo .chip-b {
+        bottom: 108px;
+        right: 58px;
+      }
+
+      .welcome-photo .chip-c {
+        right: 106px;
+        top: 88px;
+      }
+
+      .office-photo .photo-brand {
+        bottom: 66px;
+        left: 224px;
+      }
+
+      .office-photo .chip-a {
+        left: 118px;
+        top: 126px;
+      }
+
+      .office-photo .chip-b {
+        right: 64px;
+        top: 236px;
+      }
+
+      .digital-photo .photo-brand {
+        left: 70px;
+        top: 58px;
+      }
+
+      .digital-photo .screen-overlay {
+        height: 152px;
+        right: 220px;
+        top: 76px;
+        width: 245px;
+      }
+
+      .digital-photo .chip-a {
+        bottom: 70px;
+        left: 72px;
+      }
+
+      .digital-photo .chip-b {
+        bottom: 96px;
+        right: 62px;
+      }
+
+      .digital-photo .chip-c {
+        right: 190px;
+        top: 252px;
+      }
+
       .production-note {
         background: rgba(202, 209, 181, 0.34);
         border: 1px solid rgba(57, 68, 55, 0.08);
@@ -1640,6 +1856,10 @@
           transform-origin: left top;
           width: 114%;
         }
+
+        .photo-stage {
+          min-height: 430px;
+        }
       }
 
       @media (max-width: 720px) {
@@ -1651,6 +1871,20 @@
           min-height: 360px;
           transform: scale(0.72);
           width: 139%;
+        }
+
+        .photo-stage {
+          min-height: 360px;
+        }
+
+        .photo-brand {
+          left: 22px !important;
+          right: 22px;
+          top: 22px !important;
+        }
+
+        .photo-chip {
+          font-size: 0.56rem;
         }
       }
     </style>
@@ -1827,13 +2061,15 @@
               <li><strong>Blank note cards, thank-you cards, and referral appreciation cards</strong> for warm community follow-up.</li>
             </ul>
           </div>
-          <div class="mockup-stage stationery-stage" aria-label="Realistic stationery mockup">
-            <span class="mock-label" style="left:52px;top:10px;">Printed + digital letterhead</span>
-            <div class="paper-sheet a"><span>Printed letterhead</span></div>
-            <div class="paper-sheet b"><span>PDF template</span></div>
-            <div class="envelope-mock a"><span>#10 envelope</span></div>
-            <div class="note-mock a"><span>Thank-you card</span></div>
-            <div class="note-mock b"><span>Referral note</span></div>
+          <div class="photo-stage stationery-photo" aria-label="Photorealistic stationery mockup">
+            <div class="photo-brand">
+              <img src="assets/bapc-logo-transparent.png" alt="">
+              <strong>Bay Area Professional Counseling</strong>
+              <span>Letterhead system</span>
+            </div>
+            <span class="photo-chip chip-a">Printed letterhead</span>
+            <span class="photo-chip dark chip-b">#10 envelope</span>
+            <span class="photo-chip chip-c">Thank-you notes</span>
           </div>
         </article>
 
@@ -1850,13 +2086,15 @@
               <li><strong>Branded presentation folder, pocket inserts, and resource sheets</strong> to keep everything organized.</li>
             </ul>
           </div>
-          <div class="mockup-stage welcome-stage" aria-label="Realistic client welcome packet mockup">
-            <span class="mock-label" style="left:74px;top:18px;">New client packet</span>
-            <div class="insert-sheet a"></div>
-            <div class="insert-sheet b"></div>
-            <div class="folder-mock"><span>Intake folder</span></div>
-            <div class="note-mock a"><span>Crisis resources</span></div>
-            <div class="paper-sheet c"><span>FAQ sheet</span></div>
+          <div class="photo-stage welcome-photo" aria-label="Photorealistic client welcome packet mockup">
+            <div class="photo-brand">
+              <img src="assets/bapc-logo-transparent.png" alt="">
+              <strong>New Client Packet</strong>
+              <span>Folder + inserts</span>
+            </div>
+            <span class="photo-chip chip-a">Welcome letter</span>
+            <span class="photo-chip chip-b">FAQ + policies</span>
+            <span class="photo-chip dark chip-c">Resource sheets</span>
           </div>
         </article>
 
@@ -1873,14 +2111,15 @@
               <li><strong>Framed mission statement, branded artwork, and values display</strong> so the walls say something real.</li>
             </ul>
           </div>
-          <div class="mockup-stage office-stage" aria-label="Realistic office signage mockup">
-            <div class="office-wall"></div>
-            <span class="mock-label" style="left:82px;top:48px;">Reception signage</span>
-            <div class="sign-mock a"><span>Door sign</span></div>
-            <div class="sign-mock b"><span>Desk sign</span></div>
-            <div class="frame-mock a"><span>Mission</span></div>
-            <div class="frame-mock b"><span>Values</span></div>
-            <div class="note-mock a"><span>Appointment card</span></div>
+          <div class="photo-stage office-photo" aria-label="Photorealistic office signage and wall wrap mockup">
+            <div class="vinyl-preview">A calm place to begin healing.</div>
+            <div class="photo-brand">
+              <img src="assets/bapc-logo-transparent.png" alt="">
+              <strong>Reception Signage</strong>
+              <span>Door + desk signs</span>
+            </div>
+            <span class="photo-chip chip-a">Suite sign</span>
+            <span class="photo-chip dark chip-b">Vinyl wall wrap</span>
           </div>
         </article>
 
@@ -1896,13 +2135,16 @@
               <li><strong>Website assets</strong> with homepage graphics, service icons, team bio templates, and contact page graphics.</li>
             </ul>
           </div>
-          <div class="mockup-stage digital-stage" aria-label="Realistic digital asset mockup">
-            <span class="mock-label" style="left:58px;top:32px;">Website + social kit</span>
-            <div class="screen-mock a"><span>Website template</span></div>
-            <div class="screen-mock b"><span>Story</span></div>
-            <div class="logo-tile a"><span>Logo pack</span></div>
-            <div class="social-tile a"><span>Post</span></div>
-            <div class="social-tile b"><span>Mobile</span></div>
+          <div class="photo-stage digital-photo" aria-label="Photorealistic digital brand asset mockup">
+            <div class="photo-brand">
+              <img src="assets/bapc-logo-transparent.png" alt="">
+              <strong>Digital Brand Kit</strong>
+              <span>Web + email + social</span>
+            </div>
+            <div class="screen-overlay"></div>
+            <span class="photo-chip chip-a">Social templates</span>
+            <span class="photo-chip dark chip-b">Email signature</span>
+            <span class="photo-chip chip-c">Website assets</span>
           </div>
         </article>
 
@@ -1918,12 +2160,15 @@
               <li><strong>Safe zones and export rules</strong> so the logo never feels boxed in, cropped, or visually crowded.</li>
             </ul>
           </div>
-          <div class="mockup-stage brand-kit-stage" aria-label="Logo and production kit mockup">
-            <span class="mock-label" style="left:56px;top:34px;">Logo package</span>
-            <div class="logo-tile a"><span>Full logo</span></div>
-            <div class="logo-tile b"><span>Icon mark</span></div>
-            <div class="logo-tile c"><span>Mono</span></div>
-            <div class="envelope-mock c"><span>Production notes</span></div>
+          <div class="photo-stage stationery-photo" aria-label="Photorealistic logo and production kit mockup">
+            <div class="photo-brand">
+              <img src="assets/bapc-logo-transparent.png" alt="">
+              <strong>Logo Package</strong>
+              <span>Full, mono, icon, reverse</span>
+            </div>
+            <span class="photo-chip chip-a">Safe zones</span>
+            <span class="photo-chip dark chip-b">Soft-touch stock</span>
+            <span class="photo-chip chip-c">Deboss + spot gloss</span>
           </div>
         </article>
       </section>
