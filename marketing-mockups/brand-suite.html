@@ -1681,6 +1681,188 @@
         color: var(--paper);
       }
 
+      .product-mark,
+      .product-copy,
+      .product-line,
+      .product-logo {
+        position: absolute;
+        z-index: 4;
+      }
+
+      .product-logo {
+        filter:
+          drop-shadow(0 2px 2px rgba(255, 253, 247, 0.34))
+          drop-shadow(0 6px 14px rgba(48, 47, 35, 0.1));
+        height: auto;
+        opacity: 0.88;
+        width: 122px;
+      }
+
+      .product-copy {
+        color: rgba(57, 68, 55, 0.82);
+        font-size: 0.72rem;
+        font-weight: 700;
+        line-height: 1.4;
+        text-shadow: 0 1px 0 rgba(255, 253, 247, 0.42);
+      }
+
+      .product-copy strong {
+        color: var(--olive);
+        display: block;
+        font-family: var(--serif);
+        font-size: 1.32rem;
+        font-weight: 400;
+        letter-spacing: -0.04em;
+        line-height: 1;
+        margin-bottom: 7px;
+      }
+
+      .product-copy span {
+        display: block;
+      }
+
+      .product-line {
+        background: rgba(57, 68, 55, 0.18);
+        height: 1px;
+        width: 150px;
+      }
+
+      .brand-pill {
+        background: rgba(57, 68, 55, 0.86);
+        border-radius: 999px;
+        color: var(--paper);
+        display: inline-block;
+        font-size: 0.58rem;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        padding: 7px 10px;
+        text-transform: uppercase;
+      }
+
+      .letterhead-logo {
+        left: 118px;
+        top: 80px;
+        transform: rotate(-4deg);
+        width: 112px;
+      }
+
+      .letterhead-address {
+        left: 116px;
+        top: 174px;
+        transform: rotate(-4deg);
+      }
+
+      .letterhead-rule {
+        left: 116px;
+        top: 253px;
+        transform: rotate(-4deg);
+      }
+
+      .envelope-logo {
+        right: 154px;
+        top: 112px;
+        transform: rotate(-2deg);
+        width: 96px;
+      }
+
+      .envelope-address {
+        right: 104px;
+        top: 186px;
+        transform: rotate(-2deg);
+      }
+
+      .notecard-logo {
+        bottom: 116px;
+        right: 114px;
+        transform: rotate(-4deg);
+        width: 92px;
+      }
+
+      .folder-logo {
+        left: 154px;
+        top: 152px;
+        transform: rotate(-2deg);
+        width: 146px;
+      }
+
+      .folder-title {
+        left: 152px;
+        top: 268px;
+        transform: rotate(-2deg);
+      }
+
+      .packet-label {
+        right: 96px;
+        top: 82px;
+        transform: rotate(7deg);
+      }
+
+      .resource-label {
+        bottom: 94px;
+        right: 178px;
+        transform: rotate(2deg);
+      }
+
+      .wall-sign-logo {
+        left: 118px;
+        top: 124px;
+        width: 118px;
+      }
+
+      .wall-sign-copy {
+        left: 115px;
+        top: 226px;
+        text-align: center;
+        width: 126px;
+      }
+
+      .desk-sign-logo {
+        bottom: 92px;
+        left: 258px;
+        width: 132px;
+      }
+
+      .desk-sign-copy {
+        bottom: 74px;
+        left: 214px;
+        text-align: center;
+        width: 220px;
+      }
+
+      .wall-wrap-copy {
+        right: 58px;
+        top: 70px;
+        width: 214px;
+      }
+
+      .screen-logo {
+        left: 232px;
+        top: 78px;
+        width: 98px;
+      }
+
+      .screen-copy {
+        left: 230px;
+        top: 162px;
+        width: 185px;
+      }
+
+      .phone-logo {
+        right: 102px;
+        top: 118px;
+        width: 56px;
+      }
+
+      .email-card-copy {
+        bottom: 86px;
+        left: 278px;
+      }
+
+      .social-card-copy {
+        bottom: 94px;
+        right: 256px;
+      }
+
       .vinyl-preview {
         align-items: center;
         background:
@@ -2062,6 +2244,19 @@
             </ul>
           </div>
           <div class="photo-stage stationery-photo" aria-label="Photorealistic stationery mockup">
+            <img class="product-logo letterhead-logo" src="assets/bapc-logo-transparent.png" alt="">
+            <p class="product-copy letterhead-address">
+              <strong>Begin with care.</strong>
+              <span>6576 Airport Boulevard, Suite C 200</span>
+              <span>Mobile, AL 36608</span>
+            </p>
+            <span class="product-line letterhead-rule"></span>
+            <img class="product-logo envelope-logo" src="assets/bapc-logo-transparent.png" alt="">
+            <p class="product-copy envelope-address">
+              <span>Bay Area Professional Counseling</span>
+              <span>6576 Airport Boulevard, Suite C 200</span>
+            </p>
+            <img class="product-logo notecard-logo" src="assets/bapc-logo-transparent.png" alt="">
             <div class="photo-brand">
               <img src="assets/bapc-logo-transparent.png" alt="">
               <strong>Bay Area Professional Counseling</strong>
@@ -2087,6 +2282,18 @@
             </ul>
           </div>
           <div class="photo-stage welcome-photo" aria-label="Photorealistic client welcome packet mockup">
+            <img class="product-logo folder-logo" src="assets/bapc-logo-transparent.png" alt="">
+            <p class="product-copy folder-title">
+              <strong>New Client Packet</strong>
+              <span>Welcome letter · policies · FAQ</span>
+              <span>bayareaprofessionalcounseling.com</span>
+            </p>
+            <p class="product-copy packet-label">
+              <span class="brand-pill">Practice Overview</span>
+            </p>
+            <p class="product-copy resource-label">
+              <span class="brand-pill">Crisis Resources</span>
+            </p>
             <div class="photo-brand">
               <img src="assets/bapc-logo-transparent.png" alt="">
               <strong>New Client Packet</strong>
@@ -2113,6 +2320,18 @@
           </div>
           <div class="photo-stage office-photo" aria-label="Photorealistic office signage and wall wrap mockup">
             <div class="vinyl-preview">A calm place to begin healing.</div>
+            <img class="product-logo wall-sign-logo" src="assets/bapc-logo-transparent.png" alt="">
+            <p class="product-copy wall-sign-copy">
+              <span>Suite C 200</span>
+              <span>(251) 459-0200</span>
+            </p>
+            <img class="product-logo desk-sign-logo" src="assets/bapc-logo-transparent.png" alt="">
+            <p class="product-copy desk-sign-copy">
+              <span>Welcome. Please check in at the desk.</span>
+            </p>
+            <p class="product-copy wall-wrap-copy">
+              <span class="brand-pill">Vinyl wall wrap concept</span>
+            </p>
             <div class="photo-brand">
               <img src="assets/bapc-logo-transparent.png" alt="">
               <strong>Reception Signage</strong>
@@ -2136,6 +2355,18 @@
             </ul>
           </div>
           <div class="photo-stage digital-photo" aria-label="Photorealistic digital brand asset mockup">
+            <img class="product-logo screen-logo" src="assets/bapc-logo-transparent.png" alt="">
+            <p class="product-copy screen-copy">
+              <strong>A calm place to begin healing.</strong>
+              <span>Therapy in Mobile, Alabama</span>
+            </p>
+            <img class="product-logo phone-logo" src="assets/bapc-logo-transparent.png" alt="">
+            <p class="product-copy email-card-copy">
+              <span class="brand-pill">Email signature</span>
+            </p>
+            <p class="product-copy social-card-copy">
+              <span class="brand-pill">Social post</span>
+            </p>
             <div class="photo-brand">
               <img src="assets/bapc-logo-transparent.png" alt="">
               <strong>Digital Brand Kit</strong>
@@ -2161,6 +2392,18 @@
             </ul>
           </div>
           <div class="photo-stage stationery-photo" aria-label="Photorealistic logo and production kit mockup">
+            <img class="product-logo letterhead-logo" src="assets/bapc-logo-transparent.png" alt="">
+            <p class="product-copy letterhead-address">
+              <strong>Logo System</strong>
+              <span>Full color · mono · reversed · icon</span>
+              <span>bayareaprofessionalcounseling.com</span>
+            </p>
+            <img class="product-logo envelope-logo" src="assets/bapc-logo-transparent.png" alt="">
+            <p class="product-copy envelope-address">
+              <span>Production-ready files</span>
+              <span>Print, signage, digital, social</span>
+            </p>
+            <span class="product-line letterhead-rule"></span>
             <div class="photo-brand">
               <img src="assets/bapc-logo-transparent.png" alt="">
               <strong>Logo Package</strong>
