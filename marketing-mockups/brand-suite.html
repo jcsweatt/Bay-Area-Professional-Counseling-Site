@@ -428,16 +428,6 @@
         z-index: 4;
       }
 
-      .rack-card::before {
-        background: url("assets/watercolor-succulent-accent.png") center / contain no-repeat;
-        content: "";
-        inset: auto -36px -34px auto;
-        opacity: 0.08;
-        position: absolute;
-        height: 230px;
-        width: 280px;
-      }
-
       .business-front {
         background:
           radial-gradient(ellipse at 90% 82%, rgba(85, 98, 77, 0.08), transparent 28%),
@@ -701,284 +691,115 @@
         color: rgba(245, 240, 229, 0.84);
       }
 
-      .print-suite {
+      .suite-map {
         display: grid;
-        gap: 28px;
-        grid-template-columns: 0.72fr 1fr;
-      }
-
-      .rack-card {
-        aspect-ratio: 4 / 9;
-        background:
-          linear-gradient(rgba(245, 240, 229, 0.9), rgba(255, 253, 247, 0.94)),
-          var(--white);
-        border-radius: 28px;
-        box-shadow: var(--shadow);
-        overflow: hidden;
-        padding: 28px;
-        position: relative;
-      }
-
-      .rack-card::after {
-        background:
-          linear-gradient(rgba(57, 68, 55, 0.2), rgba(57, 68, 55, 0.42)),
-          url("../assets/redesign-hero-coastal-porch.jpg") center / cover no-repeat;
-        border-radius: 22px;
-        bottom: 28px;
-        content: "";
-        height: 36%;
-        left: 28px;
-        position: absolute;
-        right: 28px;
-      }
-
-      .rack-card h3 {
-        font-size: 2.75rem;
-        margin: 24px 0 15px;
-        max-width: 300px;
-        position: relative;
-        z-index: 1;
-      }
-
-      .rack-card p,
-      .rack-card ul {
-        color: var(--olive-2);
-        position: relative;
-        z-index: 1;
-      }
-
-      .rack-card ul {
-        display: grid;
-        gap: 9px;
-        list-style: none;
-        margin: 18px 0 0;
-        padding: 0;
-      }
-
-      .rack-card li::before {
-        color: var(--clay);
-        content: "• ";
-      }
-
-      .rack-logo {
-        height: 86px;
-        object-fit: contain;
-        object-position: left center;
-        width: 210px;
-      }
-
-      .flyer {
-        aspect-ratio: 8.5 / 11;
-        background:
-          radial-gradient(circle at 8% 92%, rgba(184, 121, 93, 0.08), transparent 24%),
-          radial-gradient(circle at 92% 8%, rgba(134, 201, 207, 0.13), transparent 26%),
-          radial-gradient(circle at 100% 100%, rgba(202, 209, 181, 0.18), transparent 34%),
-          var(--white);
-        border-radius: 28px;
-        box-shadow: var(--shadow);
-        overflow: hidden;
-        padding: 42px;
-        position: relative;
-      }
-
-      .flyer h3 {
-        font-size: 4rem;
-        margin: 22px 0 18px;
-        max-width: 580px;
-        position: relative;
-        z-index: 1;
-      }
-
-      .flyer p {
-        color: var(--olive-2);
-        font-size: 1.04rem;
-        max-width: 610px;
-        position: relative;
-        z-index: 1;
-      }
-
-      .flyer-grid {
-        display: grid;
-        gap: 18px;
+        gap: 22px;
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        margin: 34px 0;
-        position: relative;
-        z-index: 1;
       }
 
-      .flyer-tile {
-        background: rgba(202, 209, 181, 0.34);
-        border-radius: 22px;
-        min-height: 118px;
-        padding: 20px;
+      .suite-map.wide {
+        grid-template-columns: 1fr;
       }
 
-      .flyer-tile strong {
-        display: block;
-        font-family: var(--serif);
-        font-size: 1.35rem;
-        font-weight: 400;
-        margin-bottom: 8px;
-      }
-
-      .flyer-bottom {
-        align-items: end;
-        bottom: 42px;
-        display: flex;
-        gap: 28px;
-        justify-content: space-between;
-        left: 42px;
-        padding-top: 38px;
-        position: absolute;
-        right: 42px;
-        z-index: 1;
-      }
-
-      .flyer-bottom img {
-        width: 190px;
-      }
-
-      .digital-suite {
-        display: grid;
-        gap: 28px;
-        grid-template-columns: 1fr 0.72fr;
-      }
-
-      .social {
-        aspect-ratio: 1 / 1;
+      .system-card {
         background:
-          radial-gradient(circle at 24% 15%, rgba(245, 240, 229, 0.78), rgba(245, 240, 229, 0.28) 18%, transparent 32%),
-          linear-gradient(rgba(57, 68, 55, 0.5), rgba(57, 68, 55, 0.66)),
-          url("../assets/redesign-hero-coastal-porch.jpg") center / cover no-repeat;
-        border-radius: 38px;
-        box-shadow: var(--shadow);
-        color: var(--paper);
-        display: grid;
-        overflow: hidden;
-        padding: 42px;
-        position: relative;
-      }
-
-      .social::before {
-        display: none;
-      }
-
-      .social h3 {
-        align-self: end;
-        color: var(--paper);
-        font-size: 4.5rem;
-        max-width: 650px;
-        position: relative;
-        z-index: 1;
-      }
-
-      .social p {
-        color: rgba(245, 240, 229, 0.86);
-        font-size: 1.08rem;
-        max-width: 560px;
-        position: relative;
-        z-index: 1;
-      }
-
-      .social-logo {
-        filter:
-          drop-shadow(0 18px 28px rgba(48, 47, 35, 0.24))
-          drop-shadow(0 2px 1px rgba(255, 253, 247, 0.72));
-        position: relative;
-        width: 260px;
-        z-index: 1;
-      }
-
-      .letterhead {
-        aspect-ratio: 8.5 / 11;
-        background:
-          radial-gradient(circle at 100% 100%, rgba(202, 209, 181, 0.16), transparent 32%),
+          radial-gradient(circle at 100% 100%, rgba(202, 209, 181, 0.18), transparent 28%),
+          linear-gradient(135deg, rgba(255, 253, 247, 0.96), rgba(245, 240, 229, 0.82)),
           var(--white);
-        border-radius: 28px;
-        box-shadow: var(--shadow);
-        overflow: hidden;
-        padding: 40px;
-        position: relative;
-      }
-
-      .letterhead-header {
-        align-items: start;
-        border-bottom: 1px solid rgba(57, 68, 55, 0.14);
-        display: flex;
-        gap: 24px;
-        justify-content: space-between;
-        padding-bottom: 24px;
-        position: relative;
-        z-index: 1;
-      }
-
-      .letterhead-header img {
-        width: 220px;
-      }
-
-      .letterhead-header p {
-        color: var(--olive-2);
-        font-size: 0.82rem;
-        text-align: right;
-      }
-
-      .letter-copy {
-        color: var(--olive-2);
-        display: grid;
-        gap: 16px;
-        margin-top: 46px;
-        max-width: 620px;
-        position: relative;
-        z-index: 1;
-      }
-
-      .letter-copy h3 {
-        color: var(--olive);
-        font-size: 2.4rem;
-        margin-bottom: 10px;
-      }
-
-      .mini-suite {
-        display: grid;
-        gap: 28px;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-
-      .mini-piece {
-        background:
-          radial-gradient(circle at 12% 95%, rgba(184, 121, 93, 0.08), transparent 22%),
-          radial-gradient(circle at 100% 100%, rgba(202, 209, 181, 0.24), transparent 34%),
-          linear-gradient(rgba(255, 253, 247, 0.9), rgba(255, 253, 247, 0.98)),
-          var(--white);
+        border: 1px solid rgba(57, 68, 55, 0.06);
         border-radius: 30px;
         box-shadow: var(--soft-shadow);
-        min-height: 275px;
+        display: grid;
+        gap: 18px;
         overflow: hidden;
         padding: 28px;
         position: relative;
       }
 
-      .mini-piece::before {
-        display: none;
+      .system-card::after {
+        background: url("assets/watercolor-succulent-accent.png") center / contain no-repeat;
+        bottom: -38px;
+        content: "";
+        height: 170px;
+        opacity: 0.045;
+        pointer-events: none;
+        position: absolute;
+        right: -44px;
+        width: 230px;
       }
 
-      .mini-piece h3 {
-        font-size: 2rem;
-        margin: 20px 0 12px;
+      .system-card.featured {
+        grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+      }
+
+      .system-title {
         position: relative;
         z-index: 1;
       }
 
-      .mini-piece p {
+      .system-title h3 {
+        font-size: clamp(2rem, 3vw, 3rem);
+        margin-top: 8px;
+      }
+
+      .system-title p {
         color: var(--olive-2);
+        margin-top: 12px;
+        max-width: 560px;
+      }
+
+      .piece-grid {
+        display: grid;
+        gap: 12px;
         position: relative;
         z-index: 1;
       }
 
-      .mini-piece img {
-        position: relative;
-        width: 145px;
-        z-index: 1;
+      .piece-grid.two {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .piece {
+        background: rgba(255, 253, 247, 0.72);
+        border: 1px solid rgba(57, 68, 55, 0.055);
+        border-radius: 18px;
+        padding: 15px 16px;
+      }
+
+      .piece strong {
+        color: var(--olive);
+        display: block;
+        font-size: 0.95rem;
+        margin-bottom: 6px;
+      }
+
+      .piece p {
+        color: var(--olive-2);
+        font-size: 0.78rem;
+      }
+
+      .system-card.dark {
+        background:
+          radial-gradient(circle at 100% 100%, rgba(134, 201, 207, 0.14), transparent 28%),
+          linear-gradient(135deg, rgba(57, 68, 55, 0.98), rgba(57, 68, 55, 0.9)),
+          var(--olive);
+        color: var(--paper);
+      }
+
+      .system-card.dark .eyebrow,
+      .system-card.dark p,
+      .system-card.dark .piece p {
+        color: rgba(245, 240, 229, 0.78);
+      }
+
+      .system-card.dark .piece {
+        background: rgba(255, 253, 247, 0.08);
+        border-color: rgba(245, 240, 229, 0.1);
+      }
+
+      .system-card.dark .piece strong,
+      .system-card.dark .system-title h3 {
+        color: var(--paper);
       }
 
       .production-note {
@@ -1000,18 +821,15 @@
         }
 
         .hero,
-        .print-suite,
-        .digital-suite,
         .card-suite,
-        .mini-suite {
+        .suite-map,
+        .system-card.featured,
+        .piece-grid.two {
           grid-template-columns: 1fr;
         }
 
         .business-card,
-        .rack-card,
-        .flyer,
-        .letterhead,
-        .social {
+        .system-card {
           max-width: 680px;
         }
       }
@@ -1169,99 +987,201 @@
 
       <header class="suite-header">
         <div>
-          <span class="eyebrow">Referral + Community Pieces</span>
-          <h2>Print that feels useful, not salesy</h2>
+          <span class="eyebrow">Practice Collateral System</span>
+          <h2>A complete suite for real office life</h2>
         </div>
-        <p>These would work well for physician offices, schools, community partners, churches, and waiting rooms.</p>
+        <p>These pieces move the brand from a nice visual direction into practical tools the practice can actually use with clients, referral partners, and the community.</p>
       </header>
 
-      <section class="print-suite">
-        <article class="rack-card">
-          <img class="rack-logo" src="assets/bapc-logo-transparent.png" alt="Bay Area Professional Counseling logo">
-          <h3>When life asks for a steadier place to land.</h3>
-          <p>Thoughtful counseling for individuals, couples, families, children, and teens across Mobile, Alabama.</p>
-          <ul>
-            <li>Anxiety, depression, and stress</li>
-            <li>Trauma, grief, and life transitions</li>
-            <li>Children, teens, and family support</li>
-            <li>Addiction and recovery concerns</li>
-          </ul>
+      <section class="suite-map">
+        <article class="system-card">
+          <div class="system-title">
+            <span class="eyebrow">Letterhead</span>
+            <h3>Formal communication that still feels warm.</h3>
+            <p>Letterhead gives clinical, referral, and administrative communication a consistent identity without making it feel cold or corporate.</p>
+          </div>
+          <div class="piece-grid">
+            <div class="piece"><strong>Printed letterhead</strong><p>Needed for mailed correspondence, referral communication, and formal office documentation.</p></div>
+            <div class="piece"><strong>Digital letterhead template</strong><p>Needed so staff can create polished letters without rebuilding the layout each time.</p></div>
+            <div class="piece"><strong>Branded PDF template</strong><p>Needed for downloadable resources, policies, and client-facing documents that should feel official.</p></div>
+          </div>
         </article>
 
-        <article class="flyer">
-          <span class="eyebrow">Practice Flyer</span>
-          <h3>Choosing a therapist can feel personal because it is.</h3>
-          <p>Bay Area Professional Counseling offers welcoming, professional care with clinicians who support different ages, needs, and seasons of life.</p>
-          <div class="flyer-grid">
-            <div class="flyer-tile"><strong>Find fit</strong><p>Explore therapists by area of support, client focus, and availability.</p></div>
-            <div class="flyer-tile"><strong>Begin gently</strong><p>Start with a question, not a perfect script.</p></div>
-            <div class="flyer-tile"><strong>Bring the family</strong><p>Support is available for individuals, couples, children, teens, and families.</p></div>
-            <div class="flyer-tile"><strong>Stay local</strong><p>A Mobile, Alabama practice rooted in warm Gulf Coast care.</p></div>
+        <article class="system-card">
+          <div class="system-title">
+            <span class="eyebrow">Envelopes</span>
+            <h3>Privacy-minded mail that feels considered.</h3>
+            <p>Envelopes are small, but in healthcare-adjacent settings they signal professionalism, discretion, and care before the document is opened.</p>
           </div>
-          <div class="flyer-bottom">
-            <img src="assets/bapc-logo-transparent.png" alt="Bay Area Professional Counseling logo">
-            <p>(251) 459-0200<br>bayareacounselingmobile@gmail.com<br>6576 Airport Boulevard, Suite C 200</p>
+          <div class="piece-grid">
+            <div class="piece"><strong>#10 envelopes</strong><p>Needed for everyday mail, statements, letters, and referral correspondence.</p></div>
+            <div class="piece"><strong>Confidential document envelopes</strong><p>Needed for sensitive paperwork where privacy and seriousness should be immediately clear.</p></div>
+            <div class="piece"><strong>Thank-you note envelopes</strong><p>Needed to make referral appreciation and relationship-building feel complete, not improvised.</p></div>
+          </div>
+        </article>
+
+        <article class="system-card">
+          <div class="system-title">
+            <span class="eyebrow">Notecards</span>
+            <h3>Small gestures that build real relationships.</h3>
+            <p>Handwritten and semi-formal notes help the practice feel human while keeping community outreach aligned with the visual brand.</p>
+          </div>
+          <div class="piece-grid">
+            <div class="piece"><strong>Blank branded note cards</strong><p>Needed for flexible staff use: quick notes, community thanks, or special touchpoints.</p></div>
+            <div class="piece"><strong>Thank-you cards</strong><p>Needed for warm follow-up with referral partners, vendors, and community collaborators.</p></div>
+            <div class="piece"><strong>Referral appreciation cards</strong><p>Needed to nurture professional relationships without making outreach feel transactional.</p></div>
+          </div>
+        </article>
+
+        <article class="system-card dark">
+          <div class="system-title">
+            <span class="eyebrow">Client Welcome Materials</span>
+            <h3>A gentler first step for new clients.</h3>
+            <p>Welcome materials reduce uncertainty. They help clients understand what to expect, how to reach the office, and where to turn in urgent situations.</p>
+          </div>
+          <div class="piece-grid">
+            <div class="piece"><strong>Welcome letter</strong><p>Needed to make the first interaction feel personal, reassuring, and clear.</p></div>
+            <div class="piece"><strong>Practice overview</strong><p>Needed to explain who the practice serves, how care is approached, and what makes the team distinct.</p></div>
+            <div class="piece"><strong>Contact information</strong><p>Needed so clients always know how to reach the office for scheduling and general questions.</p></div>
+            <div class="piece"><strong>Office policies</strong><p>Needed to set expectations around appointments, communication, privacy, and administrative details.</p></div>
+            <div class="piece"><strong>Crisis resources</strong><p>Needed because clients should have immediate, clear support options outside routine office contact.</p></div>
+            <div class="piece"><strong>FAQ sheet</strong><p>Needed to answer common questions before anxiety has a chance to fill in the blanks.</p></div>
+          </div>
+        </article>
+      </section>
+
+      <section class="suite-map wide">
+        <article class="system-card featured">
+          <div class="system-title">
+            <span class="eyebrow">Intake Folder</span>
+            <h3>A calm, organized home for important paperwork.</h3>
+            <p>An intake folder turns forms, resources, and policy sheets into a single guided experience. It helps the office feel prepared and helps clients feel oriented.</p>
+          </div>
+          <div class="piece-grid two">
+            <div class="piece"><strong>Branded presentation folder</strong><p>Needed to hold client paperwork and make the handoff feel polished and intentional.</p></div>
+            <div class="piece"><strong>Pocket inserts</strong><p>Needed to separate forms, resources, and next-step instructions without overwhelming the client.</p></div>
+            <div class="piece"><strong>Resource sheets</strong><p>Needed for crisis support, community referrals, insurance notes, and practical care information.</p></div>
           </div>
         </article>
       </section>
 
       <header class="suite-header">
         <div>
-          <span class="eyebrow">Digital + Stationery</span>
-          <h2>Pieces for everyday use</h2>
+          <span class="eyebrow">Office Materials</span>
+          <h2>The physical space should feel branded, not decorated</h2>
         </div>
-        <p>Not everything needs to be printed. The same system can carry into social posts, email PDFs, referral letters, and handouts.</p>
+        <p>Office materials help the brand live quietly in the practice environment, from the exterior door to the waiting room and therapy-adjacent touchpoints.</p>
       </header>
 
-      <section class="digital-suite">
-        <article class="social">
-          <div>
-            <img class="social-logo" src="assets/bapc-logo-transparent.png" alt="Bay Area Professional Counseling logo">
+      <section class="suite-map">
+        <article class="system-card">
+          <div class="system-title">
+            <span class="eyebrow">Reception Signage</span>
+            <h3>Wayfinding that lowers friction.</h3>
+            <p>Clear signage helps clients know they are in the right place and makes the office feel steady before the first conversation begins.</p>
           </div>
-          <h3>Begin with a conversation.</h3>
-          <p>Thoughtful counseling care in Mobile, Alabama for anxiety, grief, trauma, relationships, family support, and life transitions.</p>
+          <div class="piece-grid">
+            <div class="piece"><strong>Exterior door sign</strong><p>Needed so clients can confidently identify the practice from the hallway or entrance.</p></div>
+            <div class="piece"><strong>Suite directory sign</strong><p>Needed for buildings where visitors may need confirmation before arriving at the office.</p></div>
+            <div class="piece"><strong>Reception desk sign</strong><p>Needed to create a warm branded moment at the first in-person touchpoint.</p></div>
+            <div class="piece"><strong>Waiting room information sign</strong><p>Needed for office hours, privacy reminders, crisis resources, and simple next steps.</p></div>
+            <div class="piece"><strong>Branded vinyl wall wrap</strong><p>Needed for an elegant, immersive office feature that supports the Southern botanical theme without overpowering the room.</p></div>
+          </div>
         </article>
 
-        <article class="letterhead">
-          <div class="letterhead-header">
-            <img src="assets/bapc-logo-transparent.png" alt="Bay Area Professional Counseling logo">
-            <p>6576 Airport Boulevard, Suite C 200<br>Mobile, AL 36608<br>(251) 459-0200</p>
+        <article class="system-card">
+          <div class="system-title">
+            <span class="eyebrow">Appointment Materials</span>
+            <h3>Small cards that prevent confusion.</h3>
+            <p>Appointment pieces are practical, but they also give clients something calm, simple, and easy to reference after they leave.</p>
           </div>
-          <div class="letter-copy">
-            <h3>Referral note template</h3>
-            <p>Dear colleague,</p>
-            <p>Thank you for connecting your client with Bay Area Professional Counseling. Our team provides compassionate support across a range of needs, including anxiety, depression, trauma, grief, addiction concerns, family support, and major life transitions.</p>
-            <p>We are happy to help clients explore therapist fit, scheduling, and next steps.</p>
+          <div class="piece-grid">
+            <div class="piece"><strong>Appointment reminder cards</strong><p>Needed for date, time, therapist, and office contact details.</p></div>
+            <div class="piece"><strong>Appointment policies card</strong><p>Needed to make expectations clear without burying clients in a packet.</p></div>
+            <div class="piece"><strong>Cancellation policy card</strong><p>Needed to communicate scheduling boundaries in a clean, non-punitive way.</p></div>
+          </div>
+        </article>
+
+        <article class="system-card">
+          <div class="system-title">
+            <span class="eyebrow">Office Decor Assets</span>
+            <h3>Meaningful walls, not filler art.</h3>
+            <p>Branded decor can make the office feel emotionally grounded while reinforcing the practice's voice and values.</p>
+          </div>
+          <div class="piece-grid">
+            <div class="piece"><strong>Framed mission statement</strong><p>Needed to make the practice's purpose visible to clients, staff, and visitors.</p></div>
+            <div class="piece"><strong>Branded artwork</strong><p>Needed to carry the calm botanical and Gulf Coast visual language into the physical space.</p></div>
+            <div class="piece"><strong>Values statement display</strong><p>Needed to communicate safety, respect, professionalism, and compassion in the office environment.</p></div>
           </div>
         </article>
       </section>
 
       <header class="suite-header">
         <div>
-          <span class="eyebrow">Small Brand Touchpoints</span>
-          <h2>Little pieces that make the practice feel considered</h2>
+          <span class="eyebrow">Digital Brand Assets</span>
+          <h2>The brand should work wherever clients find the practice</h2>
         </div>
+        <p>Digital assets make the visual system repeatable across the website, email, social media, PDFs, and future campaigns.</p>
       </header>
 
-      <section class="mini-suite">
-        <article class="mini-piece">
-          <img src="assets/bapc-logo-transparent.png" alt="">
-          <h3>Appointment reminder card</h3>
-          <p>A small take-home card with date, time, therapist name, and office information.</p>
+      <section class="suite-map">
+        <article class="system-card dark">
+          <div class="system-title">
+            <span class="eyebrow">Logo Package</span>
+            <h3>A flexible identity system.</h3>
+            <p>A logo package keeps the practice from stretching, cropping, or improvising the mark in different contexts.</p>
+          </div>
+          <div class="piece-grid">
+            <div class="piece"><strong>Full logo</strong><p>Needed for formal brand use and most printed materials.</p></div>
+            <div class="piece"><strong>Horizontal logo</strong><p>Needed for headers, email signatures, and narrow spaces.</p></div>
+            <div class="piece"><strong>Vertical logo</strong><p>Needed for social profiles, signage, and stacked layouts.</p></div>
+            <div class="piece"><strong>Icon mark</strong><p>Needed for favicons, small spaces, stickers, and subtle brand moments.</p></div>
+            <div class="piece"><strong>Monochrome versions</strong><p>Needed for single-color printing, embossing, debossing, and high-contrast use.</p></div>
+          </div>
         </article>
-        <article class="mini-piece">
-          <img src="assets/bapc-logo-transparent.png" alt="">
-          <h3>Resource handout cover</h3>
-          <p>A branded cover for grounding exercises, parent resources, or community referral lists.</p>
+
+        <article class="system-card">
+          <div class="system-title">
+            <span class="eyebrow">Social Media Kit</span>
+            <h3>Consistency without constant redesign.</h3>
+            <p>Social templates help the practice post with polish while keeping content approachable, recognizable, and easy to maintain.</p>
+          </div>
+          <div class="piece-grid">
+            <div class="piece"><strong>Profile images</strong><p>Needed for consistent identity across platforms.</p></div>
+            <div class="piece"><strong>Cover images</strong><p>Needed for branded first impressions on social pages.</p></div>
+            <div class="piece"><strong>Post templates</strong><p>Needed for announcements, reminders, therapist features, and educational content.</p></div>
+            <div class="piece"><strong>Story templates</strong><p>Needed for quick, polished updates that still feel on brand.</p></div>
+          </div>
         </article>
-        <article class="mini-piece">
-          <img src="assets/bapc-logo-transparent.png" alt="">
-          <h3>Thank-you note</h3>
-          <p>A simple note card for referral partners and community relationships.</p>
+
+        <article class="system-card">
+          <div class="system-title">
+            <span class="eyebrow">Email Branding</span>
+            <h3>Every inbox touchpoint should feel legitimate.</h3>
+            <p>Email branding helps routine communication feel official, warm, and easy to recognize.</p>
+          </div>
+          <div class="piece-grid">
+            <div class="piece"><strong>Email signature</strong><p>Needed for staff consistency, contact details, and a polished everyday presence.</p></div>
+            <div class="piece"><strong>Newsletter template</strong><p>Needed for future updates, community education, and practice announcements.</p></div>
+          </div>
+        </article>
+
+        <article class="system-card">
+          <div class="system-title">
+            <span class="eyebrow">Website Assets</span>
+            <h3>Reusable pieces for a living website.</h3>
+            <p>Website assets keep future pages, updates, and therapist content from drifting away from the redesigned brand.</p>
+          </div>
+          <div class="piece-grid">
+            <div class="piece"><strong>Homepage graphics</strong><p>Needed to extend the soft Southern botanical language without rethinking the hero every time.</p></div>
+            <div class="piece"><strong>Service icons</strong><p>Needed to explain areas of support in a simple, warm, scannable way.</p></div>
+            <div class="piece"><strong>Team bio templates</strong><p>Needed so new therapist profiles stay consistent with the redesigned staff pages.</p></div>
+            <div class="piece"><strong>Contact page graphics</strong><p>Needed to keep the request/intake experience visually aligned with the rest of the site.</p></div>
+          </div>
         </article>
       </section>
 
-      <p class="production-note"><strong>Production note:</strong> this is still a visual suite mockup. The next pass can turn selected pieces into print-ready PDFs with exact dimensions, bleed, crop marks, rounded-corner safe zones, final therapist/legal wording, and printer-specific requirements.</p>
+      <p class="production-note"><strong>Production note:</strong> this is still a visual suite mockup. The next pass can turn selected pieces into print-ready PDFs, editable templates, signage specs, and export-ready digital assets with final dimensions, safe zones, and production notes.</p>
     </main>
     <script>
       if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
