@@ -148,31 +148,202 @@
       }
 
       .hero-logo {
-        background: rgba(255, 253, 247, 0.72);
-        border: 1px solid rgba(57, 68, 55, 0.08);
-        border-radius: 36px;
-        box-shadow: var(--soft-shadow);
-        padding: 38px;
-        transform: rotate(1.2deg);
-        width: min(520px, 90%);
+        position: relative;
+        width: min(560px, 88%);
+        z-index: 1;
       }
 
       .hero-logo img {
         display: block;
+        filter:
+          drop-shadow(0 16px 26px rgba(48, 47, 35, 0.12))
+          drop-shadow(0 2px 1px rgba(255, 253, 247, 0.35));
         width: 100%;
       }
 
       .palette {
-        display: flex;
+        display: grid;
         gap: 10px;
-        margin-top: 24px;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        margin-top: 28px;
+        max-width: 620px;
       }
 
       .swatch {
+        align-content: end;
+        background: var(--white);
         border: 1px solid rgba(57, 68, 55, 0.08);
+        border-radius: 18px;
+        box-shadow: 0 8px 18px rgba(48, 47, 35, 0.06);
+        display: grid;
+        min-height: 82px;
+        overflow: hidden;
+        padding: 9px;
+        position: relative;
+      }
+
+      .swatch::before {
+        background: var(--tone);
+        content: "";
+        inset: 0 0 28px;
+        position: absolute;
+      }
+
+      .swatch strong,
+      .swatch span {
+        color: var(--olive);
+        display: block;
+        font-size: 0.58rem;
+        line-height: 1.2;
+        position: relative;
+        z-index: 1;
+      }
+
+      .swatch strong {
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .swatch span {
+        color: var(--olive-2);
+        font-size: 0.56rem;
+      }
+
+      .strategy-grid {
+        display: grid;
+        gap: 24px;
+        grid-template-columns: 0.95fr 1.05fr;
+        margin-top: 30px;
+      }
+
+      .story-card,
+      .palette-card,
+      .intent-card {
+        background:
+          linear-gradient(rgba(255, 253, 247, 0.82), rgba(255, 253, 247, 0.92)),
+          var(--white);
+        border: 1px solid rgba(57, 68, 55, 0.08);
+        border-radius: 34px;
+        box-shadow: var(--soft-shadow);
+        overflow: hidden;
+        padding: 32px;
+        position: relative;
+      }
+
+      .story-card::before,
+      .palette-card::before,
+      .intent-card::before {
+        background: url("../assets/redesign-therapists-succulents.jpg") right bottom / 52% auto no-repeat;
+        bottom: -30px;
+        content: "";
+        height: 210px;
+        opacity: 0.11;
+        position: absolute;
+        right: -26px;
+        width: 360px;
+      }
+
+      .story-card h2,
+      .palette-card h2 {
+        font-size: clamp(2rem, 3.3vw, 3.05rem);
+        margin-bottom: 18px;
+        max-width: 620px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .story-card p,
+      .palette-card p,
+      .intent-card p {
+        color: var(--olive-2);
+        position: relative;
+        z-index: 1;
+      }
+
+      .story-points {
+        display: grid;
+        gap: 14px;
+        margin-top: 22px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .story-point {
+        border-left: 2px solid rgba(184, 121, 93, 0.4);
+        padding-left: 15px;
+      }
+
+      .story-point strong {
+        color: var(--olive);
+        display: block;
+        font-size: 0.82rem;
+        letter-spacing: 0.12em;
+        margin-bottom: 4px;
+        text-transform: uppercase;
+      }
+
+      .color-table {
+        display: grid;
+        gap: 10px;
+        margin-top: 22px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .color-row {
+        align-items: center;
+        background: rgba(245, 240, 229, 0.62);
+        border-radius: 16px;
+        display: grid;
+        gap: 12px;
+        grid-template-columns: 38px 1fr auto;
+        padding: 10px 12px;
+      }
+
+      .color-dot {
+        background: var(--tone);
+        border: 1px solid rgba(57, 68, 55, 0.1);
         border-radius: 999px;
-        height: 34px;
-        width: 34px;
+        height: 32px;
+        width: 32px;
+      }
+
+      .color-row strong {
+        color: var(--olive);
+        display: block;
+        font-size: 0.82rem;
+      }
+
+      .color-row span {
+        color: var(--olive-2);
+        font-size: 0.78rem;
+      }
+
+      .color-row code {
+        color: var(--olive);
+        font-family: var(--sans);
+        font-size: 0.76rem;
+        font-weight: 700;
+      }
+
+      .intent-strip {
+        display: grid;
+        gap: 18px;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        margin-top: 24px;
+      }
+
+      .intent-card {
+        min-height: 190px;
+        padding: 26px;
+      }
+
+      .intent-card h3 {
+        font-size: 1.8rem;
+        margin-bottom: 12px;
+        position: relative;
+        z-index: 1;
       }
 
       .suite-header {
@@ -220,7 +391,7 @@
         aspect-ratio: 3.5 / 2;
         border-radius: 0.18in;
         box-shadow: var(--shadow);
-        min-height: 232px;
+        min-height: 238px;
         overflow: hidden;
         position: relative;
       }
@@ -241,79 +412,89 @@
 
       .business-front {
         background:
-          linear-gradient(120deg, rgba(255, 253, 247, 0.92) 0 57%, rgba(202, 209, 181, 0.82) 57%),
+          linear-gradient(120deg, rgba(255, 253, 247, 0.96) 0 64%, rgba(202, 209, 181, 0.78) 64%),
           var(--white);
-        display: grid;
-        grid-template-columns: 1fr 0.92fr;
-        padding: 24px;
+        padding: 22px 23px;
       }
 
       .business-front.alt {
         background:
           radial-gradient(circle at 16% 16%, rgba(134, 201, 207, 0.16), transparent 28%),
           linear-gradient(135deg, var(--linen), var(--white));
+        display: grid;
+        place-items: center start;
       }
 
       .business-front.deep {
         background:
-          linear-gradient(rgba(57, 68, 55, 0.9), rgba(57, 68, 55, 0.88)),
+          linear-gradient(100deg, rgba(245, 240, 229, 0.88) 0 43%, rgba(57, 68, 55, 0.9) 43% 100%),
           url("../assets/redesign-profile-grass.jpg") right bottom / cover no-repeat;
-        color: var(--paper);
+        color: var(--olive);
+        display: grid;
+        place-items: center start;
       }
 
       .business-logo {
-        height: 74px;
+        height: 58px;
+        margin-bottom: 18px;
         object-fit: contain;
         object-position: left center;
-        width: 160px;
+        width: 140px;
       }
 
       .business-front.deep .business-logo {
-        background: rgba(255, 253, 247, 0.76);
-        border-radius: 18px;
-        padding: 8px;
+        filter: drop-shadow(0 10px 16px rgba(48, 47, 35, 0.12));
       }
 
       .business-info {
-        align-content: end;
+        align-content: center;
         display: grid;
+        max-width: 56%;
         position: relative;
         z-index: 1;
       }
 
+      .business-front.alt .business-info,
+      .business-front.deep .business-info {
+        max-width: 76%;
+      }
+
       .business-photo {
-        align-self: stretch;
-        border-radius: 24px;
+        border-radius: 0 0.18in 0.18in 30px;
+        bottom: 0;
         height: 100%;
         object-fit: cover;
-        position: relative;
-        width: 100%;
+        object-position: center 17%;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 38%;
         z-index: 1;
       }
 
       .business-info h3 {
         color: inherit;
-        font-size: 1.56rem;
+        font-size: 1.5rem;
         margin-bottom: 5px;
       }
 
       .credentials {
         color: var(--clay);
-        font-size: 0.72rem;
+        font-size: 0.67rem;
         font-weight: 800;
         letter-spacing: 0.15em;
-        margin-bottom: 12px;
+        margin-bottom: 10px;
         text-transform: uppercase;
       }
 
       .deep .credentials {
-        color: var(--sand);
+        color: var(--clay);
       }
 
       .business-info p {
         color: currentColor;
-        font-size: 0.75rem;
-        max-width: 230px;
+        font-size: 0.72rem;
+        max-width: 215px;
         opacity: 0.82;
       }
 
@@ -323,7 +504,8 @@
           linear-gradient(150deg, rgba(245, 240, 229, 0.94), rgba(255, 253, 247, 0.8)),
           var(--paper);
         display: grid;
-        padding: 24px;
+        gap: 12px;
+        padding: 22px 23px;
       }
 
       .business-back.dark {
@@ -337,10 +519,10 @@
 
       .tagline {
         font-family: var(--serif);
-        font-size: 1.52rem;
+        font-size: 1.36rem;
         letter-spacing: -0.04em;
         line-height: 1.05;
-        max-width: 265px;
+        max-width: 245px;
       }
 
       .micro {
@@ -354,8 +536,9 @@
 
       .contact-lines {
         display: grid;
-        gap: 5px;
-        font-size: 0.78rem;
+        gap: 6px;
+        font-size: 0.7rem;
+        line-height: 1.28;
         position: relative;
         z-index: 1;
       }
@@ -370,7 +553,7 @@
       .pill-row {
         display: flex;
         flex-wrap: wrap;
-        gap: 6px;
+        gap: 5px;
         position: relative;
         z-index: 1;
       }
@@ -379,8 +562,8 @@
         background: rgba(57, 68, 55, 0.08);
         border-radius: 999px;
         color: var(--olive-2);
-        font-size: 0.64rem;
-        padding: 5px 9px;
+        font-size: 0.58rem;
+        padding: 4px 8px;
       }
 
       .dark .pill-row span {
@@ -539,7 +722,7 @@
       .social {
         aspect-ratio: 1 / 1;
         background:
-          linear-gradient(rgba(57, 68, 55, 0.28), rgba(57, 68, 55, 0.54)),
+          linear-gradient(120deg, rgba(245, 240, 229, 0.88) 0 38%, rgba(57, 68, 55, 0.24) 38% 58%, rgba(57, 68, 55, 0.58) 58% 100%),
           url("../assets/redesign-hero-coastal-porch.jpg") center / cover no-repeat;
         border-radius: 38px;
         box-shadow: var(--shadow);
@@ -572,6 +755,15 @@
         font-size: 1.08rem;
         max-width: 560px;
         position: relative;
+        z-index: 1;
+      }
+
+      .social-logo {
+        filter:
+          drop-shadow(0 14px 24px rgba(48, 47, 35, 0.18))
+          drop-shadow(0 2px 1px rgba(255, 253, 247, 0.5));
+        position: relative;
+        width: 245px;
         z-index: 1;
       }
 
@@ -720,11 +912,11 @@
           <h1>Soft print pieces with a little Southern air.</h1>
           <p>A more elevated collateral direction for Bay Area Professional Counseling: rounded corners, tactile paper tones, quiet succulents, warm mossy greens, and enough structure to feel professional without becoming sterile.</p>
           <div class="palette" aria-label="Color palette">
-            <span class="swatch" style="background:#f5f0e5"></span>
-            <span class="swatch" style="background:#cad1b5"></span>
-            <span class="swatch" style="background:#394437"></span>
-            <span class="swatch" style="background:#b8795d"></span>
-            <span class="swatch" style="background:#86c9cf"></span>
+            <span class="swatch" style="--tone:#f5f0e5"><strong>Warm Paper</strong><span>#F5F0E5</span></span>
+            <span class="swatch" style="--tone:#cad1b5"><strong>Soft Sage</strong><span>#CAD1B5</span></span>
+            <span class="swatch" style="--tone:#394437"><strong>Moss Ink</strong><span>#394437</span></span>
+            <span class="swatch" style="--tone:#b8795d"><strong>Clay Bloom</strong><span>#B8795D</span></span>
+            <span class="swatch" style="--tone:#86c9cf"><strong>Gulf Aqua</strong><span>#86C9CF</span></span>
           </div>
         </div>
         <div class="hero-specimen">
@@ -732,6 +924,51 @@
             <img src="assets/bapc-logo-transparent.png" alt="Bay Area Professional Counseling logo">
           </div>
         </div>
+      </section>
+
+      <section class="strategy-grid" aria-label="Design strategy">
+        <article class="story-card">
+          <span class="eyebrow">The Story</span>
+          <h2>A practice identity that feels grounded before a client ever calls.</h2>
+          <p>This suite is built around the idea that reaching out for therapy is both practical and emotional. The materials should feel organized enough to build trust, but soft enough to lower the temperature in the room. The design borrows from the website's Gulf Coast porch, quiet succulents, moss, paper texture, and rounded containers so every touchpoint feels like part of the same calm practice experience.</p>
+          <div class="story-points">
+            <div class="story-point"><strong>Rounded corners</strong><p>Chosen because they echo the website containers and feel approachable in hand. No sharp square cards, no clinical edge.</p></div>
+            <div class="story-point"><strong>Transparent logo treatment</strong><p>The logo sits directly on paper, color, or imagery. It is not boxed in, because the transparency should feel lighter and more integrated.</p></div>
+            <div class="story-point"><strong>Botanical texture</strong><p>Succulents and grasses are intentionally low contrast, used as atmosphere rather than decoration that competes with names, credentials, or contact details.</p></div>
+          </div>
+        </article>
+
+        <article class="palette-card">
+          <span class="eyebrow">Color System</span>
+          <h2>Earth tones with one coastal lift.</h2>
+          <p>The palette keeps the therapy brand warm and grounded while preserving the original logo's blue-green water note. Colors are named so the suite can become a repeatable system instead of one-off pieces.</p>
+          <div class="color-table">
+            <div class="color-row"><span class="color-dot" style="--tone:#f5f0e5"></span><span><strong>Warm Paper</strong>Primary background for calm, printable warmth.</span><code>#F5F0E5</code></div>
+            <div class="color-row"><span class="color-dot" style="--tone:#cad1b5"></span><span><strong>Soft Sage</strong>Gentle panels, therapy warmth, growth symbolism.</span><code>#CAD1B5</code></div>
+            <div class="color-row"><span class="color-dot" style="--tone:#394437"></span><span><strong>Moss Ink</strong>Primary text and premium dark-card moments.</span><code>#394437</code></div>
+            <div class="color-row"><span class="color-dot" style="--tone:#55624d"></span><span><strong>Olive Soft</strong>Secondary copy and quiet structure.</span><code>#55624D</code></div>
+            <div class="color-row"><span class="color-dot" style="--tone:#b8795d"></span><span><strong>Clay Bloom</strong>Small accents for warmth and humanity.</span><code>#B8795D</code></div>
+            <div class="color-row"><span class="color-dot" style="--tone:#86c9cf"></span><span><strong>Gulf Aqua</strong>Restrained nod to the logo's water element.</span><code>#86C9CF</code></div>
+          </div>
+        </article>
+      </section>
+
+      <section class="intent-strip" aria-label="Suite principles">
+        <article class="intent-card">
+          <span class="eyebrow">Principle 01</span>
+          <h3>Readable first.</h3>
+          <p>Names, credentials, phone numbers, and location should always win. Decorative elements stay behind the message.</p>
+        </article>
+        <article class="intent-card">
+          <span class="eyebrow">Principle 02</span>
+          <h3>Human, not precious.</h3>
+          <p>The suite should feel beautiful, but still useful for referrals, waiting rooms, business cards, and everyday office communication.</p>
+        </article>
+        <article class="intent-card">
+          <span class="eyebrow">Principle 03</span>
+          <h3>Consistent by design.</h3>
+          <p>Repeated color, corner radius, typography, and subtle foliage keep each piece recognizable without making every item identical.</p>
+        </article>
       </section>
 
       <header class="suite-header">
@@ -857,7 +1094,7 @@
       <section class="digital-suite">
         <article class="social">
           <div>
-            <img src="assets/bapc-logo-transparent.png" alt="Bay Area Professional Counseling logo" style="background:rgba(255,253,247,.72);border-radius:22px;padding:12px;width:220px">
+            <img class="social-logo" src="assets/bapc-logo-transparent.png" alt="Bay Area Professional Counseling logo">
           </div>
           <h3>Begin with a conversation.</h3>
           <p>Thoughtful counseling care in Mobile, Alabama for anxiety, grief, trauma, relationships, family support, and life transitions.</p>
