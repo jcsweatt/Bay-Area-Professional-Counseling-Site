@@ -91,16 +91,7 @@
       }
 
       .hero::before {
-        background:
-          linear-gradient(to top, rgba(245, 240, 229, 0.54), rgba(245, 240, 229, 0.32) 58%, rgba(245, 240, 229, 0)),
-          url("../assets/redesign-footer-marsh.jpg") center bottom / cover no-repeat;
-        bottom: -34px;
-        content: "";
-        height: 250px;
-        left: 0;
-        opacity: 0.52;
-        position: absolute;
-        right: 0;
+        display: none;
       }
 
       .hero::after {
@@ -165,9 +156,9 @@
       .palette {
         display: grid;
         gap: 10px;
-        grid-template-columns: repeat(5, minmax(0, 1fr));
+        grid-template-columns: repeat(6, minmax(0, 1fr));
         margin-top: 28px;
-        max-width: 620px;
+        max-width: 760px;
       }
 
       .swatch {
@@ -403,32 +394,18 @@
         overflow: hidden;
         position: relative;
         transform-origin: center center;
-        transition: box-shadow 240ms ease, transform 240ms ease;
+        transform: perspective(900px) rotateY(0deg) rotateX(0deg) translateY(0);
+        transition: box-shadow 220ms ease, transform 160ms ease;
       }
 
       .business-card:hover {
-        animation: card-rock 820ms ease-in-out;
         box-shadow: 0 30px 68px rgba(48, 47, 35, 0.2);
-        transform: translateY(-8px) rotate(-0.7deg);
+        transform:
+          perspective(900px)
+          rotateY(calc(var(--tilt-x, 0) * 1deg))
+          rotateX(calc(var(--tilt-y, 0) * 1deg))
+          translateY(-8px);
         z-index: 4;
-      }
-
-      @keyframes card-rock {
-        0% {
-          transform: translateY(-8px) rotate(0deg);
-        }
-
-        28% {
-          transform: translateY(-8px) rotate(-1.15deg);
-        }
-
-        58% {
-          transform: translateY(-8px) rotate(0.9deg);
-        }
-
-        100% {
-          transform: translateY(-8px) rotate(-0.7deg);
-        }
       }
 
       .rack-card::before,
@@ -734,7 +711,6 @@
 
       .flyer-bottom {
         align-items: end;
-        background: linear-gradient(to bottom, rgba(255, 253, 247, 0), rgba(255, 253, 247, 0.82) 24%, rgba(255, 253, 247, 0.96));
         bottom: 42px;
         display: flex;
         gap: 28px;
@@ -953,6 +929,7 @@
             <span class="swatch" style="--tone:#f5f0e5"><strong>Warm Paper</strong><span>#F5F0E5</span></span>
             <span class="swatch" style="--tone:#cad1b5"><strong>Soft Sage</strong><span>#CAD1B5</span></span>
             <span class="swatch" style="--tone:#394437"><strong>Moss Ink</strong><span>#394437</span></span>
+            <span class="swatch" style="--tone:#55624d"><strong>Olive Soft</strong><span>#55624D</span></span>
             <span class="swatch" style="--tone:#b8795d"><strong>Clay Bloom</strong><span>#B8795D</span></span>
             <span class="swatch" style="--tone:#86c9cf"><strong>Gulf Aqua</strong><span>#86C9CF</span></span>
           </div>
@@ -1179,5 +1156,23 @@
 
       <p class="production-note"><strong>Production note:</strong> this is still a visual suite mockup. The next pass can turn selected pieces into print-ready PDFs with exact dimensions, bleed, crop marks, rounded-corner safe zones, final therapist/legal wording, and printer-specific requirements.</p>
     </main>
+    <script>
+      if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+        document.querySelectorAll(".business-card").forEach((card) => {
+          card.addEventListener("mousemove", (event) => {
+            const rect = card.getBoundingClientRect();
+            const x = (event.clientX - rect.left) / rect.width - 0.5;
+            const y = (event.clientY - rect.top) / rect.height - 0.5;
+            card.style.setProperty("--tilt-x", `${x * 7}`);
+            card.style.setProperty("--tilt-y", `${y * -4}`);
+          });
+
+          card.addEventListener("mouseleave", () => {
+            card.style.setProperty("--tilt-x", "0");
+            card.style.setProperty("--tilt-y", "0");
+          });
+        });
+      }
+    </script>
   </body>
 </html>
