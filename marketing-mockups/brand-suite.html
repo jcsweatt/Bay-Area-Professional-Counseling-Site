@@ -408,10 +408,7 @@
         z-index: 4;
       }
 
-      .rack-card::before,
-      .flyer::before,
-      .letterhead::before,
-      .social::before {
+      .rack-card::before {
         background: url("../assets/redesign-gallery-succulents.jpg") right bottom / 74% auto no-repeat;
         content: "";
         inset: auto -18px -20px auto;
@@ -663,12 +660,6 @@
         position: relative;
       }
 
-      .flyer::before {
-        height: 330px;
-        opacity: 0.12;
-        width: 480px;
-      }
-
       .flyer h3 {
         font-size: 4rem;
         margin: 22px 0 18px;
@@ -748,11 +739,7 @@
       }
 
       .social::before {
-        background: url("../assets/redesign-moss-corner.jpg") top right / contain no-repeat;
-        inset: 0 0 auto auto;
-        height: 250px;
-        opacity: 0.18;
-        width: 360px;
+        display: none;
       }
 
       .social h3 {
@@ -789,12 +776,6 @@
         overflow: hidden;
         padding: 40px;
         position: relative;
-      }
-
-      .letterhead::before {
-        height: 250px;
-        opacity: 0.12;
-        width: 380px;
       }
 
       .letterhead-header {
@@ -842,6 +823,7 @@
 
       .mini-piece {
         background:
+          radial-gradient(circle at 100% 100%, rgba(202, 209, 181, 0.24), transparent 34%),
           linear-gradient(rgba(255, 253, 247, 0.9), rgba(255, 253, 247, 0.98)),
           var(--white);
         border-radius: 30px;
@@ -853,14 +835,7 @@
       }
 
       .mini-piece::before {
-        background: url("../assets/redesign-therapists-succulents.jpg") right bottom / 72% auto no-repeat;
-        bottom: -28px;
-        content: "";
-        height: 190px;
-        opacity: 0.13;
-        position: absolute;
-        right: -28px;
-        width: 280px;
+        display: none;
       }
 
       .mini-piece h3 {
