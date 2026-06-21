@@ -2143,6 +2143,26 @@
         width: 168px;
       }
 
+      .letterhead-proof {
+        border-radius: 4px;
+        box-shadow:
+          0 10px 24px rgba(48, 47, 35, 0.16),
+          0 1px 2px rgba(48, 47, 35, 0.1);
+        display: block;
+        left: 96px;
+        position: absolute;
+        top: 54px;
+        transform: rotate(-6deg);
+        width: 218px;
+        z-index: 5;
+      }
+
+      .stationery-template .letterhead-logo,
+      .stationery-template .letterhead-address,
+      .stationery-template .letterhead-rule {
+        display: none;
+      }
+
       .production-note {
         background: rgba(202, 209, 181, 0.34);
         border: 1px solid rgba(57, 68, 55, 0.08);
@@ -2387,7 +2407,8 @@
               <li><strong>Blank note cards, thank-you cards, and referral appreciation cards</strong> for warm community follow-up.</li>
             </ul>
           </div>
-          <div class="photo-stage stationery-photo" aria-label="Photorealistic stationery mockup">
+          <div class="photo-stage stationery-photo stationery-template" aria-label="Photorealistic stationery mockup">
+            <img class="letterhead-proof" src="assets/letterhead-template-proof.jpg" alt="Bay Area Professional Counseling letterhead proof">
             <img class="product-logo letterhead-logo" src="assets/bapc-logo-transparent.png" alt="">
             <p class="product-copy letterhead-address">
               <strong>Begin with care.</strong>
