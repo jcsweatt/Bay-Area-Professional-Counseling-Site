@@ -344,6 +344,103 @@
         margin-top: 24px;
       }
 
+      .rationale-card {
+        background:
+          radial-gradient(circle at 92% 14%, rgba(134, 201, 207, 0.12), transparent 24%),
+          radial-gradient(circle at 12% 100%, rgba(202, 209, 181, 0.22), transparent 28%),
+          linear-gradient(135deg, rgba(255, 253, 247, 0.96), rgba(245, 240, 229, 0.86)),
+          var(--white);
+        border: 1px solid rgba(57, 68, 55, 0.07);
+        border-radius: 34px;
+        box-shadow: var(--soft-shadow);
+        display: grid;
+        gap: 28px;
+        grid-template-columns: 0.74fr 1.26fr;
+        margin-top: 30px;
+        overflow: hidden;
+        padding: 34px;
+        position: relative;
+      }
+
+      .rationale-card::after {
+        background: url("assets/watercolor-succulent-accent.png") center / contain no-repeat;
+        bottom: -62px;
+        content: "";
+        height: 260px;
+        opacity: 0.055;
+        pointer-events: none;
+        position: absolute;
+        right: -62px;
+        width: 340px;
+      }
+
+      .rationale-card h2 {
+        font-size: clamp(2.15rem, 3.6vw, 3.4rem);
+        margin-top: 10px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .rationale-card p,
+      .rationale-card li {
+        color: var(--olive-2);
+      }
+
+      .rationale-copy,
+      .rationale-notes {
+        position: relative;
+        z-index: 1;
+      }
+
+      .rationale-notes {
+        display: grid;
+        gap: 14px;
+      }
+
+      .rationale-note {
+        background: rgba(255, 253, 247, 0.68);
+        border: 1px solid rgba(57, 68, 55, 0.065);
+        border-radius: 22px;
+        padding: 18px 20px;
+      }
+
+      .rationale-note strong {
+        color: var(--olive);
+        display: block;
+        font-family: var(--serif);
+        font-size: 1.35rem;
+        font-weight: 400;
+        letter-spacing: -0.03em;
+        margin-bottom: 6px;
+      }
+
+      .source-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        list-style: none;
+        margin: 22px 0 0;
+        padding: 0;
+      }
+
+      .source-list a {
+        background: rgba(57, 68, 55, 0.08);
+        border-radius: 999px;
+        color: var(--olive);
+        display: inline-flex;
+        font-size: 0.62rem;
+        font-weight: 800;
+        letter-spacing: 0.1em;
+        padding: 8px 10px;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+
+      .source-list a:hover,
+      .source-list a:focus-visible {
+        background: rgba(57, 68, 55, 0.14);
+      }
+
       .intent-card {
         min-height: 190px;
         padding: 26px;
@@ -2206,6 +2303,7 @@
         }
 
         .hero,
+        .rationale-card,
         .card-suite,
         .suite-map,
         .system-card.featured,
@@ -2308,6 +2406,39 @@
             <div class="color-row"><span class="color-dot" style="--tone:#394437"></span><span><strong>Moss Ink</strong>Primary text and premium dark-card moments.</span><code>#394437</code></div>
           </div>
         </article>
+      </section>
+
+      <section class="rationale-card" aria-label="Color and botanical rationale">
+        <div class="rationale-copy">
+          <span class="eyebrow">Why This Direction Fits</span>
+          <h2>Calm, local, and quietly resilient.</h2>
+          <p>The suite uses warm paper, moss ink, soft sage, Gulf aqua, clay bloom, and low-contrast botanical artwork because the practice should feel both professional and familiar. The color choices lean into nature, calm, trust, and renewal, while the plant references keep the brand rooted in the Southern Gulf Coast instead of drifting into generic wellness design.</p>
+          <ul class="source-list" aria-label="Research and regional references">
+            <li><a href="https://www.verywellmind.com/color-psychology-green-2795817" target="_blank" rel="noreferrer">Green + Renewal</a></li>
+            <li><a href="https://www.verywellmind.com/the-color-psychology-of-blue-2795815" target="_blank" rel="noreferrer">Blue + Calm</a></li>
+            <li><a href="https://www.apa.org/monitor/2020/04/nurtured-nature" target="_blank" rel="noreferrer">Nature + Wellbeing</a></li>
+            <li><a href="https://www.britannica.com/plant/succulent" target="_blank" rel="noreferrer">Succulent Resilience</a></li>
+            <li><a href="https://bellingrath.org/" target="_blank" rel="noreferrer">Mobile Garden Context</a></li>
+          </ul>
+        </div>
+        <div class="rationale-notes">
+          <article class="rationale-note">
+            <strong>Green and sage lower the room temperature.</strong>
+            <p>Green is widely associated with nature, growth, calm, and renewal. For a counseling practice, that makes sage and moss useful foundations: they feel restorative without becoming loud or overly decorative.</p>
+          </article>
+          <article class="rationale-note">
+            <strong>Gulf aqua carries trust and place.</strong>
+            <p>Blue tones often read as peaceful, stable, and trustworthy. Here, the aqua also keeps a direct connection to the existing water mark in the logo and the Gulf Coast setting.</p>
+          </article>
+          <article class="rationale-note">
+            <strong>Succulents suggest resilience without shouting.</strong>
+            <p>Succulents are known for storing water and adapting to dry conditions, so they become a quiet metaphor for steadiness, resourcefulness, and growth through harder seasons.</p>
+          </article>
+          <article class="rationale-note">
+            <strong>Local growth makes the brand feel like home.</strong>
+            <p>Southern foliage, mossy greens, and garden references nod to the Mobile area and its familiar Gulf Coast landscape. That familiarity matters: the materials should feel like care from a local practice, not a template from anywhere.</p>
+          </article>
+        </div>
       </section>
 
       <section class="intent-strip" aria-label="Suite principles">
