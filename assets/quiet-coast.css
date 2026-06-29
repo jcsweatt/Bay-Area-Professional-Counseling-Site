@@ -680,6 +680,7 @@ button:disabled {
 
 .approach-card {
   display: grid;
+  position: relative;
   min-height: 185px;
   align-items: start;
   grid-template-columns: 74px 1fr;
@@ -692,6 +693,33 @@ button:disabled {
   box-shadow: var(--shadow-card);
   padding: 1.15rem;
   scroll-margin-top: 130px;
+  transition: border-color 220ms ease, box-shadow 220ms ease, transform 220ms ease;
+}
+
+.approach-card:target {
+  border-color: rgba(231, 179, 106, 0.86);
+  box-shadow:
+    0 0 0 4px rgba(231, 179, 106, 0.22),
+    0 20px 48px rgba(31, 89, 99, 0.14);
+  transform: translateY(-3px);
+}
+
+.approach-card:target::after {
+  content: "Selected approach";
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  border: 1px solid rgba(231, 179, 106, 0.4);
+  border-radius: var(--radius-pill);
+  background: rgba(251, 248, 242, 0.94);
+  color: var(--bapc-deep-bay);
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 850;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  padding: 0.42rem 0.58rem;
+  text-transform: uppercase;
 }
 
 .approach-icon {
@@ -1844,6 +1872,14 @@ legend {
     min-height: 0;
     grid-template-columns: 64px 1fr;
     padding: 1rem;
+  }
+
+  .approach-card:target::after {
+    position: static;
+    justify-self: start;
+    grid-column: 1 / -1;
+    grid-row: 1;
+    margin-bottom: 0.35rem;
   }
 
   .approach-icon {
