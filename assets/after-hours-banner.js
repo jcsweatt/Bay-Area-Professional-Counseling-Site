@@ -99,7 +99,7 @@
     notice.innerHTML =
       '<div class="container after-hours-inner">' +
         '<div class="after-hours-notice">' +
-        '<strong>After-hours support</strong>' +
+        '<strong>After-hours support</strong> ' +
         '<span>Our office is currently closed. If you or someone you know is in immediate danger or experiencing a medical emergency, ' +
         '<a href="tel:911">call 911</a> or go to the nearest emergency room. For mental health or ' +
         'substance use crisis support, <a href="tel:988">call</a> or <a href="sms:988">text 988</a>.</span>' +

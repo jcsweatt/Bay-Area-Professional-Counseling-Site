@@ -171,6 +171,11 @@ ul {
 }
 
 .after-hours-notice {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.35rem;
+  flex-wrap: wrap;
   border: 1px solid rgba(31, 89, 99, 0.12);
   border-radius: var(--radius-md);
   background: rgba(231, 223, 201, 0.5);
@@ -449,8 +454,8 @@ button:disabled {
 
 .support-panel {
   background:
-    linear-gradient(110deg, rgba(251, 248, 242, 0.94), rgba(251, 248, 242, 0.76)),
-    url("brand/watercolor/sage-wash.png") right center / 55% auto no-repeat,
+    linear-gradient(110deg, rgba(251, 248, 242, 0.88), rgba(251, 248, 242, 0.58)),
+    url("brand/watercolor/sage-wash.png") right center / 64% auto no-repeat,
     var(--bapc-warm-white);
 }
 
@@ -470,7 +475,7 @@ button:disabled {
 
 .support-card {
   background:
-    linear-gradient(rgba(251, 248, 242, 0.88), rgba(251, 248, 242, 0.88)),
+    linear-gradient(rgba(251, 248, 242, 0.76), rgba(251, 248, 242, 0.78)),
     url("brand/watercolor/blue-wash.png") center / cover no-repeat;
   transition: transform var(--transition-soft), border-color var(--transition-soft), box-shadow var(--transition-soft);
 }
@@ -549,8 +554,8 @@ button:disabled {
   overflow: hidden;
   padding: 4.5rem;
   background:
-    linear-gradient(96deg, rgba(251, 248, 242, 0.96), rgba(251, 248, 242, 0.78)),
-    url("brand/watercolor/mist-wash.png") right center / 62% auto no-repeat,
+    linear-gradient(96deg, rgba(251, 248, 242, 0.9), rgba(251, 248, 242, 0.58)),
+    url("brand/watercolor/mist-wash.png") right center / 70% auto no-repeat,
     var(--bapc-warm-white);
 }
 
@@ -592,7 +597,7 @@ button:disabled {
 
 .about-hero {
   background:
-    linear-gradient(rgba(248, 245, 240, 0.72), rgba(248, 245, 240, 0.96)),
+    linear-gradient(rgba(248, 245, 240, 0.58), rgba(248, 245, 240, 0.9)),
     url("brand/watercolor/sand-wash.png") center top / 100% auto no-repeat;
 }
 
@@ -733,8 +738,8 @@ button:disabled {
   overflow: hidden;
   padding: 3rem;
   background:
-    linear-gradient(rgba(251, 248, 242, 0.91), rgba(251, 248, 242, 0.91)),
-    url("brand/watercolor/blue-wash.png") right center / 45% auto no-repeat,
+    linear-gradient(rgba(251, 248, 242, 0.8), rgba(251, 248, 242, 0.82)),
+    url("brand/watercolor/blue-wash.png") right center / 56% auto no-repeat,
     var(--bapc-warm-white);
 }
 
@@ -893,8 +898,8 @@ button:disabled {
   overflow: hidden;
   padding: clamp(1.25rem, 3vw, 2.5rem);
   background:
-    linear-gradient(rgba(251, 248, 242, 0.88), rgba(251, 248, 242, 0.88)),
-    url("brand/watercolor/sand-wash.png") left top / 52% auto no-repeat,
+    linear-gradient(rgba(251, 248, 242, 0.76), rgba(251, 248, 242, 0.82)),
+    url("brand/watercolor/sand-wash.png") left top / 62% auto no-repeat,
     url("brand/patterns/tide-lines.png") center / 760px auto repeat,
     var(--bapc-warm-white);
 }
