@@ -559,6 +559,28 @@ button:disabled {
   font-size: 1.08rem;
 }
 
+.contact-page-banner::after {
+  content: "";
+  position: absolute;
+  right: clamp(1rem, 4vw, 3.5rem);
+  bottom: -34px;
+  z-index: 0;
+  width: min(34vw, 360px);
+  aspect-ratio: 1.25;
+  background: url("brand/illustrations/pelican.png") center / contain no-repeat;
+  opacity: 0.24;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  -webkit-mask-image:
+    radial-gradient(ellipse at center, #000 0%, #000 54%, transparent 78%),
+    linear-gradient(90deg, transparent 0%, #000 14%, #000 86%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    radial-gradient(ellipse at center, #000 0%, #000 54%, transparent 78%),
+    linear-gradient(90deg, transparent 0%, #000 14%, #000 86%, transparent 100%);
+  mask-composite: intersect;
+}
+
 .about-hero-grid,
 .profile-banner,
 .contact-layout {
@@ -1141,7 +1163,36 @@ legend {
 }
 
 .insurance-panel {
+  position: relative;
+  overflow: hidden;
   margin-top: 3rem;
+}
+
+.insurance-panel > * {
+  position: relative;
+  z-index: 1;
+}
+
+.insurance-panel::after {
+  content: "";
+  position: absolute;
+  right: -42px;
+  bottom: -76px;
+  z-index: 0;
+  width: min(38vw, 420px);
+  aspect-ratio: 1.25;
+  background: url("brand/illustrations/shoreline.png") center / contain no-repeat;
+  opacity: 0.22;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  -webkit-mask-image:
+    radial-gradient(ellipse at center, #000 0%, #000 50%, transparent 76%),
+    linear-gradient(180deg, #000 0%, #000 72%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    radial-gradient(ellipse at center, #000 0%, #000 50%, transparent 76%),
+    linear-gradient(180deg, #000 0%, #000 72%, transparent 100%);
+  mask-composite: intersect;
 }
 
 .crisis-note {
