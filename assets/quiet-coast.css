@@ -171,6 +171,11 @@ ul {
 }
 
 .after-hours-notice {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.35rem;
+  flex-wrap: wrap;
   border: 1px solid rgba(31, 89, 99, 0.12);
   border-radius: var(--radius-md);
   background: rgba(231, 223, 201, 0.5);
@@ -449,8 +454,8 @@ button:disabled {
 
 .support-panel {
   background:
-    linear-gradient(110deg, rgba(251, 248, 242, 0.94), rgba(251, 248, 242, 0.76)),
-    url("brand/watercolor/sage-wash.png") right center / 55% auto no-repeat,
+    linear-gradient(110deg, rgba(251, 248, 242, 0.88), rgba(251, 248, 242, 0.58)),
+    url("brand/watercolor/sage-wash.png") right center / 64% auto no-repeat,
     var(--bapc-warm-white);
 }
 
@@ -470,7 +475,7 @@ button:disabled {
 
 .support-card {
   background:
-    linear-gradient(rgba(251, 248, 242, 0.88), rgba(251, 248, 242, 0.88)),
+    linear-gradient(rgba(251, 248, 242, 0.76), rgba(251, 248, 242, 0.78)),
     url("brand/watercolor/blue-wash.png") center / cover no-repeat;
   transition: transform var(--transition-soft), border-color var(--transition-soft), box-shadow var(--transition-soft);
 }
@@ -549,8 +554,8 @@ button:disabled {
   overflow: hidden;
   padding: 4.5rem;
   background:
-    linear-gradient(96deg, rgba(251, 248, 242, 0.96), rgba(251, 248, 242, 0.78)),
-    url("brand/watercolor/mist-wash.png") right center / 62% auto no-repeat,
+    linear-gradient(96deg, rgba(251, 248, 242, 0.9), rgba(251, 248, 242, 0.58)),
+    url("brand/watercolor/mist-wash.png") right center / 70% auto no-repeat,
     var(--bapc-warm-white);
 }
 
@@ -592,7 +597,7 @@ button:disabled {
 
 .about-hero {
   background:
-    linear-gradient(rgba(248, 245, 240, 0.72), rgba(248, 245, 240, 0.96)),
+    linear-gradient(rgba(248, 245, 240, 0.58), rgba(248, 245, 240, 0.9)),
     url("brand/watercolor/sand-wash.png") center top / 100% auto no-repeat;
 }
 
@@ -733,8 +738,8 @@ button:disabled {
   overflow: hidden;
   padding: 3rem;
   background:
-    linear-gradient(rgba(251, 248, 242, 0.91), rgba(251, 248, 242, 0.91)),
-    url("brand/watercolor/blue-wash.png") right center / 45% auto no-repeat,
+    linear-gradient(rgba(251, 248, 242, 0.8), rgba(251, 248, 242, 0.82)),
+    url("brand/watercolor/blue-wash.png") right center / 56% auto no-repeat,
     var(--bapc-warm-white);
 }
 
@@ -893,8 +898,8 @@ button:disabled {
   overflow: hidden;
   padding: clamp(1.25rem, 3vw, 2.5rem);
   background:
-    linear-gradient(rgba(251, 248, 242, 0.88), rgba(251, 248, 242, 0.88)),
-    url("brand/watercolor/sand-wash.png") left top / 52% auto no-repeat,
+    linear-gradient(rgba(251, 248, 242, 0.76), rgba(251, 248, 242, 0.82)),
+    url("brand/watercolor/sand-wash.png") left top / 62% auto no-repeat,
     url("brand/patterns/tide-lines.png") center / 760px auto repeat,
     var(--bapc-warm-white);
 }
@@ -1228,25 +1233,31 @@ legend {
 
 .footer-grid {
   display: grid;
-  gap: 2rem;
-  grid-template-columns: 1.25fr 0.8fr 1fr;
-  padding-top: 2.5rem;
+  align-items: start;
+  gap: clamp(2rem, 5vw, 4rem);
+  grid-template-columns: minmax(360px, 1.15fr) minmax(250px, 0.82fr) minmax(290px, 1fr);
+  padding-top: clamp(2rem, 4vw, 3.25rem);
 }
 
 .footer-logo {
-  width: min(100%, 390px);
-  max-height: 148px;
+  width: min(100%, 470px);
+  max-height: 178px;
   object-fit: contain;
   object-position: left center;
   mix-blend-mode: multiply;
 }
 
 .footer-promise {
-  margin-top: 0.75rem;
-  color: var(--bapc-charcoal);
-  font-family: var(--font-display);
-  font-size: clamp(1.28rem, 2vw, 1.7rem);
-  line-height: 1.18;
+  max-width: 470px;
+  margin: 0.25rem 0 0;
+  color: var(--bapc-deep-bay);
+  font-family: var(--font-body);
+  font-size: clamp(0.78rem, 1vw, 0.95rem);
+  font-style: italic;
+  font-weight: 650;
+  letter-spacing: 0.08em;
+  line-height: 1.35;
+  text-align: center;
 }
 
 .footer-credit {
@@ -1255,7 +1266,7 @@ legend {
   gap: 0.8rem 1.2rem;
   justify-content: space-between;
   border-top: 1px solid var(--line);
-  margin-top: 2rem;
+  margin-top: 1.75rem;
   padding-top: 1.3rem;
   color: var(--bapc-driftwood);
   font-size: 0.9rem;
