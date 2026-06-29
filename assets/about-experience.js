@@ -126,7 +126,7 @@
     },
     {
       href: "../tifani/",
-      image: "../assets/Tif-Pic-8b28f51f7639.JPG",
+      image: "../assets/Tif-pic-3-b87dc034dccb.jpg",
       alt: "Tifani Nobles",
       name: "Tifani",
       note: "Anxiety, grief, family change, stress"

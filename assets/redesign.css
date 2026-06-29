@@ -948,7 +948,75 @@ button:disabled {
   width: 100%;
   aspect-ratio: 4 / 3.25;
   object-fit: cover;
-  object-position: center 25%;
+  object-position: center 28%;
+  transform: scale(var(--photo-scale, 1));
+  transform-origin: var(--photo-origin, center center);
+  transition: transform var(--transition-soft);
+}
+
+.therapist-card:hover img,
+.therapist-card:focus-visible img {
+  transform: scale(calc(var(--photo-scale, 1) + 0.025));
+}
+
+.photo-crop-alexa {
+  --photo-scale: 1.04;
+  --photo-origin: center 34%;
+  object-position: center 34%;
+}
+
+.photo-crop-cindy {
+  --photo-scale: 1.1;
+  --photo-origin: center 40%;
+  object-position: center 40%;
+}
+
+.photo-crop-deena {
+  --photo-scale: 0.98;
+  --photo-origin: center 8%;
+  object-position: center 8%;
+}
+
+.photo-crop-kayla {
+  --photo-scale: 1.04;
+  --photo-origin: center 22%;
+  object-position: center 22%;
+}
+
+.photo-crop-lacey {
+  --photo-scale: 1.34;
+  --photo-origin: center 50%;
+  object-position: center 50%;
+}
+
+.photo-crop-lanya {
+  --photo-scale: 1;
+  --photo-origin: center 16%;
+  object-position: center 16%;
+}
+
+.photo-crop-leigh {
+  --photo-scale: 1.02;
+  --photo-origin: center 18%;
+  object-position: center 18%;
+}
+
+.photo-crop-madison {
+  --photo-scale: 1.04;
+  --photo-origin: center 18%;
+  object-position: center 18%;
+}
+
+.photo-crop-tifani {
+  --photo-scale: 1.04;
+  --photo-origin: center 18%;
+  object-position: center 18%;
+}
+
+.photo-crop-virginia {
+  --photo-scale: 1.06;
+  --photo-origin: center 18%;
+  object-position: center 18%;
 }
 
 .therapist-body {
@@ -983,7 +1051,7 @@ button:disabled {
   aspect-ratio: 4 / 4.6;
   border-radius: var(--radius-lg);
   object-fit: cover;
-  object-position: center 22%;
+  object-position: center 24%;
   box-shadow: var(--shadow-card);
 }
 
