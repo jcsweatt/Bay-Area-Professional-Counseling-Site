@@ -119,7 +119,7 @@
     },
     {
       href: "../deena/",
-      image: "../assets/d.picture-8591aaa80845.jpg",
+      image: "../assets/Alloul_Deena.jpg",
       alt: "Deena Alloul",
       name: "Deena",
       note: "ADHD, anxiety, inclusion, next steps"
