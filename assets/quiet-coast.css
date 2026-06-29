@@ -414,8 +414,8 @@ button:disabled {
   min-height: 0;
   object-fit: contain;
   object-position: center right;
-  opacity: 0.64;
-  filter: saturate(0.82) contrast(0.88) brightness(1.06);
+  opacity: 1;
+  filter: saturate(0.6) contrast(0.72) brightness(1.08);
   mix-blend-mode: multiply;
   -webkit-mask-image:
     radial-gradient(ellipse at 57% 53%, #000 0%, #000 42%, rgba(0, 0, 0, 0.72) 58%, transparent 78%),
@@ -1371,7 +1371,7 @@ legend {
     height: auto;
     min-height: 360px;
     object-position: center;
-    opacity: 0.68;
+    opacity: 1;
   }
 
   .aside-card {
