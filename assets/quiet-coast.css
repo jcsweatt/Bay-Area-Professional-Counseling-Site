@@ -64,6 +64,75 @@ a {
   text-decoration: none;
 }
 
+.method-link {
+  position: relative;
+  z-index: 1;
+  border-bottom: 2px dotted rgba(31, 89, 99, 0.48);
+  color: var(--bapc-deep-bay);
+  font-weight: 650;
+  text-decoration: none;
+  text-underline-offset: 0.2em;
+}
+
+.method-link::after {
+  content: "learn more?";
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 0.45rem);
+  z-index: 10;
+  transform: translateX(-50%) translateY(4px);
+  width: max-content;
+  max-width: min(180px, 70vw);
+  border: 1px solid rgba(251, 248, 242, 0.42);
+  border-radius: var(--radius-pill);
+  background: rgba(31, 89, 99, 0.96);
+  box-shadow: 0 10px 24px rgba(31, 89, 99, 0.16);
+  color: var(--bapc-warm-white);
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1;
+  opacity: 0;
+  padding: 0.42rem 0.62rem;
+  pointer-events: none;
+  text-transform: none;
+  transition: opacity 180ms ease, transform 180ms ease;
+  white-space: nowrap;
+}
+
+.method-link::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 0.12rem);
+  z-index: 9;
+  transform: translateX(-50%) translateY(4px) rotate(45deg);
+  width: 8px;
+  height: 8px;
+  background: rgba(31, 89, 99, 0.96);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.method-link:hover::after,
+.method-link:focus-visible::after,
+.method-link:hover::before,
+.method-link:focus-visible::before {
+  opacity: 1;
+}
+
+.method-link:hover::after,
+.method-link:focus-visible::after {
+  transform: translateX(-50%) translateY(-2px);
+}
+
+.method-link:hover::before,
+.method-link:focus-visible::before {
+  transform: translateX(-50%) translateY(-2px) rotate(45deg);
+}
+
 p {
   margin: 0 0 1.15rem;
   max-width: 70ch;
@@ -578,6 +647,149 @@ button:disabled {
   font-size: 1.08rem;
 }
 
+.therapy-approaches-hero {
+  padding-bottom: 2rem;
+  text-align: center;
+}
+
+.approaches-intro {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.therapy-approaches-hero .container,
+.therapy-approaches-section .container {
+  width: min(1360px, calc(100vw - 64px));
+}
+
+.approaches-intro p {
+  max-width: none;
+  color: var(--bapc-driftwood);
+  font-size: clamp(1.05rem, 1.8vw, 1.35rem);
+}
+
+.therapy-approaches-section {
+  padding-top: 1rem;
+}
+
+.approach-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.approach-card {
+  display: grid;
+  min-height: 185px;
+  align-items: start;
+  grid-template-columns: 74px 1fr;
+  gap: 1.1rem;
+  border: 1px solid var(--approach-line, var(--line));
+  border-radius: var(--radius-md);
+  background:
+    linear-gradient(135deg, rgba(251, 248, 242, 0.97), rgba(255, 255, 255, 0.8)),
+    var(--bapc-warm-white);
+  box-shadow: var(--shadow-card);
+  padding: 1.15rem;
+  scroll-margin-top: 130px;
+}
+
+.approach-icon {
+  display: inline-flex;
+  width: 74px;
+  height: 74px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--approach-soft, rgba(31, 89, 99, 0.1));
+  color: var(--approach-color, var(--bapc-deep-bay));
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.approach-card h2 {
+  margin-bottom: 0.25rem;
+  color: var(--approach-color, var(--bapc-deep-bay));
+  font-family: var(--font-body);
+  font-size: 1.18rem;
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+.approach-card h3 {
+  margin-bottom: 0.7rem;
+  color: var(--approach-color, var(--bapc-deep-bay));
+  font-family: var(--font-body);
+  font-size: 0.98rem;
+  font-weight: 750;
+  line-height: 1.18;
+}
+
+.approach-card p {
+  margin: 0;
+  color: var(--bapc-charcoal);
+  font-size: 0.93rem;
+  line-height: 1.45;
+}
+
+.approach-green {
+  --approach-color: #3f7042;
+  --approach-soft: rgba(168, 185, 154, 0.28);
+  --approach-line: rgba(63, 112, 66, 0.14);
+}
+
+.approach-purple {
+  --approach-color: #715da0;
+  --approach-soft: rgba(113, 93, 160, 0.13);
+  --approach-line: rgba(113, 93, 160, 0.14);
+}
+
+.approach-gold {
+  --approach-color: #bd7600;
+  --approach-soft: rgba(231, 179, 106, 0.24);
+  --approach-line: rgba(189, 118, 0, 0.14);
+}
+
+.approach-teal {
+  --approach-color: #168f98;
+  --approach-soft: rgba(22, 143, 152, 0.13);
+  --approach-line: rgba(22, 143, 152, 0.14);
+}
+
+.approach-orange {
+  --approach-color: #d16818;
+  --approach-soft: rgba(209, 104, 24, 0.11);
+  --approach-line: rgba(209, 104, 24, 0.14);
+}
+
+.approach-blue {
+  --approach-color: #1e6d9d;
+  --approach-soft: rgba(30, 109, 157, 0.12);
+  --approach-line: rgba(30, 109, 157, 0.14);
+}
+
+.approach-pink {
+  --approach-color: #c44973;
+  --approach-soft: rgba(196, 73, 115, 0.12);
+  --approach-line: rgba(196, 73, 115, 0.14);
+}
+
+.approach-red {
+  --approach-color: #d9524b;
+  --approach-soft: rgba(217, 82, 75, 0.12);
+  --approach-line: rgba(217, 82, 75, 0.14);
+}
+
+.approaches-note {
+  max-width: none;
+  margin: 1.4rem 0 0;
+  color: var(--bapc-driftwood);
+  font-size: 1rem;
+  text-align: center;
+}
+
 .contact-page-banner::after {
   content: "";
   position: absolute;
@@ -903,15 +1115,15 @@ button:disabled {
 
 .filter-options {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.65rem;
-  overflow-x: auto;
-  padding: 0.25rem 0 1rem;
-  scrollbar-width: thin;
+  padding: 0.25rem 0 0.65rem;
 }
 
 .filter-button {
-  flex: 0 0 auto;
+  flex: 0 1 auto;
   cursor: pointer;
+  white-space: normal;
 }
 
 .filter-button.is-active,
@@ -1525,6 +1737,10 @@ legend {
     grid-column: span 2;
   }
 
+  .approach-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .hero-grid {
     min-height: 0;
   }
@@ -1609,6 +1825,31 @@ legend {
   .hero,
   .page-hero {
     padding: 3rem 0 3.5rem;
+  }
+
+  .method-link::before,
+  .method-link::after {
+    display: none;
+  }
+
+  .therapy-approaches-hero {
+    padding-bottom: 1rem;
+  }
+
+  .approach-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .approach-card {
+    min-height: 0;
+    grid-template-columns: 64px 1fr;
+    padding: 1rem;
+  }
+
+  .approach-icon {
+    width: 64px;
+    height: 64px;
+    font-size: 0.88rem;
   }
 
   .panel,
