@@ -200,7 +200,7 @@ ul {
 
 .header-inner {
   display: flex;
-  min-height: 132px;
+  min-height: 140px;
   align-items: center;
   justify-content: space-between;
   gap: clamp(1.25rem, 3vw, 3rem);
@@ -212,8 +212,8 @@ ul {
 }
 
 .brand-logo {
-  width: clamp(360px, 30vw, 500px);
-  height: 120px;
+  width: clamp(390px, 32vw, 540px);
+  height: 132px;
   object-fit: contain;
   object-position: left center;
   mix-blend-mode: multiply;
@@ -628,6 +628,7 @@ button:disabled {
   overflow: hidden;
   background: var(--bapc-warm-white);
   box-shadow: var(--shadow-card);
+  --about-line-scroll-offset: 120;
 }
 
 .about-arrival-map::before {
@@ -638,21 +639,56 @@ button:disabled {
 }
 
 .about-line-art {
-  display: none;
+  position: absolute;
+  inset: 8% 7%;
+  z-index: 1;
+  display: block;
+  width: 86%;
+  height: 84%;
+  fill: none;
+  pointer-events: none;
+}
+
+.about-line-art path,
+.constellation-lines path {
+  stroke: rgba(31, 89, 99, 0.34);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-dasharray: 9 18;
+  stroke-dashoffset: calc(var(--about-line-scroll-offset, 120) * 1px);
+  transition: stroke-dashoffset 0.18s linear, opacity 0.8s ease;
+}
+
+.about-arrival-map:not(.is-visible) .about-line-art path,
+.about-constellation:not(.is-visible) .constellation-lines path {
+  opacity: 0;
 }
 
 .about-map-card {
   position: absolute;
+  z-index: 2;
   max-width: 210px;
   border: 1px solid rgba(31, 89, 99, 0.12);
   border-radius: var(--radius-md);
   background: rgba(251, 248, 242, 0.88);
   box-shadow: var(--shadow-card);
   padding: 1rem;
+  opacity: 0;
+  transform: translateY(18px) rotate(var(--tilt, 0deg));
+  transition: opacity 0.7s ease, transform 0.7s ease, box-shadow var(--transition-soft), border-color var(--transition-soft);
 }
 
 .about-map-card span {
+  display: inline-flex;
+  width: 2.6rem;
+  height: 2.6rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: rgba(168, 185, 154, 0.28);
   color: var(--bapc-mobile-bay-blue);
+  font-family: var(--font-display);
+  font-size: 1.35rem;
   font-weight: 800;
 }
 
@@ -664,16 +700,44 @@ button:disabled {
 .about-map-card-one {
   left: 7%;
   top: 9%;
+  --tilt: -2deg;
 }
 
 .about-map-card-two {
   right: 7%;
   top: 37%;
+  --tilt: 2deg;
 }
 
 .about-map-card-three {
   left: 11%;
   bottom: 9%;
+  --tilt: -1deg;
+}
+
+.about-arrival-map.is-visible .about-map-card {
+  opacity: 1;
+  transform: translateY(0) rotate(var(--tilt, 0deg));
+}
+
+.about-arrival-map.is-scroll-linked .about-map-card-one {
+  transform: translateY(calc(var(--about-line-scroll-offset, 0) * -0.04px)) rotate(var(--tilt, 0deg));
+}
+
+.about-arrival-map.is-scroll-linked .about-map-card-two {
+  transform: translateY(calc(var(--about-line-scroll-offset, 0) * 0.035px)) rotate(var(--tilt, 0deg));
+}
+
+.about-arrival-map.is-scroll-linked .about-map-card-three {
+  transform: translateY(calc(var(--about-line-scroll-offset, 0) * -0.03px)) rotate(var(--tilt, 0deg));
+}
+
+.about-arrival-map.is-visible .about-map-card-two {
+  transition-delay: 0.12s;
+}
+
+.about-arrival-map.is-visible .about-map-card-three {
+  transition-delay: 0.24s;
 }
 
 .about-discovery-panel {
@@ -704,22 +768,84 @@ button:disabled {
 }
 
 .about-constellation {
+  position: relative;
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(5, minmax(0, 1fr));
+  --about-line-scroll-offset: 120;
 }
 
 .constellation-lines {
-  display: none;
+  position: absolute;
+  inset: -3rem 0 -2rem;
+  z-index: 0;
+  display: block;
+  width: 100%;
+  height: calc(100% + 5rem);
+  fill: none;
+  pointer-events: none;
+}
+
+.constellation-lines path {
+  stroke: rgba(168, 185, 154, 0.48);
+  stroke-width: 4;
+  stroke-dasharray: 12 20;
 }
 
 .about-person,
 .about-constellation-note {
+  position: relative;
+  z-index: 1;
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
   background: rgba(251, 248, 242, 0.84);
   padding: 1rem;
   box-shadow: var(--shadow-card);
+}
+
+.about-person {
+  --tilt: 0deg;
+  --scroll-lift: 0px;
+  --hover-lift: 0px;
+  opacity: 0;
+  transform: translateY(calc(18px + var(--scroll-lift) + var(--hover-lift))) rotate(var(--tilt));
+  transition: opacity 0.7s ease, transform var(--transition-soft), border-color var(--transition-soft), box-shadow var(--transition-soft);
+}
+
+.about-constellation.is-visible .about-person {
+  opacity: 1;
+  transform: translateY(calc(var(--scroll-lift) + var(--hover-lift))) rotate(var(--tilt));
+}
+
+.about-person-one,
+.about-person-four {
+  --tilt: -1.2deg;
+}
+
+.about-person-two,
+.about-person-five {
+  --tilt: 1.1deg;
+}
+
+.about-constellation.is-scroll-linked .about-person-one,
+.about-constellation.is-scroll-linked .about-person-four {
+  --scroll-lift: calc(var(--about-line-scroll-offset, 0) * -0.035px);
+}
+
+.about-constellation.is-scroll-linked .about-person-two,
+.about-constellation.is-scroll-linked .about-person-five {
+  --scroll-lift: calc(var(--about-line-scroll-offset, 0) * 0.028px);
+}
+
+.about-constellation.is-scroll-linked .about-person-three {
+  --scroll-lift: calc(var(--about-line-scroll-offset, 0) * -0.02px);
+}
+
+.about-person:hover,
+.about-person:focus-visible {
+  --hover-lift: -12px;
+  border-color: rgba(168, 185, 154, 0.95);
+  box-shadow: 0 24px 52px rgba(31, 89, 99, 0.15);
 }
 
 .about-person img {
@@ -1374,6 +1500,14 @@ legend {
     opacity: 1;
   }
 
+  .about-arrival-map {
+    min-height: 430px;
+  }
+
+  .about-map-card {
+    max-width: min(220px, 46vw);
+  }
+
   .aside-card {
     position: static;
   }
@@ -1414,12 +1548,12 @@ legend {
   }
 
   .header-inner {
-    min-height: 76px;
+    min-height: 84px;
   }
 
   .brand-logo {
-    width: min(70vw, 300px);
-    max-height: 100px;
+    width: min(76vw, 340px);
+    max-height: 112px;
   }
 
   .hero,
@@ -1444,6 +1578,62 @@ legend {
 
   .hero-art {
     min-height: 310px;
+  }
+
+  .about-arrival-map {
+    display: grid;
+    gap: 0.75rem;
+    min-height: 0;
+    padding: 1rem;
+    border-radius: var(--radius-md);
+    background:
+      linear-gradient(rgba(251, 248, 242, 0.72), rgba(251, 248, 242, 0.82)),
+      url("brand/illustrations/porch.png") center / cover no-repeat,
+      var(--bapc-warm-white);
+  }
+
+  .about-arrival-map::before {
+    opacity: 0.24;
+  }
+
+  .about-line-art {
+    inset: 0.6rem;
+    width: calc(100% - 1.2rem);
+    height: calc(100% - 1.2rem);
+    opacity: 0.28;
+  }
+
+  .about-map-card {
+    position: relative;
+    left: auto;
+    right: auto;
+    top: auto;
+    bottom: auto;
+    display: grid;
+    max-width: none;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 0.25rem 0.85rem;
+    align-items: center;
+    padding: 0.95rem;
+  }
+
+  .about-map-card span {
+    grid-row: span 2;
+    width: 2.35rem;
+    height: 2.35rem;
+    font-size: 1.15rem;
+  }
+
+  .about-map-card small {
+    line-height: 1.45;
+  }
+
+  .about-constellation {
+    gap: 0.85rem;
+  }
+
+  .constellation-lines {
+    display: none;
   }
 
   .support-grid,
