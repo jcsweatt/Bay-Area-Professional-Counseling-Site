@@ -195,10 +195,10 @@ ul {
 
 .header-inner {
   display: flex;
-  min-height: 86px;
+  min-height: 112px;
   align-items: center;
   justify-content: space-between;
-  gap: 2rem;
+  gap: clamp(1.25rem, 3vw, 3rem);
 }
 
 .brand {
@@ -207,8 +207,9 @@ ul {
 }
 
 .brand-logo {
-  width: 238px;
-  height: 64px;
+  width: clamp(310px, 28vw, 430px);
+  height: auto;
+  max-height: 118px;
   object-fit: contain;
   object-position: left center;
   mix-blend-mode: multiply;
@@ -217,9 +218,9 @@ ul {
 .site-nav {
   display: flex;
   align-items: center;
-  gap: 1.35rem;
+  gap: clamp(0.9rem, 1.6vw, 1.35rem);
   color: var(--bapc-deep-bay);
-  font-size: 0.92rem;
+  font-size: 0.9rem;
   font-weight: 650;
 }
 
@@ -323,15 +324,18 @@ button:disabled {
 
 .hero {
   overflow: hidden;
-  padding: 5rem 0 6rem;
+  padding: 5.5rem 0 6.5rem;
+  background:
+    linear-gradient(90deg, rgba(248, 245, 240, 0.98) 0%, rgba(248, 245, 240, 0.86) 48%, rgba(248, 245, 240, 0.42) 100%),
+    url("brand/watercolor/hero-horizon.png") right bottom / min(760px, 62vw) auto no-repeat;
 }
 
 .hero-grid {
   position: relative;
   display: grid;
   align-items: center;
-  gap: 4rem;
-  grid-template-columns: 0.92fr 1.08fr;
+  gap: clamp(2.5rem, 6vw, 6rem);
+  grid-template-columns: minmax(0, 0.78fr) minmax(360px, 1.22fr);
 }
 
 .hero-grid::before,
@@ -358,7 +362,8 @@ button:disabled {
 
 .hero-copy p {
   color: var(--bapc-driftwood);
-  font-size: 1.12rem;
+  font-size: 1.18rem;
+  max-width: 58ch;
 }
 
 .hero-actions,
@@ -371,17 +376,29 @@ button:disabled {
 }
 
 .hero-art {
+  position: relative;
   margin: 0;
-  border-radius: var(--radius-lg);
+  border: 0;
+  border-radius: 42px;
   overflow: hidden;
-  background: var(--bapc-warm-white);
-  box-shadow: var(--shadow-soft);
+  background: transparent;
+  box-shadow: none;
+}
+
+.hero-art::before {
+  content: "";
+  position: absolute;
+  inset: 10% 8% 6%;
+  z-index: -1;
+  border-radius: 48% 52% 45% 55%;
+  background: rgba(104, 157, 167, 0.12);
 }
 
 .hero-art img {
   width: 100%;
-  min-height: 430px;
-  object-fit: cover;
+  min-height: 500px;
+  object-fit: contain;
+  filter: saturate(0.95);
 }
 
 .section {
@@ -523,8 +540,8 @@ button:disabled {
   overflow: hidden;
   padding: 4.5rem;
   background:
-    linear-gradient(90deg, rgba(251, 248, 242, 0.94), rgba(251, 248, 242, 0.74)),
-    url("brand/watercolor/mist-wash.png") right center / 54% auto no-repeat,
+    linear-gradient(96deg, rgba(251, 248, 242, 0.96), rgba(251, 248, 242, 0.78)),
+    url("brand/watercolor/mist-wash.png") right center / 62% auto no-repeat,
     var(--bapc-warm-white);
 }
 
@@ -838,30 +855,61 @@ button:disabled {
 }
 
 .gallery-experience {
+  position: relative;
   display: grid;
-  gap: 2rem;
-  grid-template-columns: 1.4fr 0.6fr;
-  padding: 1.5rem;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  grid-template-columns: minmax(0, 1.32fr) minmax(260px, 0.68fr);
+  overflow: hidden;
+  padding: clamp(1.25rem, 3vw, 2.5rem);
+  background:
+    linear-gradient(rgba(251, 248, 242, 0.88), rgba(251, 248, 242, 0.88)),
+    url("brand/watercolor/sand-wash.png") left top / 52% auto no-repeat,
+    url("brand/patterns/tide-lines.png") center / 760px auto repeat,
+    var(--bapc-warm-white);
+}
+
+.gallery-experience::before {
+  content: "";
+  position: absolute;
+  right: -64px;
+  bottom: -84px;
+  width: 280px;
+  height: 280px;
+  background: url("brand/illustrations/oyster.png") center / contain no-repeat;
+  opacity: 0.16;
+  pointer-events: none;
 }
 
 .gallery-view {
+  position: relative;
   display: grid;
   align-items: center;
-  gap: 1rem;
-  grid-template-columns: 74px 1fr 74px;
+  gap: 0;
+  grid-template-columns: 84px minmax(0, 1fr) 84px;
 }
 
 .gallery-feature {
+  position: relative;
+  z-index: 2;
   margin: 0;
   overflow: hidden;
-  border-radius: var(--radius-lg);
+  border: 10px solid rgba(251, 248, 242, 0.95);
+  border-radius: 36px;
   background: var(--bapc-oyster-sand);
+  box-shadow: 0 24px 70px rgba(31, 89, 99, 0.16);
+  transform: rotate(-1.2deg);
 }
 
 .gallery-feature img {
   width: 100%;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 10.5;
   object-fit: cover;
+  transition: opacity 180ms ease, transform 380ms ease;
+}
+
+.gallery-feature img.is-changing {
+  opacity: 0.35;
+  transform: scale(1.015);
 }
 
 .gallery-peek,
@@ -876,10 +924,22 @@ button:disabled {
 }
 
 .gallery-peek {
-  width: 74px;
-  height: 74px;
+  position: relative;
+  z-index: 3;
+  width: 96px;
+  height: 96px;
+  border: 6px solid var(--bapc-warm-white);
+  box-shadow: var(--shadow-card);
   overflow: hidden;
   padding: 0;
+}
+
+.gallery-peek-previous {
+  transform: translateX(18px) rotate(-5deg);
+}
+
+.gallery-peek-next {
+  transform: translateX(-18px) rotate(5deg);
 }
 
 .gallery-peek img {
@@ -889,7 +949,13 @@ button:disabled {
 }
 
 .gallery-story {
+  position: relative;
+  z-index: 2;
   align-self: center;
+  border-left: 3px solid rgba(231, 179, 106, 0.8);
+  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+  background: rgba(251, 248, 242, 0.74);
+  padding: 1.5rem;
 }
 
 .gallery-counter {
@@ -906,30 +972,36 @@ button:disabled {
 }
 
 .gallery-path {
-  display: grid;
+  display: flex;
   grid-column: 1 / -1;
   gap: 0.7rem;
-  grid-template-columns: repeat(12, minmax(64px, 1fr));
+  overflow-x: auto;
+  padding: 0.6rem 0.2rem 0.85rem;
+  scrollbar-width: thin;
 }
 
 .gallery-stop {
+  flex: 0 0 76px;
   border: 2px solid transparent;
-  border-radius: var(--radius-sm);
+  border-radius: 50%;
   background: transparent;
   cursor: pointer;
   padding: 0;
   overflow: hidden;
+  transition: transform var(--transition-soft), border-color var(--transition-soft);
 }
 
 .gallery-stop.is-selected,
 .gallery-stop[aria-current="true"] {
   border-color: var(--bapc-sunrise-gold);
+  transform: translateY(-7px);
 }
 
 .gallery-stop img {
   width: 100%;
   aspect-ratio: 1;
   object-fit: cover;
+  border-radius: 50%;
 }
 
 .gallery-grid {
@@ -1079,8 +1151,8 @@ legend {
 }
 
 .footer-horizon {
-  height: 170px;
-  background: url("brand/watercolor/footer-horizon.png") center bottom / cover no-repeat;
+  height: clamp(170px, 23vw, 320px);
+  background: url("brand/watercolor/footer-horizon.png") center bottom / contain no-repeat;
 }
 
 .footer-grid {
@@ -1224,8 +1296,8 @@ legend {
   }
 
   .brand-logo {
-    width: 188px;
-    height: 52px;
+    width: min(68vw, 260px);
+    max-height: 92px;
   }
 
   .hero,
