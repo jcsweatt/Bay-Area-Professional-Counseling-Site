@@ -1,13 +1,18 @@
-<header class="site-header">
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header" data-site-header>
   <div class="container header-inner">
     <a class="brand" href="{{ '/' | relative_url }}">
-      <img class="brand-logo" src="{{ '/assets/Full-Color_Bay-Area_logo-4803542f60cc.jpg' | relative_url }}" alt="Bay Area Professional Counseling">
+      <img class="brand-logo" src="{{ '/assets/brand/logos/horizontal-logo.png' | relative_url }}" alt="Bay Area Professional Counseling">
     </a>
-    <nav class="site-nav" aria-label="Main navigation">
+    <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav">
+      <span class="nav-toggle-lines" aria-hidden="true"></span>
+      <span class="visually-hidden">Menu</span>
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="Main navigation" data-site-nav>
       <a{% if page.nav_current == 'about' %} aria-current="page"{% endif %} href="{{ '/about/' | relative_url }}">About</a>
       <a{% if page.nav_current == 'staff' %} aria-current="page"{% endif %} href="{{ '/our-staff/' | relative_url }}">Our Therapists</a>
       <a{% if page.nav_current == 'gallery' %} aria-current="page"{% endif %} href="{{ '/gallery/' | relative_url }}">Gallery</a>
-      <a class="button" href="{{ '/request-an-appointment/' | relative_url }}">Request an Appointment</a>
+      <a class="button nav-cta" href="{{ '/request-an-appointment/' | relative_url }}">Request an Appointment</a>
     </nav>
   </div>
 </header>
