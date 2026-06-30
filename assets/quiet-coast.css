@@ -821,7 +821,7 @@ button:disabled {
 .contact-page-banner::after {
   content: "";
   position: absolute;
-  right: clamp(1rem, 4vw, 3.5rem);
+  right: clamp(-1.4rem, -1.5vw, -0.25rem);
   bottom: -34px;
   z-index: 0;
   width: min(34vw, 360px);
@@ -1581,10 +1581,39 @@ legend {
   margin-top: 2rem;
 }
 
+.contact-layout .contact-options {
+  grid-template-columns: repeat(2, minmax(230px, 1fr));
+  gap: 1.35rem;
+  margin-top: 1.65rem;
+}
+
+.contact-layout .privacy-note {
+  margin-top: 1.7rem;
+}
+
 .office-card,
 .contact-option,
 .insurance-panel {
   padding: 1.5rem;
+}
+
+.contact-option {
+  display: flex;
+  min-height: 340px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.contact-option p {
+  flex: 1;
+}
+
+.contact-option .button {
+  min-width: 0;
+  max-width: 100%;
+  margin-top: auto;
+  white-space: normal;
 }
 
 .office-detail {
@@ -1607,21 +1636,23 @@ legend {
 .insurance-panel::after {
   content: "";
   position: absolute;
-  right: -42px;
-  bottom: -76px;
+  right: -56px;
+  bottom: -84px;
   z-index: 0;
-  width: min(38vw, 420px);
-  aspect-ratio: 1.25;
-  background: url("brand/illustrations/shoreline.png") center / contain no-repeat;
-  opacity: 0.22;
+  width: min(35vw, 390px);
+  aspect-ratio: 1.35;
+  background: url("brand/illustrations/dock.png") center / contain no-repeat;
+  opacity: 0.2;
   mix-blend-mode: multiply;
   pointer-events: none;
   -webkit-mask-image:
     radial-gradient(ellipse at center, #000 0%, #000 50%, transparent 76%),
+    linear-gradient(90deg, transparent 0%, #000 14%, #000 88%, transparent 100%),
     linear-gradient(180deg, #000 0%, #000 72%, transparent 100%);
   -webkit-mask-composite: source-in;
   mask-image:
     radial-gradient(ellipse at center, #000 0%, #000 50%, transparent 76%),
+    linear-gradient(90deg, transparent 0%, #000 14%, #000 88%, transparent 100%),
     linear-gradient(180deg, #000 0%, #000 72%, transparent 100%);
   mask-composite: intersect;
 }
@@ -1865,6 +1896,10 @@ legend {
   }
 
   .approach-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-layout .contact-options {
     grid-template-columns: 1fr;
   }
 
