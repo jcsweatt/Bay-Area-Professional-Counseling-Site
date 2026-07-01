@@ -1,0 +1,889 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bay Area Professional Counseling | Quiet Coast Marketing Suite</title>
+    <meta name="description" content="A client-facing brand story and visual system overview for the Quiet Coast redesign of Bay Area Professional Counseling.">
+    <style>
+      :root {
+        --paper: #f8f5f0;
+        --warm-white: #fbf8f2;
+        --mobile-bay-blue: #689da7;
+        --deep-bay: #1f5963;
+        --marsh-sage: #a8b99a;
+        --oyster-sand: #e7dfc9;
+        --driftwood: #6d655f;
+        --charcoal: #3e3a36;
+        --sunrise-gold: #e7b36a;
+        --line: rgba(31, 89, 99, 0.13);
+        --shadow-soft: 0 18px 50px rgba(31, 89, 99, 0.1);
+        --shadow-card: 0 12px 32px rgba(31, 89, 99, 0.08);
+        --display: "Cormorant Garamond", Georgia, serif;
+        --body: "Avenir Next", "Lato", "Source Sans 3", system-ui, sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background:
+          linear-gradient(rgba(248, 245, 240, 0.94), rgba(248, 245, 240, 0.96)),
+          url("../../assets/brand/watercolor/paper-wash.png") center top / 900px auto repeat,
+          var(--paper);
+        color: var(--charcoal);
+        font-family: var(--body);
+        font-size: 1rem;
+        line-height: 1.75;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        background: url("../../assets/brand/patterns/tide-lines.png") center top / 940px auto repeat;
+        opacity: 0.024;
+        pointer-events: none;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      p {
+        max-width: 72ch;
+        margin: 0 0 1.15rem;
+      }
+
+      h1,
+      h2,
+      h3 {
+        margin: 0 0 1rem;
+        color: var(--deep-bay);
+        font-family: var(--display);
+        font-weight: 500;
+        letter-spacing: 0;
+        line-height: 1.05;
+      }
+
+      h1 {
+        max-width: 12ch;
+        font-size: clamp(3.4rem, 7.2vw, 6.6rem);
+      }
+
+      h2 {
+        font-size: clamp(2.45rem, 5vw, 4.4rem);
+      }
+
+      h3 {
+        font-size: clamp(1.55rem, 2.8vw, 2.2rem);
+      }
+
+      .suite-shell {
+        overflow: hidden;
+      }
+
+      .container {
+        width: min(1180px, calc(100vw - 42px));
+        margin: 0 auto;
+      }
+
+      .suite-nav {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        border-bottom: 1px solid rgba(31, 89, 99, 0.1);
+        background: rgba(248, 245, 240, 0.84);
+        backdrop-filter: blur(18px);
+      }
+
+      .suite-nav-inner {
+        display: flex;
+        min-height: 76px;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.2rem;
+      }
+
+      .suite-back-link,
+      .suite-jump-link {
+        border: 1px solid rgba(31, 89, 99, 0.15);
+        border-radius: 999px;
+        background: rgba(251, 248, 242, 0.78);
+        color: var(--deep-bay);
+        font-size: 0.76rem;
+        font-weight: 850;
+        letter-spacing: 0.12em;
+        padding: 0.68rem 0.9rem;
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: background 200ms ease, border-color 200ms ease, transform 200ms ease;
+      }
+
+      .suite-back-link:hover,
+      .suite-back-link:focus-visible,
+      .suite-jump-link:hover,
+      .suite-jump-link:focus-visible {
+        border-color: rgba(231, 179, 106, 0.72);
+        background: rgba(251, 248, 242, 0.96);
+        transform: translateY(-2px);
+      }
+
+      .suite-jumps {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 0.55rem;
+      }
+
+      .suite-hero {
+        position: relative;
+        padding: clamp(5.2rem, 9vw, 8.5rem) 0 clamp(4.5rem, 8vw, 7rem);
+      }
+
+      .suite-hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(90deg, rgba(248, 245, 240, 0.96) 0 43%, rgba(248, 245, 240, 0.28) 70%, rgba(248, 245, 240, 0.78) 100%),
+          url("../../assets/brand/watercolor/hero-horizon.png") right center / min(900px, 66vw) auto no-repeat;
+        opacity: 0.92;
+      }
+
+      .suite-hero-grid {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        align-items: center;
+        gap: clamp(2rem, 5vw, 5rem);
+        grid-template-columns: 0.92fr 1.08fr;
+      }
+
+      .eyebrow {
+        display: block;
+        margin-bottom: 1rem;
+        color: var(--driftwood);
+        font-size: 0.76rem;
+        font-weight: 850;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      .hero-copy {
+        max-width: 650px;
+      }
+
+      .hero-copy p {
+        color: var(--driftwood);
+        font-size: clamp(1.05rem, 1.6vw, 1.24rem);
+      }
+
+      .hero-logo-card {
+        position: relative;
+        overflow: hidden;
+        border: 1px solid rgba(31, 89, 99, 0.13);
+        border-radius: 30px;
+        background:
+          linear-gradient(140deg, rgba(251, 248, 242, 0.95), rgba(251, 248, 242, 0.64)),
+          url("../../assets/brand/watercolor/mist-wash.png") center / cover no-repeat,
+          var(--warm-white);
+        box-shadow: var(--shadow-soft);
+        padding: clamp(2rem, 4vw, 4rem);
+      }
+
+      .hero-logo-card::after {
+        content: "";
+        position: absolute;
+        right: -2rem;
+        bottom: -2.8rem;
+        width: min(320px, 42vw);
+        aspect-ratio: 1.25;
+        background: url("../../assets/brand/illustrations/oyster.png") center / contain no-repeat;
+        opacity: 0.13;
+        mix-blend-mode: multiply;
+        pointer-events: none;
+        -webkit-mask-image: radial-gradient(ellipse at center, #000 0%, #000 54%, transparent 78%);
+        mask-image: radial-gradient(ellipse at center, #000 0%, #000 54%, transparent 78%);
+      }
+
+      .hero-logo-card img {
+        width: min(520px, 100%);
+        margin: 0 auto;
+        filter: drop-shadow(0 16px 30px rgba(31, 89, 99, 0.1));
+      }
+
+      .hero-logo-note {
+        margin: 2rem auto 0;
+        max-width: 56ch;
+        color: var(--driftwood);
+        text-align: center;
+      }
+
+      .suite-section {
+        padding: clamp(4.5rem, 8vw, 7rem) 0;
+      }
+
+      .section-intro {
+        display: grid;
+        gap: 1.5rem;
+        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+        margin-bottom: 2rem;
+      }
+
+      .section-intro p {
+        color: var(--driftwood);
+        font-size: 1.08rem;
+      }
+
+      .story-panel,
+      .rationale-card,
+      .asset-card,
+      .logo-card,
+      .principle-card {
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        background: rgba(251, 248, 242, 0.82);
+        box-shadow: var(--shadow-card);
+      }
+
+      .story-panel {
+        position: relative;
+        overflow: hidden;
+        padding: clamp(2rem, 5vw, 4.5rem);
+      }
+
+      .story-panel::after {
+        content: "";
+        position: absolute;
+        right: -4rem;
+        bottom: -5rem;
+        width: min(430px, 40vw);
+        aspect-ratio: 1.25;
+        background: url("../../assets/brand/illustrations/shoreline.png") center / contain no-repeat;
+        opacity: 0.14;
+        mix-blend-mode: multiply;
+        pointer-events: none;
+        -webkit-mask-image:
+          radial-gradient(ellipse at center, #000 0%, #000 54%, transparent 78%),
+          linear-gradient(180deg, #000 0%, #000 72%, transparent 100%);
+        -webkit-mask-composite: source-in;
+        mask-image:
+          radial-gradient(ellipse at center, #000 0%, #000 54%, transparent 78%),
+          linear-gradient(180deg, #000 0%, #000 72%, transparent 100%);
+        mask-composite: intersect;
+      }
+
+      .story-panel > * {
+        position: relative;
+        z-index: 1;
+      }
+
+      .story-panel p {
+        color: var(--driftwood);
+        font-size: 1.08rem;
+      }
+
+      .principle-grid {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        margin-top: 1.8rem;
+      }
+
+      .principle-card {
+        min-height: 220px;
+        padding: 1.4rem;
+        transition: border-color 220ms ease, box-shadow 220ms ease, transform 220ms ease;
+      }
+
+      .principle-card:hover,
+      .principle-card:focus-within {
+        border-color: rgba(231, 179, 106, 0.7);
+        box-shadow: 0 22px 46px rgba(31, 89, 99, 0.12);
+        transform: translateY(-6px);
+      }
+
+      .principle-card span {
+        display: block;
+        width: 3rem;
+        height: 3rem;
+        margin-bottom: 1rem;
+        border-radius: 50%;
+        background: var(--accent);
+        box-shadow: 0 0 0 9px color-mix(in srgb, var(--accent) 18%, transparent);
+      }
+
+      .principle-card p {
+        color: var(--driftwood);
+        font-size: 0.96rem;
+      }
+
+      .palette-grid {
+        display: grid;
+        gap: 1.2rem;
+        grid-template-columns: repeat(7, minmax(0, 1fr));
+      }
+
+      .color-blot {
+        position: relative;
+        min-height: 260px;
+        overflow: hidden;
+        border: 1px solid rgba(31, 89, 99, 0.12);
+        border-radius: 26px;
+        background: rgba(251, 248, 242, 0.78);
+        box-shadow: var(--shadow-card);
+        padding: 1rem;
+        transition: border-color 220ms ease, box-shadow 220ms ease, transform 220ms ease;
+      }
+
+      .color-blot:hover,
+      .color-blot:focus-within {
+        border-color: rgba(31, 89, 99, 0.22);
+        box-shadow: 0 24px 54px rgba(31, 89, 99, 0.13);
+        transform: translateY(-8px);
+      }
+
+      .color-blot::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 1rem;
+        width: 142%;
+        aspect-ratio: 1;
+        transform: translateX(-50%) rotate(var(--turn));
+        border-radius: 42% 58% 61% 39% / 47% 43% 57% 53%;
+        background:
+          radial-gradient(circle at 34% 28%, rgba(255, 255, 255, 0.35), transparent 24%),
+          radial-gradient(circle at 70% 64%, rgba(255, 255, 255, 0.18), transparent 28%),
+          var(--swatch);
+        opacity: 0.92;
+        mix-blend-mode: multiply;
+        filter: saturate(0.96);
+      }
+
+      .color-blot::after {
+        content: "";
+        position: absolute;
+        inset: 1.3rem;
+        border-radius: 45% 55% 50% 50% / 52% 42% 58% 48%;
+        background: url("../../assets/brand/watercolor/paper-wash.png") center / cover no-repeat;
+        opacity: 0.12;
+        pointer-events: none;
+      }
+
+      .color-copy {
+        position: absolute;
+        right: 1rem;
+        bottom: 1rem;
+        left: 1rem;
+        z-index: 1;
+        border-top: 1px solid rgba(31, 89, 99, 0.12);
+        background: linear-gradient(rgba(251, 248, 242, 0), rgba(251, 248, 242, 0.92) 22%);
+        padding-top: 2.35rem;
+      }
+
+      .color-copy strong,
+      .color-copy span {
+        display: block;
+      }
+
+      .color-copy strong {
+        color: var(--deep-bay);
+        font-size: 0.88rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .color-copy span {
+        color: var(--driftwood);
+        font-size: 0.84rem;
+      }
+
+      .rationale-grid {
+        display: grid;
+        gap: 1.2rem;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .rationale-card {
+        position: relative;
+        overflow: hidden;
+        min-height: 300px;
+        padding: 1.55rem;
+        transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+      }
+
+      .rationale-card:hover,
+      .rationale-card:focus-within {
+        border-color: rgba(168, 185, 154, 0.8);
+        box-shadow: 0 24px 54px rgba(31, 89, 99, 0.12);
+        transform: translateY(-7px);
+      }
+
+      .rationale-card::after {
+        content: "";
+        position: absolute;
+        right: -2rem;
+        bottom: -3rem;
+        width: min(250px, 56%);
+        aspect-ratio: 1;
+        background: var(--image) center / contain no-repeat;
+        opacity: 0.16;
+        mix-blend-mode: multiply;
+        pointer-events: none;
+        transition: opacity 220ms ease, transform 220ms ease;
+        -webkit-mask-image: radial-gradient(ellipse at center, #000 0%, #000 54%, transparent 78%);
+        mask-image: radial-gradient(ellipse at center, #000 0%, #000 54%, transparent 78%);
+      }
+
+      .rationale-card:hover::after,
+      .rationale-card:focus-within::after {
+        opacity: 0.28;
+        transform: translate(-0.8rem, -0.6rem) rotate(-2deg);
+      }
+
+      .rationale-card p {
+        position: relative;
+        z-index: 1;
+        color: var(--driftwood);
+      }
+
+      .logo-system {
+        display: grid;
+        gap: 1.2rem;
+        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+        align-items: stretch;
+      }
+
+      .logo-card {
+        display: grid;
+        min-height: 430px;
+        place-items: center;
+        padding: clamp(2rem, 5vw, 4rem);
+        background:
+          linear-gradient(rgba(251, 248, 242, 0.82), rgba(251, 248, 242, 0.92)),
+          url("../../assets/brand/watercolor/sand-wash.png") center / cover no-repeat,
+          var(--warm-white);
+      }
+
+      .logo-card img {
+        width: min(620px, 100%);
+        filter: drop-shadow(0 18px 34px rgba(31, 89, 99, 0.1));
+        transition: transform 260ms ease;
+      }
+
+      .logo-card:hover img,
+      .logo-card:focus-within img {
+        transform: scale(1.035);
+      }
+
+      .logo-copy {
+        display: grid;
+        gap: 1rem;
+      }
+
+      .logo-copy .rationale-card {
+        min-height: 0;
+      }
+
+      .asset-grid {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+      }
+
+      .asset-card {
+        display: grid;
+        min-height: 230px;
+        place-items: center;
+        overflow: hidden;
+        padding: 1.1rem;
+        text-align: center;
+        transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+      }
+
+      .asset-card:hover,
+      .asset-card:focus-within {
+        border-color: rgba(104, 157, 167, 0.45);
+        box-shadow: 0 22px 46px rgba(31, 89, 99, 0.12);
+        transform: translateY(-7px);
+      }
+
+      .asset-card img {
+        width: min(170px, 84%);
+        max-height: 145px;
+        object-fit: contain;
+        opacity: 0.82;
+        mix-blend-mode: multiply;
+        transition: opacity 220ms ease, transform 220ms ease;
+      }
+
+      .asset-card:hover img,
+      .asset-card:focus-within img {
+        opacity: 1;
+        transform: scale(1.08) rotate(-1deg);
+      }
+
+      .asset-card strong {
+        display: block;
+        margin-top: 0.9rem;
+        color: var(--deep-bay);
+        font-size: 0.8rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      .application-panel {
+        position: relative;
+        overflow: hidden;
+        border-radius: 34px;
+        background:
+          linear-gradient(112deg, rgba(31, 89, 99, 0.94), rgba(31, 89, 99, 0.78)),
+          url("../../assets/brand/watercolor/deep-bay-wash.png") center / cover no-repeat,
+          var(--deep-bay);
+        color: var(--warm-white);
+        padding: clamp(2rem, 5vw, 4.5rem);
+      }
+
+      .application-panel::after {
+        content: "";
+        position: absolute;
+        right: -3rem;
+        bottom: -4rem;
+        width: min(520px, 52vw);
+        aspect-ratio: 1.25;
+        background: url("../../assets/brand/illustrations/egret.png") center / contain no-repeat;
+        opacity: 0.18;
+        pointer-events: none;
+        filter: contrast(0.9);
+        -webkit-mask-image: radial-gradient(ellipse at center, #000 0%, #000 55%, transparent 80%);
+        mask-image: radial-gradient(ellipse at center, #000 0%, #000 55%, transparent 80%);
+      }
+
+      .application-panel > * {
+        position: relative;
+        z-index: 1;
+      }
+
+      .application-panel h2,
+      .application-panel h3 {
+        color: var(--warm-white);
+      }
+
+      .application-panel p {
+        color: rgba(251, 248, 242, 0.84);
+      }
+
+      .voice-grid {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        margin-top: 1.8rem;
+      }
+
+      .voice-card {
+        border: 1px solid rgba(251, 248, 242, 0.22);
+        border-radius: 22px;
+        background: rgba(251, 248, 242, 0.08);
+        padding: 1.35rem;
+      }
+
+      .voice-card p {
+        margin-bottom: 0;
+      }
+
+      .suite-closing {
+        padding: clamp(4.5rem, 8vw, 7rem) 0 clamp(5rem, 9vw, 8rem);
+        text-align: center;
+      }
+
+      .suite-closing .container {
+        display: grid;
+        justify-items: center;
+      }
+
+      .suite-closing img {
+        width: min(560px, 86vw);
+        margin-bottom: 2rem;
+      }
+
+      .suite-closing p {
+        color: var(--driftwood);
+        font-size: 1.15rem;
+      }
+
+      @media (max-width: 980px) {
+        .suite-hero-grid,
+        .section-intro,
+        .logo-system {
+          grid-template-columns: 1fr;
+        }
+
+        .palette-grid {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .rationale-grid,
+        .principle-grid,
+        .voice-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .asset-grid {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 680px) {
+        .suite-nav {
+          position: static;
+        }
+
+        .suite-nav-inner {
+          align-items: flex-start;
+          flex-direction: column;
+          padding: 1rem 0;
+        }
+
+        .suite-jumps {
+          justify-content: flex-start;
+        }
+
+        .suite-hero::before {
+          background:
+            linear-gradient(rgba(248, 245, 240, 0.9), rgba(248, 245, 240, 0.96)),
+            url("../../assets/brand/watercolor/hero-horizon.png") right 12% / 145vw auto no-repeat;
+        }
+
+        .palette-grid,
+        .rationale-grid,
+        .principle-grid,
+        .voice-grid,
+        .asset-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .color-blot {
+          min-height: 220px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+          transition: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="suite-shell">
+      <nav class="suite-nav" aria-label="Marketing suite sections">
+        <div class="container suite-nav-inner">
+          <a class="suite-back-link" href="../">Back to Quiet Coast Site</a>
+          <div class="suite-jumps">
+            <a class="suite-jump-link" href="#story">Story</a>
+            <a class="suite-jump-link" href="#palette">Palette</a>
+            <a class="suite-jump-link" href="#logo">Logo</a>
+            <a class="suite-jump-link" href="#assets">Assets</a>
+            <a class="suite-jump-link" href="#voice">Voice</a>
+          </div>
+        </div>
+      </nav>
+
+      <header class="suite-hero">
+        <div class="container suite-hero-grid">
+          <div class="hero-copy">
+            <span class="eyebrow">Quiet Coast Brand System</span>
+            <h1>Care that feels rooted.</h1>
+            <p>Bay Area Professional Counseling needed a visual identity that felt calm without feeling clinical, refined without feeling distant, and local without becoming decorative. The Quiet Coast direction gives the practice a warm, grounded presence that helps clients feel oriented before they read a single paragraph.</p>
+          </div>
+          <div class="hero-logo-card">
+            <img src="../../assets/brand/logos/primary-logo.png" alt="Bay Area Professional Counseling primary logo">
+            <p class="hero-logo-note">The updated identity brings together a hand-lettered coastal wordmark, a steady professional descriptor, and a small rooted botanical mark. It feels personal, established, and intentionally local.</p>
+          </div>
+        </div>
+      </header>
+
+      <section class="suite-section" id="story">
+        <div class="container">
+          <div class="section-intro">
+            <div>
+              <span class="eyebrow">Brand Foundation</span>
+              <h2>The Quiet Coast.</h2>
+            </div>
+            <p>The design is built around one emotional promise: you do not have to navigate it alone. Every major choice supports that idea through softness, clarity, warmth, and a sense of place.</p>
+          </div>
+
+          <div class="story-panel">
+            <h3>Why this direction works</h3>
+            <p>People often arrive at a counseling website carrying stress, uncertainty, grief, or the quiet hope that something could feel different. A site like this should not feel like a hospital form, a wellness trend, or a generic therapy template. It should feel like an open door.</p>
+            <p>The Quiet Coast design uses familiar Gulf Coast references to create that open-door feeling. Beach grass, oyster sand, Mobile Bay blue, marsh sage, warm paper texture, and sunset gold are not used as decoration for decoration's sake. They give the practice a sense of home. They remind clients that care can be professional and still feel human, local, and deeply welcoming.</p>
+            <p>The result is a brand that feels compassionate, rooted in place, and quietly confident. It is editorial enough to feel polished, soft enough to feel approachable, and restrained enough to keep the focus on the people seeking care.</p>
+          </div>
+
+          <div class="principle-grid">
+            <article class="principle-card" style="--accent: var(--mobile-bay-blue);">
+              <span aria-hidden="true"></span>
+              <h3>Local Calm</h3>
+              <p>The coast is referenced through tone, texture, and atmosphere, giving the practice a familiar regional identity without becoming themed or literal.</p>
+            </article>
+            <article class="principle-card" style="--accent: var(--sunrise-gold);">
+              <span aria-hidden="true"></span>
+              <h3>Warmth</h3>
+              <p>Southern sunset colors and paper-soft neutrals replace hard clinical whites, creating a visual system that feels gentle and reassuring.</p>
+            </article>
+            <article class="principle-card" style="--accent: var(--marsh-sage);">
+              <span aria-hidden="true"></span>
+              <h3>Belonging</h3>
+              <p>The imagery suggests familiar places, familiar wildlife, and a sense of being held by a landscape clients may already know.</p>
+            </article>
+            <article class="principle-card" style="--accent: var(--deep-bay);">
+              <span aria-hidden="true"></span>
+              <h3>Trust</h3>
+              <p>Deep Bay anchors the system with clarity and professionalism, so the brand remains credible even when the visual language is soft.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="suite-section" id="palette">
+        <div class="container">
+          <div class="section-intro">
+            <div>
+              <span class="eyebrow">Color Palette</span>
+              <h2>Drawn from coast, paper, and sunset.</h2>
+            </div>
+            <p>The palette is intentionally quiet. Warm whites and sand tones create the canvas. Blue, sage, and deep bay tones provide regional character and structure. Sunrise Gold is held back for warmth, emphasis, and moments of optimism.</p>
+          </div>
+
+          <div class="palette-grid" aria-label="Quiet Coast color palette">
+            <article class="color-blot" style="--swatch: #f8f5f0; --turn: -8deg;"><div class="color-copy"><strong>Morning Fog</strong><span>#F8F5F0 - main canvas</span></div></article>
+            <article class="color-blot" style="--swatch: #689da7; --turn: 5deg;"><div class="color-copy"><strong>Mobile Bay Blue</strong><span>#689DA7 - atmosphere</span></div></article>
+            <article class="color-blot" style="--swatch: #a8b99a; --turn: -3deg;"><div class="color-copy"><strong>Marsh Sage</strong><span>#A8B99A - natural support</span></div></article>
+            <article class="color-blot" style="--swatch: #e7dfc9; --turn: 7deg;"><div class="color-copy"><strong>Oyster Sand</strong><span>#E7DFC9 - warmth</span></div></article>
+            <article class="color-blot" style="--swatch: #6d655f; --turn: -11deg;"><div class="color-copy"><strong>Driftwood</strong><span>#6D655F - secondary text</span></div></article>
+            <article class="color-blot" style="--swatch: #1f5963; --turn: 4deg;"><div class="color-copy"><strong>Deep Bay</strong><span>#1F5963 - hierarchy</span></div></article>
+            <article class="color-blot" style="--swatch: #e7b36a; --turn: -5deg;"><div class="color-copy"><strong>Sunrise Gold</strong><span>#E7B36A - quiet highlight</span></div></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="suite-section" id="logo">
+        <div class="container">
+          <div class="section-intro">
+            <div>
+              <span class="eyebrow">Logo System</span>
+              <h2>Personal, polished, and easy to trust.</h2>
+            </div>
+            <p>The updated logo works because it balances warmth and authority. The expressive wordmark gives the brand a human hand, while the professional descriptor keeps the practice clear and credible.</p>
+          </div>
+
+          <div class="logo-system">
+            <div class="logo-card">
+              <img src="../../assets/brand/logos/horizontal-logo.png" alt="Bay Area Professional Counseling horizontal logo">
+            </div>
+            <div class="logo-copy">
+              <article class="rationale-card" style="--image: url('../../assets/brand/illustrations/oak-tree.png');">
+                <h3>Why this logo was chosen</h3>
+                <p>The script wordmark feels approachable and personal, which matters for counseling. It reads less like an institution and more like a steady local practice with real people behind it.</p>
+              </article>
+              <article class="rationale-card" style="--image: url('../../assets/brand/illustrations/driftwood.png');">
+                <h3>Why it works so well</h3>
+                <p>The composition has enough refinement to feel established, but enough softness to lower the emotional temperature. The small rooted mark reinforces care that is grounded, compassionate, and connected to place.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="suite-section" id="assets">
+        <div class="container">
+          <div class="section-intro">
+            <div>
+              <span class="eyebrow">Watercolor And Illustration</span>
+              <h2>Familiar details, used with restraint.</h2>
+            </div>
+            <p>The assets are designed to be felt before they are noticed. Watercolor washes soften the digital experience, while local coastal illustrations create recognition, warmth, and a sense of belonging.</p>
+          </div>
+
+          <div class="rationale-grid">
+            <article class="rationale-card" style="--image: url('../../assets/brand/illustrations/pelican.png');">
+              <h3>Wildlife</h3>
+              <p>Pelicans and egrets are familiar Gulf Coast presences. They add life and regional memory without making the site feel playful in the wrong places.</p>
+            </article>
+            <article class="rationale-card" style="--image: url('../../assets/brand/illustrations/dock.png');">
+              <h3>Place</h3>
+              <p>Docks, shorelines, driftwood, and oyster forms quietly locate the practice near Mobile Bay. They suggest steadiness, return, and a landscape people already understand.</p>
+            </article>
+            <article class="rationale-card" style="--image: url('../../assets/brand/illustrations/porch.png');">
+              <h3>Home</h3>
+              <p>Porches, chairs, journals, and coffee bring the brand indoors. They make the experience feel hospitable and human rather than purely clinical.</p>
+            </article>
+          </div>
+
+          <div class="asset-grid" aria-label="Quiet Coast illustration library">
+            <article class="asset-card"><img src="../../assets/brand/illustrations/egret.png" alt="Egret illustration"><strong>Egret</strong></article>
+            <article class="asset-card"><img src="../../assets/brand/illustrations/pelican.png" alt="Pelican illustration"><strong>Pelican</strong></article>
+            <article class="asset-card"><img src="../../assets/brand/illustrations/dock.png" alt="Dock illustration"><strong>Dock</strong></article>
+            <article class="asset-card"><img src="../../assets/brand/illustrations/oyster.png" alt="Oyster illustration"><strong>Oyster</strong></article>
+            <article class="asset-card"><img src="../../assets/brand/illustrations/shoreline.png" alt="Shoreline illustration"><strong>Shoreline</strong></article>
+            <article class="asset-card"><img src="../../assets/brand/illustrations/driftwood.png" alt="Driftwood illustration"><strong>Driftwood</strong></article>
+            <article class="asset-card"><img src="../../assets/brand/illustrations/journal.png" alt="Journal illustration"><strong>Journal</strong></article>
+            <article class="asset-card"><img src="../../assets/brand/illustrations/chair.png" alt="Chair illustration"><strong>Chair</strong></article>
+            <article class="asset-card"><img src="../../assets/brand/illustrations/porch.png" alt="Porch illustration"><strong>Porch</strong></article>
+            <article class="asset-card"><img src="../../assets/brand/illustrations/oak-tree.png" alt="Oak tree illustration"><strong>Oak Tree</strong></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="suite-section" id="voice">
+        <div class="container">
+          <div class="application-panel">
+            <span class="eyebrow">Messaging And Experience</span>
+            <h2>A site that sounds like a steady counselor.</h2>
+            <p>The words should feel warm, clear, and quietly confident. The brand should avoid institutional language, exaggerated wellness promises, and anything that sounds like a hospital brochure. The tone is calm enough for someone in distress and refined enough for someone evaluating professional care.</p>
+
+            <div class="voice-grid">
+              <article class="voice-card">
+                <h3>Clear</h3>
+                <p>Navigation, therapist information, appointment steps, and privacy guidance are direct and easy to scan.</p>
+              </article>
+              <article class="voice-card">
+                <h3>Human</h3>
+                <p>The design makes room for warmth, imperfection, and softness, helping clients feel met rather than processed.</p>
+              </article>
+              <article class="voice-card">
+                <h3>Rooted</h3>
+                <p>Mobile Bay references help the practice feel like it belongs to this community, not like a generic counseling template.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="suite-closing">
+        <div class="container">
+          <img src="../../assets/brand/logos/wordmark.png" alt="Bay Area Professional Counseling wordmark">
+          <h2>Compassionate care, rooted in place.</h2>
+          <p>This identity gives Bay Area Professional Counseling a digital home that feels like the care it offers: warm, steady, thoughtful, local, and never generic.</p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
