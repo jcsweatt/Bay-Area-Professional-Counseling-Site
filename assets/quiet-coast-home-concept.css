@@ -7,26 +7,52 @@
 
 .concept-home .site-header {
   border-bottom-color: rgb(31 89 99 / calc(0.02 + var(--concept-header-progress, 0) * 0.1));
-  background:
-    linear-gradient(
-      rgb(251 248 242 / calc(var(--concept-header-progress, 0) * 0.94)),
-      rgb(251 248 242 / calc(var(--concept-header-progress, 0) * 0.84))
-    ),
-    url("brand/watercolor/mist-wash.png") center top / cover no-repeat;
-  backdrop-filter: blur(calc(var(--concept-header-progress, 0) * 18px));
+  background: transparent;
+  backdrop-filter: blur(calc(var(--concept-header-progress, 0) * 16px));
   box-shadow: none;
+  isolation: isolate;
+  overflow: hidden;
   transition:
     border-color 420ms ease;
+}
+
+.concept-home .site-header::before,
+.concept-home .site-header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.concept-home .site-header::before {
+  background:
+    linear-gradient(90deg, rgba(251, 248, 242, 0.78) 0%, rgba(251, 248, 242, 0.38) 40%, rgba(251, 248, 242, 0.12) 100%),
+    url("homepage-concept/header-hero.jpg") center top / max(100vw, 2200px) auto no-repeat,
+    var(--bapc-paper);
+  opacity: calc(1 - var(--concept-header-progress, 0));
+}
+
+.concept-home .site-header::after {
+  background:
+    linear-gradient(rgba(251, 248, 242, 0.94), rgba(251, 248, 242, 0.84)),
+    url("brand/watercolor/mist-wash.png") center top / cover no-repeat;
+  opacity: var(--concept-header-progress, 0);
 }
 
 .concept-home .site-header.is-scrolled,
 .concept-home .site-header:focus-within {
   border-bottom-color: rgba(31, 89, 99, 0.12);
-  background:
-    linear-gradient(rgba(251, 248, 242, 0.94), rgba(251, 248, 242, 0.84)),
-    url("brand/watercolor/mist-wash.png") center top / cover no-repeat;
-  backdrop-filter: blur(18px);
   box-shadow: 0 10px 34px rgb(31 89 99 / calc(var(--concept-header-progress, 1) * 0.08));
+}
+
+.concept-home .site-header:focus-within::after {
+  opacity: 1;
+}
+
+.concept-home .header-inner {
+  position: relative;
+  z-index: 1;
 }
 
 .concept-home .site-nav a[href="#workshops"]::after {
@@ -40,10 +66,20 @@
   margin-top: calc(var(--header-offset, 141px) * -1);
   padding: clamp(190px, 16vw, 250px) 0 clamp(8rem, 13vw, 14rem);
   background:
-    linear-gradient(90deg, rgba(251, 248, 242, 0.94) 0%, rgba(251, 248, 242, 0.74) 33%, rgba(251, 248, 242, 0.18) 68%, rgba(251, 248, 242, 0.08) 100%),
+    linear-gradient(90deg, rgba(251, 248, 242, 0.98) 0%, rgba(251, 248, 242, 0.74) 24%, rgba(251, 248, 242, 0.18) 62%, rgba(251, 248, 242, 0.04) 100%),
     linear-gradient(180deg, rgba(251, 248, 242, 0.18) 0%, rgba(251, 248, 242, 0) 44%, rgba(251, 248, 242, 0.1) 100%),
-    url("homepage-concept/header-hero.jpg") center calc(100% + 54px) / min(100vw, 1780px) auto no-repeat,
+    url("homepage-concept/header-hero.jpg") center calc(100% + 54px) / max(100vw, 2200px) auto no-repeat,
     var(--bapc-paper);
+}
+
+.concept-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, var(--bapc-paper) 0%, rgba(251, 248, 242, 0) 11%, rgba(251, 248, 242, 0) 89%, var(--bapc-paper) 100%),
+    linear-gradient(180deg, rgba(251, 248, 242, 0.32) 0%, rgba(251, 248, 242, 0) 22%, rgba(251, 248, 242, 0) 76%, var(--bapc-paper) 100%);
 }
 
 .concept-hero::after {
@@ -57,7 +93,7 @@
 
 .concept-hero .container {
   position: relative;
-  z-index: 2;
+  z-index: 3;
 }
 
 .concept-hero-copy {
@@ -582,7 +618,7 @@
     min-height: clamp(860px, 52vw, 1040px);
     padding-top: clamp(210px, 12vw, 260px);
     padding-bottom: clamp(13rem, 14vw, 17rem);
-    background-size: min(100vw, 1880px) auto;
+    background-size: max(100vw, 2320px) auto;
     background-position: center calc(100% + 88px);
   }
 
