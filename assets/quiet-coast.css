@@ -1303,33 +1303,15 @@ button:disabled {
 .profile-layout > aside {
   align-self: start;
   position: sticky;
-  top: clamp(5.5rem, 9vw, 7.25rem);
+  top: clamp(7rem, 11vw, 8.75rem);
   z-index: 2;
 }
 
 .aside-card {
   position: relative;
-  max-height: calc(100vh - clamp(7rem, 12vw, 9rem));
-  overflow: auto;
-  overscroll-behavior: contain;
   padding: 1.5rem;
   box-shadow: 0 20px 52px rgba(31, 89, 99, 0.13);
   transform: translateZ(0);
-  scrollbar-width: thin;
-  scrollbar-color: rgba(31, 89, 99, 0.28) transparent;
-}
-
-.aside-card::-webkit-scrollbar {
-  width: 0.55rem;
-}
-
-.aside-card::-webkit-scrollbar-thumb {
-  border-radius: 999px;
-  background: rgba(31, 89, 99, 0.26);
-}
-
-.aside-card::-webkit-scrollbar-track {
-  background: transparent;
 }
 
 .details-list {
@@ -1861,8 +1843,6 @@ legend {
 
   .aside-card {
     position: static;
-    max-height: none;
-    overflow: visible;
   }
 
   .profile-layout > aside {
