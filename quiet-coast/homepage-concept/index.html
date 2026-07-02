@@ -7,7 +7,7 @@ description: A separate mockup-inspired homepage concept for the Quiet Coast red
 <html lang="en">
   <head>
     {% include quiet-coast-head.html %}
-    <link rel="stylesheet" href="{{ '/assets/quiet-coast-home-concept.css?v=20260702-01' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/quiet-coast-home-concept.css?v=20260702-02' | relative_url }}">
   </head>
   <body class="concept-home">
     <a class="skip-link" href="#main-content">Skip to content</a>
@@ -201,9 +201,6 @@ description: A separate mockup-inspired homepage concept for the Quiet Coast red
     </main>
 
     <footer class="concept-footer">
-      <div class="container">
-        <p class="concept-footer-quote">"You don't have to navigate life's challenges alone."</p>
-      </div>
       <div class="container concept-footer-grid">
         <div>
           <img class="concept-footer-logo" src="{{ '/assets/brand/logos/svg/wordmark-logo.svg' | relative_url }}" alt="Bay Area Professional Counseling">
@@ -246,5 +243,17 @@ description: A separate mockup-inspired homepage concept for the Quiet Coast red
         <span>Marketing Suite &nbsp; | &nbsp; Privacy Policy</span>
       </div>
     </footer>
+    <script>
+      (() => {
+        const root = document.documentElement;
+        const updateConceptHeader = () => {
+          const progress = Math.min(window.scrollY / 180, 1);
+          root.style.setProperty("--concept-header-progress", progress.toFixed(3));
+        };
+
+        updateConceptHeader();
+        window.addEventListener("scroll", updateConceptHeader, { passive: true });
+      })();
+    </script>
   </body>
 </html>
