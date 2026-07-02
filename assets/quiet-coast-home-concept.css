@@ -1,0 +1,632 @@
+.concept-home {
+  background:
+    linear-gradient(rgba(251, 248, 242, 0.92), rgba(251, 248, 242, 0.95)),
+    url("brand/patterns/linen-texture.png") center top / 960px auto repeat;
+  color: var(--bapc-charcoal);
+}
+
+.concept-home .site-header {
+  background:
+    linear-gradient(rgba(251, 248, 242, 0.88), rgba(251, 248, 242, 0.62)),
+    url("brand/watercolor/mist-wash.png") center top / cover no-repeat;
+  box-shadow: none;
+}
+
+.concept-home .site-nav a[href="#workshops"]::after {
+  transform: scaleX(0);
+}
+
+.concept-hero {
+  position: relative;
+  overflow: hidden;
+  min-height: clamp(620px, 78vw, 840px);
+  margin-top: calc(var(--header-offset, 90px) * -1);
+  padding: clamp(150px, 16vw, 210px) 0 clamp(5rem, 9vw, 8rem);
+  background:
+    linear-gradient(90deg, rgba(251, 248, 242, 0.9) 0%, rgba(251, 248, 242, 0.7) 33%, rgba(251, 248, 242, 0.16) 68%, rgba(251, 248, 242, 0.08) 100%),
+    linear-gradient(180deg, rgba(251, 248, 242, 0.18) 0%, rgba(251, 248, 242, 0) 44%, rgba(251, 248, 242, 0.1) 100%),
+    url("homepage-concept/header-hero.png") center bottom / cover no-repeat,
+    var(--bapc-paper);
+}
+
+.concept-hero::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 -1px;
+  height: clamp(54px, 8vw, 96px);
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(251, 248, 242, 0), var(--bapc-paper) 84%);
+}
+
+.concept-hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+.concept-hero-copy {
+  max-width: 680px;
+}
+
+.concept-hero h1 {
+  max-width: 11ch;
+  margin: 0 0 1.25rem;
+  color: var(--bapc-deep-bay);
+  font-size: clamp(3.75rem, 8vw, 6.9rem);
+  line-height: 0.98;
+}
+
+.concept-hero p {
+  max-width: 590px;
+  margin: 0 0 2rem;
+  color: var(--bapc-deep-bay);
+  font-family: var(--display);
+  font-size: clamp(1.35rem, 2vw, 1.85rem);
+  line-height: 1.38;
+}
+
+.concept-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.welcome-band {
+  position: relative;
+  border-top: 1px solid rgba(31, 89, 99, 0.12);
+  border-bottom: 1px solid rgba(31, 89, 99, 0.12);
+  background:
+    linear-gradient(90deg, rgba(251, 248, 242, 0.96), rgba(251, 248, 242, 0.9)),
+    url("brand/watercolor/paper-wash.png") center / cover no-repeat;
+  padding: clamp(2rem, 4vw, 3.2rem) 0;
+}
+
+.welcome-grid {
+  display: grid;
+  align-items: center;
+  gap: clamp(1.5rem, 4vw, 4rem);
+  grid-template-columns: minmax(160px, 0.32fr) minmax(220px, 0.55fr) minmax(280px, 1fr);
+}
+
+.welcome-sprig {
+  min-height: 160px;
+  background: url("brand/illustrations/grass.png") center / contain no-repeat;
+  opacity: 0.72;
+}
+
+.welcome-band h2 {
+  max-width: 12ch;
+  margin: 0;
+  color: var(--bapc-deep-bay);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+}
+
+.welcome-band p {
+  margin: 0;
+  border-left: 1px solid rgba(31, 89, 99, 0.18);
+  padding-left: clamp(1.25rem, 3vw, 3rem);
+  color: var(--bapc-charcoal);
+}
+
+.concept-section {
+  padding: clamp(3.8rem, 7vw, 6.2rem) 0;
+}
+
+.concept-section-title {
+  text-align: center;
+}
+
+.concept-section-title h2 {
+  margin: 0;
+  color: var(--bapc-deep-bay);
+  font-size: clamp(2.4rem, 4.8vw, 4rem);
+}
+
+.concept-divider {
+  width: 150px;
+  height: 36px;
+  margin: 0.55rem auto 2.2rem;
+  background: url("brand/dividers/divider-leaves.png") center / contain no-repeat;
+  opacity: 0.62;
+}
+
+.help-grid {
+  display: grid;
+  gap: 0;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  border-top: 1px solid rgba(31, 89, 99, 0.1);
+  border-bottom: 1px solid rgba(31, 89, 99, 0.1);
+}
+
+.help-item {
+  min-height: 142px;
+  border-left: 1px solid rgba(31, 89, 99, 0.12);
+  display: grid;
+  place-items: center;
+  gap: 0.65rem;
+  padding: 1.15rem 0.75rem;
+  text-align: center;
+}
+
+.help-item:first-child {
+  border-left: 0;
+}
+
+.help-icon {
+  width: 58px;
+  height: 58px;
+  color: var(--bapc-marsh-sage);
+}
+
+.help-item strong {
+  color: var(--bapc-deep-bay);
+  font-family: var(--display);
+  font-size: 1.18rem;
+  line-height: 1.15;
+}
+
+.approach-story {
+  background:
+    linear-gradient(180deg, rgba(251, 248, 242, 0.4), rgba(251, 248, 242, 0.86)),
+    url("brand/watercolor/mist-wash.png") center / cover no-repeat;
+}
+
+.approach-grid {
+  display: grid;
+  align-items: stretch;
+  gap: clamp(2rem, 5vw, 4.5rem);
+  grid-template-columns: minmax(280px, 0.9fr) minmax(320px, 1.1fr);
+}
+
+.approach-image {
+  min-height: clamp(330px, 34vw, 520px);
+  border-radius: 7px;
+  background:
+    linear-gradient(rgba(251, 248, 242, 0.04), rgba(251, 248, 242, 0.12)),
+    url("brand/illustrations/boardwalk.png") center / cover no-repeat;
+  box-shadow: var(--shadow-card);
+}
+
+.approach-copy h2,
+.workshops-intro h2,
+.meet-card h2,
+.steps-panel h2,
+.loop-band h2 {
+  margin: 0 0 1rem;
+  color: var(--bapc-deep-bay);
+}
+
+.approach-copy p,
+.workshops-intro p,
+.meet-card p,
+.step p,
+.loop-band p {
+  color: var(--bapc-charcoal);
+}
+
+.approach-values {
+  display: grid;
+  gap: 0;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 2.4rem;
+  border-top: 1px solid rgba(31, 89, 99, 0.12);
+  border-bottom: 1px solid rgba(31, 89, 99, 0.12);
+}
+
+.approach-value {
+  padding: 1.4rem 1rem;
+  border-left: 1px solid rgba(31, 89, 99, 0.12);
+  text-align: center;
+}
+
+.approach-value:first-child {
+  border-left: 0;
+}
+
+.approach-value svg {
+  width: 54px;
+  height: 54px;
+  margin-bottom: 0.6rem;
+  color: var(--bapc-marsh-sage);
+}
+
+.workshop-section {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(90deg, rgba(248, 245, 240, 0.96), rgba(248, 245, 240, 0.92)),
+    url("brand/watercolor/sand-wash.png") center / cover no-repeat;
+}
+
+.workshop-section::after {
+  content: "";
+  position: absolute;
+  right: -2rem;
+  bottom: -2rem;
+  width: clamp(190px, 24vw, 360px);
+  height: clamp(240px, 32vw, 480px);
+  background: url("brand/illustrations/grass.png") center / contain no-repeat;
+  opacity: 0.72;
+  pointer-events: none;
+}
+
+.workshop-layout {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 0.78fr repeat(3, minmax(0, 1fr));
+}
+
+.workshop-card {
+  min-height: 250px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: rgba(251, 248, 242, 0.9);
+  box-shadow: 0 10px 28px rgba(31, 89, 99, 0.08);
+  padding: 1.35rem;
+}
+
+.workshop-card h3 {
+  margin: 0 0 0.75rem;
+  color: var(--bapc-deep-bay);
+  font-size: 1.55rem;
+}
+
+.workshop-card .date {
+  display: block;
+  margin-bottom: 0.8rem;
+  color: var(--bapc-driftwood);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.workshop-card::before {
+  content: "";
+  display: block;
+  height: 78px;
+  margin: -1.35rem -1.35rem 1.1rem;
+  border-radius: 7px 7px 0 0;
+  background: var(--workshop-image) center / cover no-repeat;
+  opacity: 0.78;
+}
+
+.lower-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: minmax(300px, 0.8fr) minmax(360px, 1.2fr);
+}
+
+.meet-card,
+.steps-panel {
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: rgba(251, 248, 242, 0.88);
+  box-shadow: var(--shadow-card);
+  padding: clamp(1.25rem, 3vw, 2rem);
+}
+
+.meet-card {
+  position: relative;
+  display: grid;
+  align-items: center;
+  gap: 1.5rem;
+  grid-template-columns: 140px minmax(0, 1fr);
+  overflow: hidden;
+}
+
+.meet-card::after {
+  content: "";
+  position: absolute;
+  left: -1rem;
+  bottom: -2rem;
+  width: 150px;
+  height: 200px;
+  background: url("brand/illustrations/grass.png") center / contain no-repeat;
+  opacity: 0.54;
+}
+
+.meet-card img {
+  position: relative;
+  z-index: 1;
+  width: 140px;
+  aspect-ratio: 1;
+  border-radius: 999px;
+  object-fit: cover;
+  box-shadow: var(--shadow-card);
+}
+
+.steps-row {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.step {
+  text-align: center;
+}
+
+.step-icon {
+  display: grid;
+  place-items: center;
+  width: 76px;
+  height: 76px;
+  margin: 0 auto 0.75rem;
+  border-radius: 999px;
+  background:
+    linear-gradient(rgba(251, 248, 242, 0.82), rgba(251, 248, 242, 0.74)),
+    url("brand/watercolor/paper-wash.png") center / cover no-repeat;
+  color: var(--bapc-mobile-bay-blue);
+}
+
+.step-icon svg {
+  width: 36px;
+  height: 36px;
+}
+
+.step strong {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: var(--bapc-deep-bay);
+  font-family: var(--display);
+  font-size: 1.15rem;
+}
+
+.loop-band {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(90deg, rgba(232, 241, 243, 0.88), rgba(248, 245, 240, 0.92)),
+    url("brand/watercolor/blue-wash.png") center / cover no-repeat;
+  padding: clamp(2.4rem, 5vw, 4.4rem) 0;
+}
+
+.loop-band::before,
+.loop-band::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.loop-band::before {
+  left: clamp(1rem, 6vw, 5rem);
+  bottom: -2rem;
+  width: clamp(130px, 18vw, 250px);
+  height: clamp(190px, 26vw, 360px);
+  background-image: url("brand/illustrations/blue-heron1.png");
+  opacity: 0.78;
+}
+
+.loop-band::after {
+  right: clamp(1rem, 4vw, 5rem);
+  bottom: -2.5rem;
+  width: clamp(190px, 28vw, 430px);
+  height: clamp(150px, 22vw, 300px);
+  background-image: url("brand/illustrations/lighthouse.png");
+  opacity: 0.46;
+  filter: saturate(0.72) brightness(1.1);
+}
+
+.loop-content {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  align-items: center;
+  gap: 2rem;
+  grid-template-columns: 0.8fr 1fr;
+}
+
+.loop-form {
+  display: flex;
+  gap: 0.7rem;
+}
+
+.loop-form input {
+  min-width: 0;
+  flex: 1;
+  border: 1px solid rgba(31, 89, 99, 0.22);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.84);
+  padding: 0.9rem 1rem;
+  font: inherit;
+}
+
+.concept-footer {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(3rem, 6vw, 5rem) 0 1.5rem;
+  background:
+    linear-gradient(180deg, rgba(248, 245, 240, 0.82) 0%, rgba(248, 245, 240, 0.7) 38%, rgba(248, 245, 240, 0.9) 100%),
+    url("homepage-concept/footer-scene.png") center bottom / cover no-repeat;
+  min-height: 680px;
+}
+
+.concept-footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(251, 248, 242, 0.06) 0%, rgba(251, 248, 242, 0.58) 62%, rgba(251, 248, 242, 0.9) 100%);
+}
+
+.concept-footer-quote {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+  margin: 0 auto clamp(4rem, 8vw, 7rem);
+  color: var(--bapc-deep-bay);
+  font-family: var(--display);
+  font-size: clamp(2.4rem, 4.8vw, 4.6rem);
+  line-height: 1.08;
+  text-align: center;
+}
+
+.concept-footer-quote::after {
+  content: "";
+  display: block;
+  width: 130px;
+  height: 32px;
+  margin: 1rem auto 0;
+  background: url("brand/dividers/divider-leaves.png") center / contain no-repeat;
+  opacity: 0.54;
+}
+
+.concept-footer-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: clamp(2rem, 5vw, 4rem);
+  grid-template-columns: minmax(260px, 1.1fr) repeat(3, minmax(160px, 0.7fr));
+}
+
+.concept-footer-logo {
+  width: min(250px, 72vw);
+  margin-bottom: 1rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 0.65rem;
+  margin-top: 1.25rem;
+}
+
+.social-links a {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(31, 89, 99, 0.18);
+  border-radius: 999px;
+  background: rgba(251, 248, 242, 0.76);
+  color: var(--bapc-deep-bay);
+  transition: transform 180ms ease, background 180ms ease;
+}
+
+.social-links a:hover {
+  transform: translateY(-3px);
+  background: rgba(232, 241, 243, 0.9);
+}
+
+.social-links svg {
+  width: 22px;
+  height: 22px;
+}
+
+.concept-footer h3 {
+  margin: 0 0 1rem;
+  color: var(--bapc-deep-bay);
+  font-family: var(--body);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.concept-footer ul {
+  display: grid;
+  gap: 0.45rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.concept-footer a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.concept-footer a:hover {
+  color: var(--bapc-deep-bay);
+}
+
+.concept-footer-bottom {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: clamp(2rem, 5vw, 4rem);
+  border-top: 1px solid rgba(31, 89, 99, 0.12);
+  padding-top: 1rem;
+  color: var(--bapc-driftwood);
+  font-size: 0.82rem;
+}
+
+@media (max-width: 1020px) {
+  .help-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .help-item:nth-child(4n + 1) {
+    border-left: 0;
+  }
+
+  .approach-grid,
+  .workshop-layout,
+  .lower-grid,
+  .loop-content,
+  .concept-footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .workshops-intro {
+    max-width: 620px;
+  }
+
+  .steps-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .concept-hero {
+    min-height: 620px;
+    padding-top: 130px;
+    background-position: 58% bottom;
+  }
+
+  .welcome-grid,
+  .approach-values,
+  .steps-row {
+    grid-template-columns: 1fr;
+  }
+
+  .welcome-sprig {
+    min-height: 120px;
+  }
+
+  .welcome-band p,
+  .approach-value {
+    border-left: 0;
+    border-top: 1px solid rgba(31, 89, 99, 0.12);
+    padding-left: 0;
+    padding-top: 1.2rem;
+  }
+
+  .help-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .help-item:nth-child(odd) {
+    border-left: 0;
+  }
+
+  .meet-card {
+    grid-template-columns: 1fr;
+  }
+
+  .loop-form {
+    flex-direction: column;
+  }
+
+  .concept-footer-bottom {
+    flex-direction: column;
+  }
+
+  .concept-footer {
+    background-position: 56% bottom;
+  }
+}
