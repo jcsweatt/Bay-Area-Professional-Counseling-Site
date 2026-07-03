@@ -7,7 +7,7 @@ description: A separate mockup-inspired homepage concept for the Quiet Coast red
 <html lang="en">
   <head>
     {% include quiet-coast-head.html %}
-    <link rel="stylesheet" href="{{ '/assets/quiet-coast-home-concept.css?v=20260703-02' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/quiet-coast-home-concept.css?v=20260703-03' | relative_url }}">
   </head>
   <body class="concept-home">
     <a class="skip-link" href="#main-content">Skip to content</a>
@@ -149,36 +149,42 @@ description: A separate mockup-inspired homepage concept for the Quiet Coast red
       </section>
 
       <section class="concept-section">
-        <div class="container lower-grid">
-          <article class="meet-card">
-            <img src="{{ '/assets/IMG_0051-99db6be59a41.jpg' | relative_url }}" alt="Lacey Moore">
-            <div>
-              <h2>Meet Lacey</h2>
-              <p>Owner and Licensed Professional Counselor helping adults, couples, and families find hope through compassionate care.</p>
-              <a class="text-link" href="{{ '/quiet-coast/lacey/' | relative_url }}">Read My Story</a>
+        <div class="container lower-grid concept-start-panel">
+          <article class="meet-card" data-therapist-rotator>
+            <img data-therapist-image src="{{ '/assets/IMG_0051-99db6be59a41.jpg' | relative_url }}" alt="Lacey Moore">
+            <div class="meet-card-copy">
+              <h2 data-therapist-heading>Meet Lacey</h2>
+              <span class="meet-card-rule" aria-hidden="true"></span>
+              <p class="meet-card-role" data-therapist-role>Owner &amp; Licensed Professional Counselor</p>
+              <p data-therapist-summary>Helping adults, couples, and families find hope through compassionate care.</p>
+              <a class="text-link" data-therapist-link href="{{ '/quiet-coast/lacey/' | relative_url }}">Read My Story</a>
             </div>
           </article>
           <article class="steps-panel">
             <h2>Getting Started Is Simple</h2>
             <div class="steps-row">
               <div class="step">
-                <div class="step-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M17 9 12 14c-2 2 2 11 9 18s16 11 18 9l5-5-8-8-5 5c-4-2-8-6-10-10l5-5-9-9Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></div>
-                <strong>1 Reach Out</strong>
+                <div class="step-icon"><img src="{{ '/assets/homepage-concept/step-phone.png' | relative_url }}" alt=""></div>
+                <span class="step-number">1</span>
+                <strong>Reach Out</strong>
                 <p>Give us a call or send a message.</p>
               </div>
               <div class="step">
-                <div class="step-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M10 13h28v20H21l-8 6v-6h-3V13Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M18 23h.01M24 23h.01M30 23h.01" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg></div>
-                <strong>2 Brief Phone Consultation</strong>
+                <div class="step-icon"><img src="{{ '/assets/homepage-concept/step-message-bubble.png' | relative_url }}" alt=""></div>
+                <span class="step-number">2</span>
+                <strong>Brief Phone Consultation</strong>
                 <p>We'll connect and talk about your needs.</p>
               </div>
               <div class="step">
-                <div class="step-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="12" y="14" width="24" height="24" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M17 10v8M31 10v8M12 22h24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
-                <strong>3 Your First Appointment</strong>
+                <div class="step-icon"><img src="{{ '/assets/homepage-concept/step-calendar.png' | relative_url }}" alt=""></div>
+                <span class="step-number">3</span>
+                <strong>Your First Appointment</strong>
                 <p>We'll get to know you and set goals together.</p>
               </div>
               <div class="step">
-                <div class="step-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M37 9c-13 2-22 11-25 25 13-2 22-11 25-25Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 34c7-8 13-13 21-20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
-                <strong>4 Begin Your Journey</strong>
+                <div class="step-icon"><img src="{{ '/assets/homepage-concept/step-branch.png' | relative_url }}" alt=""></div>
+                <span class="step-number">4</span>
+                <strong>Begin Your Journey</strong>
                 <p>We'll walk alongside you every step of the way.</p>
               </div>
             </div>
@@ -253,6 +259,83 @@ description: A separate mockup-inspired homepage concept for the Quiet Coast red
 
         updateConceptHeader();
         window.addEventListener("scroll", updateConceptHeader, { passive: true });
+      })();
+    </script>
+    <script>
+      (() => {
+        const card = document.querySelector("[data-therapist-rotator]");
+        if (!card || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+        const prefix = window.location.pathname.startsWith("/Bay-Area-Professional-Counseling-Site/")
+          ? "/Bay-Area-Professional-Counseling-Site"
+          : "";
+        const therapists = [
+          {
+            name: "Lacey",
+            role: "Owner & Licensed Professional Counselor",
+            summary: "Helping adults, couples, and families find hope through compassionate care.",
+            image: "/assets/IMG_0051-99db6be59a41.jpg",
+            alt: "Lacey Moore",
+            href: "/quiet-coast/lacey/"
+          },
+          {
+            name: "Alexa",
+            role: "Licensed Professional Counselor",
+            summary: "Supporting individuals, families, and clients navigating addiction or transition.",
+            image: "/assets/IMG_9906-e7cd05e5faf2.jpg",
+            alt: "Alexa Da Rosa",
+            href: "/quiet-coast/alexa/"
+          },
+          {
+            name: "Cindy",
+            role: "Licensed Professional Counselor",
+            summary: "Bringing experienced care for adults, couples, and adolescents.",
+            image: "/assets/IMG_0006-2-1fecee2be4a7.jpg",
+            alt: "Cindy Perronne",
+            href: "/quiet-coast/cindy/"
+          },
+          {
+            name: "Kayla",
+            role: "Licensed Professional Counselor",
+            summary: "Offering restorative support for children, teens, adults, and families.",
+            image: "/assets/Kayla-pic-ef9bd584ab26.jpg",
+            alt: "Kayla Whatley",
+            href: "/quiet-coast/kayla/"
+          },
+          {
+            name: "Leigh",
+            role: "Associate Licensed Counselor",
+            summary: "Providing compassionate support for perinatal care, grief, anxiety, and trauma.",
+            image: "/assets/L.photo-b9534d3c0366.jpg",
+            alt: "Leigh Mohorn",
+            href: "/quiet-coast/leigh/"
+          }
+        ];
+
+        const image = card.querySelector("[data-therapist-image]");
+        const heading = card.querySelector("[data-therapist-heading]");
+        const role = card.querySelector("[data-therapist-role]");
+        const summary = card.querySelector("[data-therapist-summary]");
+        const link = card.querySelector("[data-therapist-link]");
+        let index = 0;
+
+        function setTherapist(therapist) {
+          image.src = prefix + therapist.image;
+          image.alt = therapist.alt;
+          heading.textContent = "Meet " + therapist.name;
+          role.textContent = therapist.role;
+          summary.textContent = therapist.summary;
+          link.href = prefix + therapist.href;
+        }
+
+        window.setInterval(() => {
+          index = (index + 1) % therapists.length;
+          card.classList.add("is-transitioning");
+          window.setTimeout(() => {
+            setTherapist(therapists[index]);
+            card.classList.remove("is-transitioning");
+          }, 260);
+        }, 5200);
       })();
     </script>
   </body>
