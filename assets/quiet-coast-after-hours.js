@@ -108,21 +108,35 @@
     return notice;
   }
 
+  function syncBannerState() {
+    var isVisible = !!(banner && banner.parentNode);
+
+    document.body.classList.toggle('has-after-hours-banner', isVisible);
+    if (isVisible) {
+      document.documentElement.style.setProperty('--after-hours-banner-height', banner.offsetHeight + 'px');
+    } else {
+      document.documentElement.style.removeProperty('--after-hours-banner-height');
+    }
+  }
+
   function updateBanner() {
     var header = document.querySelector('.site-header');
     if (!header) return;
 
     if (officeIsOpen()) {
       if (banner && banner.parentNode) banner.parentNode.removeChild(banner);
+      syncBannerState();
       return;
     }
 
     if (!banner) banner = buildBanner();
     if (!banner.parentNode) header.parentNode.insertBefore(banner, header);
+    syncBannerState();
   }
 
   function initialize() {
     updateBanner();
+    window.addEventListener('resize', syncBannerState);
     window.setInterval(updateBanner, 60000);
   }
 
