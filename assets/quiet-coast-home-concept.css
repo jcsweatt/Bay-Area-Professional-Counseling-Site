@@ -6,6 +6,8 @@
 }
 
 .concept-home .site-header {
+  position: fixed;
+  inset: 0 0 auto;
   border-bottom-color: rgb(31 89 99 / calc(0.02 + var(--concept-header-progress, 0) * 0.1));
   background: transparent;
   backdrop-filter: blur(calc(var(--concept-header-progress, 0) * 16px));
@@ -16,21 +18,12 @@
     border-color 420ms ease;
 }
 
-.concept-home .site-header::before,
 .concept-home .site-header::after {
   content: "";
   position: absolute;
   inset: 0;
   z-index: -1;
   pointer-events: none;
-}
-
-.concept-home .site-header::before {
-  background:
-    linear-gradient(90deg, rgba(251, 248, 242, 0.78) 0%, rgba(251, 248, 242, 0.38) 40%, rgba(251, 248, 242, 0.12) 100%),
-    url("homepage-concept/header-hero.jpg") center top / max(100vw, 2200px) auto no-repeat,
-    var(--bapc-paper);
-  opacity: calc(1 - var(--concept-header-progress, 0));
 }
 
 .concept-home .site-header::after {
@@ -62,13 +55,13 @@
 .concept-hero {
   position: relative;
   overflow: hidden;
-  min-height: clamp(720px, 65vw, 1020px);
-  margin-top: calc(var(--header-offset, 141px) * -1);
-  padding: clamp(190px, 16vw, 250px) 0 clamp(8rem, 13vw, 14rem);
+  min-height: clamp(760px, 67vw, 1080px);
+  margin-top: 0;
+  padding: clamp(210px, 17vw, 280px) 0 clamp(8rem, 13vw, 14rem);
   background:
     linear-gradient(90deg, rgba(251, 248, 242, 0.98) 0%, rgba(251, 248, 242, 0.74) 24%, rgba(251, 248, 242, 0.18) 62%, rgba(251, 248, 242, 0.04) 100%),
     linear-gradient(180deg, rgba(251, 248, 242, 0.18) 0%, rgba(251, 248, 242, 0) 44%, rgba(251, 248, 242, 0.1) 100%),
-    url("homepage-concept/header-hero.jpg") center calc(100% + 54px) / max(100vw, 2200px) auto no-repeat,
+    url("homepage-concept/header-hero.jpg") center top / cover no-repeat,
     var(--bapc-paper);
 }
 
@@ -615,11 +608,11 @@
 
 @media (min-width: 1500px) {
   .concept-hero {
-    min-height: clamp(860px, 52vw, 1040px);
+    min-height: clamp(900px, 54vw, 1080px);
     padding-top: clamp(210px, 12vw, 260px);
     padding-bottom: clamp(13rem, 14vw, 17rem);
-    background-size: max(100vw, 2320px) auto;
-    background-position: center calc(100% + 88px);
+    background-size: cover;
+    background-position: center top;
   }
 
   .concept-hero h1 {
