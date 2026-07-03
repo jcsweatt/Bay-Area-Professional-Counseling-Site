@@ -79,19 +79,55 @@
   z-index: 1;
 }
 
+.concept-home .site-header > .container {
+  width: min(1360px, calc(100vw - 56px));
+}
+
+.concept-home .header-inner {
+  min-height: 128px;
+  gap: clamp(1.2rem, 2vw, 2.4rem);
+}
+
+.concept-home .brand {
+  flex: 0 1 410px;
+}
+
+.concept-home .brand-logo {
+  width: clamp(320px, 24vw, 430px);
+  height: 116px;
+}
+
+.concept-home .site-nav {
+  flex: 0 0 auto;
+  flex-wrap: nowrap;
+  gap: clamp(0.62rem, 1vw, 1.05rem);
+  font-size: clamp(0.78rem, 0.82vw, 0.88rem);
+  line-height: 1;
+}
+
+.concept-home .site-nav a {
+  white-space: nowrap;
+}
+
+.concept-home .site-nav a:not(.button) {
+  display: inline-flex;
+  align-items: center;
+}
+
 .concept-home .site-nav a[href="#workshops"]::after {
   transform: scaleX(0);
 }
 
 .concept-home .site-nav .nav-cta {
   min-width: 0;
-  min-height: 50px;
-  max-width: 190px;
+  min-height: 46px;
+  max-width: none;
   border-radius: 999px;
-  padding: 0.78rem 1.2rem;
-  font-size: 0.78rem;
-  line-height: 1.16;
-  letter-spacing: 0.055em;
+  padding: 0.72rem 1.05rem;
+  font-size: 0.76rem;
+  line-height: 1;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
 }
 
 .concept-hero {
@@ -466,41 +502,21 @@
 }
 
 .loop-band {
+  --concept-loop-scene-height: clamp(220px, 15vw, 300px);
   position: relative;
   overflow: hidden;
   background:
-    linear-gradient(90deg, rgba(232, 241, 243, 0.86), rgba(248, 245, 240, 0.62)),
+    linear-gradient(90deg, rgba(232, 241, 243, 0.68), rgba(248, 245, 240, 0.28) 58%, rgba(251, 248, 242, 0.18)),
+    linear-gradient(180deg, rgba(251, 248, 242, 0.2), rgba(251, 248, 242, 0.08)),
     url("homepage-concept/footer-scene.jpg") center top / 100% auto no-repeat,
-    url("brand/watercolor/blue-wash.png") center / cover no-repeat;
-  padding: clamp(2.4rem, 5vw, 4.4rem) 0;
+    var(--bapc-paper);
+  min-height: var(--concept-loop-scene-height);
+  padding: clamp(2.2rem, 4vw, 3.4rem) 0;
 }
 
 .loop-band::before,
 .loop-band::after {
-  content: "";
-  position: absolute;
-  pointer-events: none;
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-
-.loop-band::before {
-  left: clamp(1rem, 6vw, 5rem);
-  bottom: -2rem;
-  width: clamp(130px, 18vw, 250px);
-  height: clamp(190px, 26vw, 360px);
-  background-image: url("brand/illustrations/blue-heron1.png");
-  opacity: 0.78;
-}
-
-.loop-band::after {
-  right: clamp(1rem, 4vw, 5rem);
-  bottom: -2.5rem;
-  width: clamp(190px, 28vw, 430px);
-  height: clamp(150px, 22vw, 300px);
-  background-image: url("brand/illustrations/lighthouse.png");
-  opacity: 0.46;
-  filter: saturate(0.72) brightness(1.1);
+  content: none;
 }
 
 .loop-content {
@@ -528,12 +544,13 @@
 }
 
 .concept-footer {
+  --concept-loop-scene-height: clamp(220px, 15vw, 300px);
   position: relative;
   overflow: hidden;
   padding: clamp(13rem, 19vw, 20rem) 0 1.5rem;
   background:
     linear-gradient(180deg, rgba(248, 245, 240, 0.42) 0%, rgba(248, 245, 240, 0.66) 38%, rgba(248, 245, 240, 0.94) 100%),
-    url("homepage-concept/footer-scene.jpg") center top / 100% auto no-repeat;
+    url("homepage-concept/footer-scene.jpg") center calc(-1 * var(--concept-loop-scene-height)) / 100% auto no-repeat;
   min-height: clamp(760px, 46vw, 940px);
 }
 
