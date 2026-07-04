@@ -204,8 +204,7 @@
   margin-top: calc(-1 * clamp(78px, 7vw, 126px));
   border: 0;
   background:
-    linear-gradient(180deg, rgba(251, 248, 242, 0.84) 0%, rgba(251, 248, 242, 0.98) 24%, rgba(251, 248, 242, 0.98) 78%, rgba(251, 248, 242, 0.78) 100%),
-    linear-gradient(90deg, rgba(251, 248, 242, 0.92), rgba(251, 248, 242, 0.86)),
+    linear-gradient(180deg, rgba(251, 248, 242, 0) 0%, rgba(251, 248, 242, 0.64) 24%, rgba(251, 248, 242, 0.98) 46%, rgba(251, 248, 242, 0.98) 100%),
     url("brand/watercolor/paper-wash.png") center / cover no-repeat;
   padding: clamp(1.7rem, 3vw, 2.5rem) 0 clamp(1.6rem, 2.5vw, 2.2rem);
   overflow: visible;
@@ -213,27 +212,7 @@
 
 .welcome-band::before,
 .welcome-band::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  z-index: -1;
-  height: clamp(34px, 4.5vw, 68px);
-  pointer-events: none;
-  background:
-    linear-gradient(180deg, rgba(251, 248, 242, 0), rgba(251, 248, 242, 0.95)),
-    url("brand/watercolor/watercolor-border.png") center / cover no-repeat;
-  opacity: 0.9;
-}
-
-.welcome-band::before {
-  top: calc(-1 * clamp(30px, 4vw, 56px));
-}
-
-.welcome-band::after {
-  bottom: calc(-1 * clamp(26px, 3.2vw, 48px));
-  transform: rotate(180deg);
-  opacity: 0.7;
+  content: none;
 }
 
 .welcome-grid {
