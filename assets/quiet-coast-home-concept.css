@@ -80,7 +80,7 @@
 }
 
 .concept-home .site-header > .container {
-  width: min(1360px, calc(100vw - 56px));
+  width: min(1460px, calc(100vw - 48px));
 }
 
 .concept-home .header-inner {
@@ -89,19 +89,19 @@
 }
 
 .concept-home .brand {
-  flex: 0 1 410px;
+  flex: 0 1 500px;
 }
 
 .concept-home .brand-logo {
-  width: clamp(320px, 24vw, 430px);
-  height: 116px;
+  width: clamp(380px, 28vw, 520px);
+  height: 132px;
 }
 
 .concept-home .site-nav {
   flex: 0 0 auto;
   flex-wrap: nowrap;
-  gap: clamp(0.62rem, 1vw, 1.05rem);
-  font-size: clamp(0.78rem, 0.82vw, 0.88rem);
+  gap: clamp(0.5rem, 0.85vw, 0.95rem);
+  font-size: clamp(0.74rem, 0.78vw, 0.86rem);
   line-height: 1;
 }
 
@@ -123,8 +123,8 @@
   min-height: 46px;
   max-width: none;
   border-radius: 999px;
-  padding: 0.72rem 1.05rem;
-  font-size: 0.76rem;
+  padding: 0.7rem 0.95rem;
+  font-size: 0.72rem;
   line-height: 1;
   letter-spacing: 0.05em;
   white-space: nowrap;
@@ -200,39 +200,72 @@
 
 .welcome-band {
   position: relative;
-  border-top: 1px solid rgba(31, 89, 99, 0.12);
-  border-bottom: 1px solid rgba(31, 89, 99, 0.12);
+  z-index: 2;
+  margin-top: calc(-1 * clamp(78px, 7vw, 126px));
+  border: 0;
   background:
-    linear-gradient(90deg, rgba(251, 248, 242, 0.96), rgba(251, 248, 242, 0.9)),
+    linear-gradient(180deg, rgba(251, 248, 242, 0.84) 0%, rgba(251, 248, 242, 0.98) 24%, rgba(251, 248, 242, 0.98) 78%, rgba(251, 248, 242, 0.78) 100%),
+    linear-gradient(90deg, rgba(251, 248, 242, 0.92), rgba(251, 248, 242, 0.86)),
     url("brand/watercolor/paper-wash.png") center / cover no-repeat;
-  padding: clamp(2rem, 4vw, 3.2rem) 0;
+  padding: clamp(1.7rem, 3vw, 2.5rem) 0 clamp(1.6rem, 2.5vw, 2.2rem);
+  overflow: visible;
+}
+
+.welcome-band::before,
+.welcome-band::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  height: clamp(34px, 4.5vw, 68px);
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(251, 248, 242, 0), rgba(251, 248, 242, 0.95)),
+    url("brand/watercolor/watercolor-border.png") center / cover no-repeat;
+  opacity: 0.9;
+}
+
+.welcome-band::before {
+  top: calc(-1 * clamp(30px, 4vw, 56px));
+}
+
+.welcome-band::after {
+  bottom: calc(-1 * clamp(26px, 3.2vw, 48px));
+  transform: rotate(180deg);
+  opacity: 0.7;
 }
 
 .welcome-grid {
+  width: min(1060px, calc(100vw - 48px));
+  margin: 0 auto;
   display: grid;
   align-items: center;
-  gap: clamp(1.5rem, 4vw, 4rem);
-  grid-template-columns: minmax(160px, 0.32fr) minmax(220px, 0.55fr) minmax(280px, 1fr);
+  gap: clamp(1.1rem, 3vw, 3rem);
+  grid-template-columns: minmax(130px, 180px) minmax(220px, 0.5fr) minmax(360px, 1fr);
 }
 
 .welcome-sprig {
-  min-height: 160px;
+  min-height: 130px;
   background: url("brand/illustrations/grass.png") center / contain no-repeat;
-  opacity: 0.72;
+  opacity: 0.62;
 }
 
 .welcome-band h2 {
   max-width: 12ch;
   margin: 0;
   color: var(--bapc-deep-bay);
-  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-size: clamp(1.45rem, 2.05vw, 2.05rem);
+  line-height: 1.16;
 }
 
 .welcome-band p {
   margin: 0;
   border-left: 1px solid rgba(31, 89, 99, 0.18);
-  padding-left: clamp(1.25rem, 3vw, 3rem);
+  padding-left: clamp(1.1rem, 2.6vw, 2.6rem);
   color: var(--bapc-charcoal);
+  font-size: clamp(0.82rem, 0.9vw, 0.98rem);
+  line-height: 1.72;
 }
 
 .concept-section {
@@ -293,25 +326,53 @@
 }
 
 .approach-story {
+  position: relative;
+  overflow: visible;
   background:
-    linear-gradient(180deg, rgba(251, 248, 242, 0.4), rgba(251, 248, 242, 0.86)),
+    linear-gradient(180deg, rgba(251, 248, 242, 0.16), rgba(251, 248, 242, 0.74)),
     url("brand/watercolor/mist-wash.png") center / cover no-repeat;
+  padding: clamp(2.4rem, 4.8vw, 4rem) 0;
+}
+
+.approach-story::before,
+.approach-story::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: clamp(38px, 4.5vw, 70px);
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(251, 248, 242, 0), rgba(251, 248, 242, 0.86)),
+    url("brand/watercolor/watercolor-border.png") center / cover no-repeat;
+  opacity: 0.62;
+}
+
+.approach-story::before {
+  top: calc(-1 * clamp(28px, 3.5vw, 48px));
+}
+
+.approach-story::after {
+  bottom: calc(-1 * clamp(28px, 3.5vw, 48px));
+  transform: rotate(180deg);
 }
 
 .approach-grid {
   display: grid;
-  align-items: stretch;
-  gap: clamp(2rem, 5vw, 4.5rem);
-  grid-template-columns: minmax(280px, 0.9fr) minmax(320px, 1.1fr);
+  align-items: center;
+  gap: clamp(1.6rem, 4vw, 3.4rem);
+  grid-template-columns: minmax(260px, 0.82fr) minmax(320px, 1.18fr);
 }
 
 .approach-image {
-  min-height: clamp(330px, 34vw, 520px);
-  border-radius: 7px;
+  min-height: clamp(230px, 25vw, 390px);
+  border-radius: 0;
   background:
-    linear-gradient(rgba(251, 248, 242, 0.04), rgba(251, 248, 242, 0.12)),
-    url("brand/illustrations/boardwalk.png") center / cover no-repeat;
-  box-shadow: var(--shadow-card);
+    radial-gradient(circle at center, rgba(251, 248, 242, 0) 48%, rgba(251, 248, 242, 0.92) 76%),
+    url("brand/illustrations/boardwalk.png") center / contain no-repeat;
+  box-shadow: none;
+  -webkit-mask-image: radial-gradient(ellipse 48% 44% at 50% 53%, #000 48%, rgba(0, 0, 0, 0.72) 64%, transparent 82%);
+  mask-image: radial-gradient(ellipse 48% 44% at 50% 53%, #000 48%, rgba(0, 0, 0, 0.72) 64%, transparent 82%);
 }
 
 .approach-copy h2,
@@ -335,13 +396,13 @@
   display: grid;
   gap: 0;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  margin-top: 2.4rem;
+  margin-top: 1.65rem;
   border-top: 1px solid rgba(31, 89, 99, 0.12);
   border-bottom: 1px solid rgba(31, 89, 99, 0.12);
 }
 
 .approach-value {
-  padding: 1.4rem 1rem;
+  padding: 1.05rem 0.85rem;
   border-left: 1px solid rgba(31, 89, 99, 0.12);
   text-align: center;
 }
@@ -351,30 +412,42 @@
 }
 
 .approach-value svg {
-  width: 54px;
-  height: 54px;
-  margin-bottom: 0.6rem;
+  width: 44px;
+  height: 44px;
+  margin-bottom: 0.45rem;
   color: var(--bapc-marsh-sage);
 }
 
 .workshop-section {
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   background:
-    linear-gradient(90deg, rgba(248, 245, 240, 0.96), rgba(248, 245, 240, 0.92)),
+    linear-gradient(180deg, rgba(251, 248, 242, 0.78), rgba(248, 245, 240, 0.94) 18%, rgba(248, 245, 240, 0.94) 82%, rgba(251, 248, 242, 0.78)),
+    linear-gradient(90deg, rgba(248, 245, 240, 0.94), rgba(248, 245, 240, 0.9)),
     url("brand/watercolor/sand-wash.png") center / cover no-repeat;
 }
 
+.workshop-section::before,
 .workshop-section::after {
   content: "";
   position: absolute;
-  right: -2rem;
-  bottom: -2rem;
-  width: clamp(190px, 24vw, 360px);
-  height: clamp(240px, 32vw, 480px);
-  background: url("brand/illustrations/grass.png") center / contain no-repeat;
-  opacity: 0.72;
+  left: 0;
+  right: 0;
+  height: clamp(42px, 5vw, 82px);
+  background:
+    linear-gradient(180deg, rgba(251, 248, 242, 0), rgba(248, 245, 240, 0.9)),
+    url("brand/watercolor/watercolor-border.png") center / cover no-repeat;
+  opacity: 0.7;
   pointer-events: none;
+}
+
+.workshop-section::before {
+  top: calc(-1 * clamp(32px, 4vw, 58px));
+}
+
+.workshop-section::after {
+  bottom: calc(-1 * clamp(32px, 4vw, 58px));
+  transform: rotate(180deg);
 }
 
 .workshop-layout {
