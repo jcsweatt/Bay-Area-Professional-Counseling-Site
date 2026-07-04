@@ -132,7 +132,7 @@
 
 .concept-hero {
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   min-height: clamp(760px, 67vw, 1080px);
   margin-top: 0;
   padding: clamp(210px, 17vw, 280px) 0 clamp(8rem, 13vw, 14rem);
@@ -154,16 +154,11 @@
   pointer-events: none;
   background:
     linear-gradient(90deg, var(--bapc-paper) 0%, rgba(251, 248, 242, 0) 11%, rgba(251, 248, 242, 0) 89%, var(--bapc-paper) 100%),
-    linear-gradient(180deg, rgba(251, 248, 242, 0.32) 0%, rgba(251, 248, 242, 0) 22%, rgba(251, 248, 242, 0) 76%, var(--bapc-paper) 100%);
+    linear-gradient(180deg, rgba(251, 248, 242, 0.32) 0%, rgba(251, 248, 242, 0) 22%, rgba(251, 248, 242, 0) 100%);
 }
 
 .concept-hero::after {
-  content: "";
-  position: absolute;
-  inset: auto 0 -1px;
-  height: clamp(54px, 8vw, 96px);
-  pointer-events: none;
-  background: linear-gradient(180deg, rgba(251, 248, 242, 0), var(--bapc-paper) 84%);
+  content: none;
 }
 
 .concept-hero .container {
@@ -201,11 +196,9 @@
 .welcome-band {
   position: relative;
   z-index: 2;
-  margin-top: calc(-1 * clamp(78px, 7vw, 126px));
+  margin-top: calc(-1 * clamp(170px, 13vw, 250px));
   border: 0;
-  background:
-    linear-gradient(180deg, rgba(251, 248, 242, 0) 0%, rgba(251, 248, 242, 0.64) 24%, rgba(251, 248, 242, 0.98) 46%, rgba(251, 248, 242, 0.98) 100%),
-    url("brand/watercolor/paper-wash.png") center / cover no-repeat;
+  background: transparent;
   padding: clamp(1.7rem, 3vw, 2.5rem) 0 clamp(1.6rem, 2.5vw, 2.2rem);
   overflow: visible;
 }
