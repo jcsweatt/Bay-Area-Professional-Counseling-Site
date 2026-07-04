@@ -423,16 +423,17 @@
 .lower-grid {
   display: grid;
   align-items: center;
-  gap: clamp(1.5rem, 4vw, 3rem);
-  grid-template-columns: minmax(300px, 0.82fr) minmax(520px, 1.18fr);
+  gap: clamp(1.5rem, 3.2vw, 2.6rem);
+  grid-template-columns: minmax(300px, 0.78fr) minmax(620px, 1.35fr);
 }
 
 .concept-start-panel {
+  width: min(1260px, calc(100vw - 56px));
   border: 1px solid var(--line);
   border-radius: 7px;
-  background: rgba(251, 248, 242, 0.9);
+  background: rgba(251, 248, 242, 0.94);
   box-shadow: var(--shadow-card);
-  padding: clamp(1.25rem, 2.6vw, 2rem) clamp(1.25rem, 3.4vw, 2.5rem);
+  padding: clamp(1.25rem, 2vw, 1.75rem) clamp(1.35rem, 3vw, 2.4rem);
 }
 
 .meet-card,
@@ -449,10 +450,10 @@
   display: grid;
   align-items: center;
   gap: clamp(1.1rem, 2.4vw, 1.75rem);
-  grid-template-columns: clamp(120px, 13vw, 168px) minmax(0, 1fr);
+  grid-template-columns: clamp(118px, 11vw, 150px) minmax(0, 1fr);
   overflow: hidden;
   border-right: 1px solid rgba(31, 89, 99, 0.14);
-  padding-right: clamp(1.25rem, 3vw, 2.6rem);
+  padding-right: clamp(1.25rem, 2.6vw, 2.2rem);
   transition: opacity 260ms ease, transform 260ms ease;
 }
 
@@ -475,11 +476,17 @@
 .meet-card img {
   position: relative;
   z-index: 1;
-  width: clamp(120px, 13vw, 168px);
+  width: clamp(118px, 11vw, 150px);
   aspect-ratio: 1;
   border-radius: 999px;
   object-fit: cover;
   box-shadow: var(--shadow-card);
+}
+
+.meet-card h2 {
+  margin-bottom: 0.75rem;
+  font-size: clamp(2rem, 3.2vw, 3.45rem);
+  line-height: 0.98;
 }
 
 .meet-card-copy {
@@ -489,14 +496,14 @@
 
 .meet-card-rule {
   display: block;
-  width: 74px;
+  width: 66px;
   height: 2px;
-  margin: -0.35rem 0 1rem;
+  margin: -0.25rem 0 0.85rem;
   background: rgba(31, 89, 99, 0.28);
 }
 
 .meet-card-role {
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.6rem;
   color: var(--bapc-charcoal);
   font-size: 0.92rem;
   font-weight: 800;
@@ -505,32 +512,32 @@
 
 .steps-row {
   display: grid;
-  gap: clamp(0.65rem, 1.6vw, 1.1rem);
+  gap: clamp(0.65rem, 1.4vw, 1rem);
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
-.step {
+.steps-panel .step {
   position: relative;
   min-height: 0;
   border-left: 0;
-  padding: 0 clamp(0.35rem, 0.9vw, 0.85rem);
+  padding: 0 clamp(0.2rem, 0.8vw, 0.7rem);
   text-align: center;
 }
 
-.steps-panel .step::before {
+.concept-home .steps-panel .step::before {
   content: none;
   counter-increment: none;
   display: none;
 }
 
-.step:not(:last-child)::after {
+.steps-panel .step:not(:last-child)::after {
   content: "→";
   position: absolute;
-  top: clamp(29px, 3.6vw, 42px);
-  right: clamp(-0.9rem, -1.1vw, -0.3rem);
+  top: clamp(24px, 2.9vw, 34px);
+  right: clamp(-0.85rem, -1vw, -0.3rem);
   color: var(--bapc-mobile-bay-blue);
   font-family: var(--body);
-  font-size: clamp(1.2rem, 2vw, 1.65rem);
+  font-size: clamp(1rem, 1.45vw, 1.3rem);
   font-weight: 500;
   opacity: 0.82;
 }
@@ -538,9 +545,9 @@
 .step-icon {
   display: grid;
   place-items: center;
-  width: clamp(72px, 5.8vw, 92px);
-  height: clamp(72px, 5.8vw, 92px);
-  margin: 0 auto 0.45rem;
+  width: clamp(58px, 4.8vw, 74px);
+  height: clamp(58px, 4.8vw, 74px);
+  margin: 0 auto 0.35rem;
   border-radius: 999px;
   overflow: hidden;
   background: rgba(251, 248, 242, 0.72);
@@ -554,7 +561,7 @@
 }
 
 .step-number,
-.step strong {
+.steps-panel .step strong {
   display: block;
   color: var(--bapc-deep-bay);
   font-family: var(--display);
@@ -562,26 +569,28 @@
 }
 
 .step-number {
-  margin-bottom: 0.1rem;
-  font-size: clamp(0.95rem, 1vw, 1.08rem);
+  margin-bottom: 0.06rem;
+  font-size: clamp(0.78rem, 0.86vw, 0.94rem);
 }
 
-.step strong {
-  min-height: 2.35em;
-  margin-bottom: 0.3rem;
-  font-size: clamp(1rem, 1.14vw, 1.14rem);
+.steps-panel .step strong {
+  min-height: 2.25em;
+  margin-bottom: 0.22rem;
+  font-size: clamp(0.84rem, 0.95vw, 1rem);
 }
 
-.step p {
+.steps-panel .step p {
   margin: 0 auto;
-  max-width: 14ch;
-  font-size: clamp(0.76rem, 0.78vw, 0.86rem);
-  line-height: 1.36;
+  max-width: 13ch;
+  font-size: clamp(0.68rem, 0.72vw, 0.78rem);
+  line-height: 1.32;
 }
 
 .steps-panel h2 {
-  margin-bottom: clamp(1rem, 2.4vw, 1.55rem);
+  margin-bottom: clamp(0.8rem, 1.8vw, 1.15rem);
   text-align: center;
+  font-size: clamp(1.75rem, 2.6vw, 2.55rem);
+  line-height: 1.06;
 }
 
 .loop-band {
