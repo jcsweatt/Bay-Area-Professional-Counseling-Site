@@ -137,7 +137,7 @@
   overflow: visible;
   min-height: clamp(760px, 67vw, 1080px);
   margin: 0 0 calc(-1 * var(--hero-tear-overlap));
-  padding: clamp(210px, 17vw, 280px) 0 clamp(8rem, 13vw, 14rem);
+  padding: clamp(210px, 17vw, 280px) 0 calc(clamp(8rem, 13vw, 14rem) + var(--hero-tear-overlap));
   background:
     linear-gradient(90deg, rgba(251, 248, 242, 0.98) 0%, rgba(251, 248, 242, 0.74) 24%, rgba(251, 248, 242, 0.18) 62%, rgba(251, 248, 242, 0.04) 100%),
     linear-gradient(180deg, rgba(251, 248, 242, 0.18) 0%, rgba(251, 248, 242, 0) 44%, rgba(251, 248, 242, 0.1) 100%),
