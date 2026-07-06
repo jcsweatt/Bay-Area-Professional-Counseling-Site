@@ -141,7 +141,7 @@
   background:
     linear-gradient(90deg, rgba(251, 248, 242, 0.98) 0%, rgba(251, 248, 242, 0.74) 24%, rgba(251, 248, 242, 0.18) 62%, rgba(251, 248, 242, 0.04) 100%),
     linear-gradient(180deg, rgba(251, 248, 242, 0.18) 0%, rgba(251, 248, 242, 0) 44%, rgba(251, 248, 242, 0.1) 100%),
-    url("homepage-concept/header-hero.jpg") center top / cover no-repeat,
+    url("homepage-concept/header-hero.png") center top / cover no-repeat,
     var(--bapc-paper);
 }
 
