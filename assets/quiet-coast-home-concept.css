@@ -149,7 +149,7 @@
   content: "";
   position: absolute;
   z-index: 1;
-  inset: 0 0 calc(-1 * var(--hero-tear-overlap));
+  inset: 0;
   pointer-events: none;
   background:
     linear-gradient(90deg, rgba(251, 248, 242, 0.98) 0%, rgba(251, 248, 242, 0.74) 24%, rgba(251, 248, 242, 0.18) 62%, rgba(251, 248, 242, 0.04) 100%),
@@ -201,7 +201,7 @@
 
 .welcome-band {
   position: relative;
-  z-index: 1;
+  z-index: 4;
   margin-top: 0;
   border: 0;
   background: transparent;
@@ -215,6 +215,8 @@
 }
 
 .welcome-grid {
+  position: relative;
+  z-index: 1;
   width: min(1060px, calc(100vw - 48px));
   margin: 0 auto;
   display: grid;
