@@ -296,9 +296,39 @@
 }
 
 .help-icon {
-  width: 58px;
-  height: 58px;
+  width: 78px;
+  height: 78px;
   color: var(--bapc-marsh-sage);
+  overflow: visible;
+}
+
+.help-icon .icon-wash {
+  fill: rgba(202, 209, 181, 0.34);
+}
+
+.help-icon .icon-blue {
+  fill: rgba(134, 201, 207, 0.22);
+}
+
+.help-icon .icon-clay {
+  fill: rgba(184, 121, 93, 0.18);
+}
+
+.help-icon .icon-line {
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2.8;
+}
+
+.help-icon .icon-fine {
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.55;
+  opacity: 0.58;
 }
 
 .help-item strong {
