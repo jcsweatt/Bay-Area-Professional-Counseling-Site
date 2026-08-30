@@ -1,5 +1,6 @@
 .concept-home {
-  --hero-tear-overlap: clamp(70px, 7vw, 120px);
+  --hero-tear-overlap: 0px;
+  --hero-image-fade-depth: clamp(150px, 11vw, 240px);
   background:
     linear-gradient(rgba(251, 248, 242, 0.92), rgba(251, 248, 242, 0.95)),
     url("brand/patterns/linen-texture.png") center top / 960px auto repeat;
@@ -136,7 +137,7 @@
   z-index: 3;
   overflow: visible;
   min-height: clamp(760px, 67vw, 1080px);
-  margin: 0 0 calc(-1 * var(--hero-tear-overlap));
+  margin: 0;
   padding: clamp(210px, 17vw, 280px) 0 calc(clamp(8rem, 13vw, 14rem) + var(--hero-tear-overlap));
   background: var(--bapc-paper);
 }
@@ -162,9 +163,11 @@
   content: "";
   position: absolute;
   z-index: 0;
-  inset: 0 0 calc(-1 * var(--hero-tear-overlap));
+  inset: 0;
   pointer-events: none;
   background: url("homepage-concept/header-hero.png") center top / cover no-repeat;
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 calc(100% - var(--hero-image-fade-depth)), transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 0%, #000 calc(100% - var(--hero-image-fade-depth)), transparent 100%);
 }
 
 .concept-hero .container {
