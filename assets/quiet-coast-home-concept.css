@@ -149,11 +149,11 @@
   content: "";
   position: absolute;
   z-index: 1;
-  inset: 0;
+  inset: 0 0 calc(-1 * var(--hero-tear-overlap));
   pointer-events: none;
   background:
     linear-gradient(90deg, rgba(251, 248, 242, 0.98) 0%, rgba(251, 248, 242, 0.74) 24%, rgba(251, 248, 242, 0.18) 62%, rgba(251, 248, 242, 0.04) 100%),
-    linear-gradient(180deg, rgba(251, 248, 242, 0.18) 0%, rgba(251, 248, 242, 0) 44%, rgba(251, 248, 242, 0.1) 100%),
+    linear-gradient(180deg, rgba(251, 248, 242, 0.18) 0%, rgba(251, 248, 242, 0) 44%, rgba(251, 248, 242, 0.2) 78%, rgba(251, 248, 242, 0.82) 100%),
     linear-gradient(90deg, var(--bapc-paper) 0%, rgba(251, 248, 242, 0) 11%, rgba(251, 248, 242, 0) 89%, var(--bapc-paper) 100%),
     linear-gradient(180deg, rgba(251, 248, 242, 0.32) 0%, rgba(251, 248, 242, 0) 22%, rgba(251, 248, 242, 0) 100%);
 }
@@ -227,7 +227,7 @@
 
 .welcome-sprig {
   min-height: 130px;
-  background: url("brand/illustrations/grass.png") center / contain no-repeat;
+  background: url("homepage-concept/welcome-grass-transparent.png") center / contain no-repeat;
   opacity: 0.62;
 }
 
