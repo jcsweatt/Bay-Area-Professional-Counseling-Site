@@ -450,11 +450,51 @@
   border-left: 0;
 }
 
-.approach-value svg {
-  width: 44px;
-  height: 44px;
-  margin-bottom: 0.45rem;
-  color: var(--bapc-marsh-sage);
+.approach-sketch {
+  width: 82px;
+  height: 66px;
+  margin-bottom: 0.7rem;
+  color: var(--bapc-deep-bay);
+  overflow: visible;
+  filter: drop-shadow(0 10px 16px rgba(31, 89, 99, 0.07));
+}
+
+.approach-sketch .sketch-paper {
+  fill: rgba(255, 251, 243, 0.68);
+}
+
+.approach-sketch .sketch-wash {
+  fill: rgba(202, 209, 181, 0.42);
+}
+
+.approach-sketch .sketch-aqua {
+  fill: rgba(134, 201, 207, 0.32);
+}
+
+.approach-sketch .sketch-clay {
+  fill: rgba(184, 121, 93, 0.32);
+}
+
+.approach-sketch .sketch-moss {
+  fill: rgba(31, 89, 99, 0.72);
+}
+
+.approach-sketch .sketch-line {
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+  opacity: 0.28;
+}
+
+.approach-sketch .sketch-fine {
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.1;
+  opacity: 0.2;
 }
 
 .workshop-section {
