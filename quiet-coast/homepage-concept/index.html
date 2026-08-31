@@ -7,7 +7,7 @@ description: A separate mockup-inspired homepage concept for the Quiet Coast red
 <html lang="en">
   <head>
     {% include quiet-coast-head.html %}
-    <link rel="stylesheet" href="{{ '/assets/quiet-coast-home-concept.css?v=20260830-06' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/quiet-coast-home-concept.css?v=20260830-07' | relative_url }}">
   </head>
   <body class="concept-home">
     <a class="skip-link" href="#main-content">Skip to content</a>
@@ -151,7 +151,7 @@ description: A separate mockup-inspired homepage concept for the Quiet Coast red
       <section class="concept-section">
         <div class="container lower-grid concept-start-panel">
           <article class="meet-card" data-therapist-rotator>
-            <img data-therapist-image src="{{ '/assets/IMG_0051-99db6be59a41.jpg' | relative_url }}" alt="Lacey Moore">
+            <img class="meet-card-photo" data-therapist-image src="{{ '/assets/IMG_0051-99db6be59a41.jpg' | relative_url }}" alt="Lacey Moore">
             <div class="meet-card-copy">
               <h2 data-therapist-heading>Meet Lacey</h2>
               <span class="meet-card-rule" aria-hidden="true"></span>
@@ -330,11 +330,13 @@ description: A separate mockup-inspired homepage concept for the Quiet Coast red
 
         window.setInterval(() => {
           index = (index + 1) % therapists.length;
-          card.classList.add("is-transitioning");
+          card.classList.add("is-fading");
           window.setTimeout(() => {
             setTherapist(therapists[index]);
-            card.classList.remove("is-transitioning");
-          }, 260);
+            window.requestAnimationFrame(() => {
+              card.classList.remove("is-fading");
+            });
+          }, 720);
         }, 5200);
       })();
     </script>
