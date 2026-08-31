@@ -810,8 +810,24 @@
   position: relative;
   z-index: 1;
   display: grid;
-  gap: clamp(2rem, 5vw, 4rem);
-  grid-template-columns: minmax(260px, 1.1fr) repeat(3, minmax(160px, 0.7fr));
+  gap: clamp(1.75rem, 3vw, 3.25rem);
+  grid-template-columns:
+    minmax(280px, 1fr)
+    minmax(130px, 0.42fr)
+    minmax(360px, 1.08fr)
+    minmax(235px, 0.68fr);
+}
+
+.concept-footer-grid > * {
+  min-width: 0;
+}
+
+.concept-footer-grid > :nth-child(3) {
+  overflow-wrap: anywhere;
+}
+
+.concept-footer-grid > :nth-child(4) {
+  min-width: 235px;
 }
 
 .concept-footer-logo {
