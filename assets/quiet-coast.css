@@ -582,7 +582,7 @@ button:disabled {
   padding: 2rem;
   background:
     linear-gradient(rgba(251, 248, 242, 0.78), rgba(251, 248, 242, 0.82)),
-    url("brand/illustrations/egret.png") right bottom / 260px auto no-repeat,
+    url("brand/illustrations/egret-left.png") right bottom / 260px auto no-repeat,
     var(--bapc-warm-white);
 }
 
