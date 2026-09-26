@@ -5,6 +5,11 @@
   var ticking = false;
 
   function reveal(target) {
+    var journeyRoute = target.querySelector("[data-journey-route]");
+    if (journeyRoute) {
+      target.style.setProperty("--journey-path-length", journeyRoute.getTotalLength().toFixed(2));
+    }
+
     target.classList.add("is-visible");
     if (!reduceMotion) {
       window.setTimeout(function () {
@@ -31,7 +36,14 @@
       var progress = clamp((viewportHeight - rect.top) / travel, 0, 1);
       var offset = 120 - (progress * 240);
 
-      target.style.setProperty("--about-line-scroll-offset", offset.toFixed(2));
+      var journeyRoute = target.querySelector("[data-journey-route]");
+      if (journeyRoute) {
+        var journeyLength = journeyRoute.getTotalLength();
+        target.style.setProperty("--journey-path-length", journeyLength.toFixed(2));
+        target.style.setProperty("--about-journey-scroll-offset", (journeyLength * (1 - progress)).toFixed(2));
+      } else {
+        target.style.setProperty("--about-line-scroll-offset", offset.toFixed(2));
+      }
     });
   }
 
