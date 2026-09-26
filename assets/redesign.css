@@ -761,19 +761,9 @@ main > .section:last-child {
   stroke-width: 2;
 }
 
-.about-line-art [data-journey-route] {
-  stroke-dasharray: var(--journey-path-length, 1);
-  stroke-dashoffset: var(--journey-path-length, 1);
-  transition: stroke-dashoffset 90ms linear;
-}
-
 .about-arrival-map.is-visible .about-line-art path,
 .about-constellation.is-visible .constellation-lines path {
   animation: about-line-draw 2.2s ease forwards;
-}
-
-.about-arrival-map.is-visible .about-line-art [data-journey-route] {
-  animation: about-journey-draw 2.2s ease forwards;
 }
 
 .about-arrival-map.is-scroll-linked .about-line-art path,
@@ -781,10 +771,6 @@ main > .section:last-child {
   animation: none;
   stroke-dashoffset: var(--about-line-scroll-offset, 0);
   transition: stroke-dashoffset 90ms linear;
-}
-
-.about-arrival-map.is-scroll-linked .about-line-art [data-journey-route] {
-  stroke-dashoffset: var(--about-journey-scroll-offset, var(--journey-path-length, 1));
 }
 
 .about-line-art path:nth-child(2),
@@ -1076,16 +1062,6 @@ main > .section:last-child {
 @keyframes about-line-draw {
   from {
     stroke-dashoffset: 220;
-  }
-
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
-@keyframes about-journey-draw {
-  from {
-    stroke-dashoffset: var(--journey-path-length, 1);
   }
 
   to {
