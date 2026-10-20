@@ -3,3 +3,37 @@ baseurl: "/Bay-Area-Professional-Counseling-Site"
 exclude:
   - .jekyll-cache
   - _site
+  - app
+  - content
+  - dist
+  - node_modules
+  - scripts
+  - .openai
+  - .next
+  - .vinext
+  - .wrangler
+  - README.md
+  - index.html
+  - package.json
+  - pnpm-lock.yaml
+  - vite.config.ts
+  - tsconfig.json
+  - about
+  - alexa
+  - cindy
+  - deena
+  - gallery
+  - kayla
+  - lacey
+  - lanya
+  - leigh
+  - madison
+  - marketing-mockups
+  - our-staff
+  - quiet-coast
+  - request-an-appointment
+  - tifani
+  - virginia
+  - google856eaa8101249a05.html
+  - robots.txt
+  - sitemap.xml

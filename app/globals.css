@@ -1,0 +1,50 @@
+.chatgpt-account-controls {
+  position: fixed;
+  z-index: 10000;
+  inset: auto 1rem 1rem auto;
+  display: flex;
+  gap: .75rem;
+  align-items: center;
+  padding: .55rem .8rem;
+  border: 1px solid rgba(57, 67, 55, .24);
+  border-radius: 999px;
+  background: rgba(250, 248, 241, .94);
+  color: #394337;
+  font: 600 .8rem/1.2 system-ui, sans-serif;
+  box-shadow: 0 4px 18px rgba(30, 38, 30, .12);
+}
+
+.chatgpt-account-controls a { color: inherit; text-underline-offset: .18em; }
+
+.auth-page {
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+  background: #f4f0e5;
+  color: #354034;
+  font: 400 1rem/1.6 system-ui, sans-serif;
+}
+
+.auth-panel {
+  width: min(100%, 34rem);
+  padding: clamp(2rem, 6vw, 4rem);
+  border-radius: 1.5rem;
+  background: #fffdf7;
+  box-shadow: 0 1.5rem 4rem rgba(45, 54, 42, .12);
+}
+
+.auth-panel .eyebrow {
+  color: #b4775a;
+  font-size: .75rem;
+  font-weight: 750;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.auth-panel h1 { margin: .5rem 0 1rem; font: 500 clamp(2.3rem, 8vw, 4rem)/1.02 Georgia, serif; }
+.auth-panel p { max-width: 34rem; }
+.auth-actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.75rem; }
+.auth-actions a { padding: .8rem 1rem; border-radius: 999px; background: #384236; color: white; font-weight: 650; text-decoration: none; }
+.auth-actions a.secondary { border: 1px solid #69715f; background: transparent; color: #354034; }
+.auth-panel :focus-visible { outline: 3px solid #b4775a; outline-offset: 3px; }

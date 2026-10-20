@@ -2,46 +2,50 @@
 
 Redesign staging site for **Bay Area Professional Counseling**, a counseling practice in Mobile, Alabama serving Gulf Coast communities.
 
-This repository began as a localized copy of the existing Squarespace site, but the `redesign` branch is now a custom static site with a soft Southern coastal visual direction: earthtone colors, watercolor/sketched foliage and marsh imagery, rounded content panels, therapist profiles, an interactive practice gallery, and an appointment-request preview.
+This repository began as a localized copy of the existing Squarespace site, but the `redesign` branch now contains three counseling-site redesign previews with a soft Southern coastal visual direction: earthtone colors, watercolor/sketched foliage and marsh imagery, rounded content panels, therapist profiles, an interactive practice gallery, and an appointment-request preview.
 
 ## Current Status
 
 | Item | Current value |
 | --- | --- |
 | Redesign branch | `redesign` |
-| Published staging site | <https://jcsweatt.github.io/Bay-Area-Professional-Counseling-Site/> |
-| GitHub Pages source | `redesign` branch, repository root (`/`) |
-| HTTPS | Enforced by GitHub Pages |
+| Published staging site | <https://bapc-redesign-previews.jcsweatt.chatgpt.site/> |
+| Source branch | `redesign` |
+| Hosting | ChatGPT Sites on the Vinext / Cloudflare runtime |
 | Live/original practice site | <https://www.bayareaprofessionalcounseling.com/> |
 | Production status | Staging mockup only; not yet a replacement for the live site |
 
-The staging site is intentionally blocked from search indexing in `robots.txt` until a production decision is made.
+The preview is protected by ChatGPT sign-in and a server-side email allowlist. The allowlist is stored in the ChatGPT Sites runtime as the private `ALLOWED_EMAILS` variable. Do not add approved addresses or credentials to this repository. The Site routes send signed-out visitors to the host-owned `/signin-with-chatgpt` endpoint and provide sign-out through `/signout-with-chatgpt`.
 
 ## Technology
 
-The redesign is intentionally lightweight:
+The page design remains the Jekyll-authored HTML and CSS, now served by dynamically rendered Vinext routes:
 
-- GitHub Pages with Jekyll/Liquid includes.
-- Static HTML pages with YAML front matter.
-- One primary stylesheet: `assets/redesign.css`.
+- Vinext with Next-style server routes and `@openai/sites-vite-plugin`.
+- Cloudflare Worker runtime through `@cloudflare/vite-plugin`.
+- Jekyll/Liquid templates as the design source, compiled into a route registry by `scripts/build-page-content.mjs`.
+- Original redesign stylesheet: `public/assets/redesign.css`.
 - Vanilla JavaScript for the after-hours notice, gallery interaction, and therapist filtering.
-- Locally stored images and illustration assets in `assets/`.
-- Google Analytics and Google Search Console verification included in the shared document head.
+- Locally stored images and illustration assets in `public/assets/`.
+- The existing Google Analytics tag is preserved on the rendered pages.
 
-There is no JavaScript build system, application framework, database, or server-side form handler in this repository.
+The server reads ChatGPT's trusted identity headers, checks `ALLOWED_EMAILS`, and redirects signed-out or unapproved visitors before returning page content. `/access-denied` offers full-page sign-in and sign-out links.
 
 ## Deployment
 
-GitHub Pages publishes the repository root from the `redesign` branch. A push to `redesign` updates the staging URL after GitHub Pages builds the Jekyll/Liquid templates.
+GitHub remains the canonical source repository. The `redesign` branch is mirrored to the ChatGPT Sites source repository for deployment. The registered Sites project is recorded in `.openai/hosting.json`; do not copy a project ID from another Site.
 
-`_config.yml` defines the GitHub Pages project-site path:
+The old GitHub Pages HTML routes are excluded from Jekyll output, so the previous Pages URLs no longer render the redesign. Only the dynamically rendered Site routes return page HTML. Source HTML remains in the repository for editing and content generation.
 
-```yml
-url: "https://jcsweatt.github.io"
-baseurl: "/Bay-Area-Professional-Counseling-Site"
+To rebuild the page registry after editing the Jekyll page source, install Jekyll 4.4 and run:
+
+```sh
+pnpm install --frozen-lockfile
+pnpm run build:content
+pnpm run build
 ```
 
-Internal navigation should use Jekyll's `relative_url` filter, as implemented in `_includes/header.html`, so links work correctly under the project subdirectory.
+The page-registry build uses the ChatGPT Sites origin and an empty base path. Static files are published from `public/` and served from the Site root.
 
 Do not reintroduce client-side URL rewriting for project paths. The published HTML should contain correct URLs before JavaScript runs.
 
@@ -54,7 +58,7 @@ Do not reintroduce client-side URL rewriting for project paths. The published HT
 | `_includes/head.html` | Analytics, Search Console verification option, metadata output, favicon, stylesheet, and global/page-specific scripts |
 | `_includes/header.html` | Site logo and primary navigation |
 | `_includes/footer.html` | Office contact block, design credit, and copyright |
-| `_config.yml` | GitHub Pages `url` and `baseurl` configuration |
+| `_config.yml` | Jekyll source-build settings and exclusions for the old Pages output |
 
 Each public page contains front matter that controls its page-specific metadata and navigation state:
 
@@ -77,7 +81,7 @@ Supported optional front-matter settings currently include:
 - `script: gallery-experience`: loads the interactive gallery behavior.
 - `script: about-experience`: loads About page scroll-triggered line animation and rotating therapist callouts.
 
-### Public Pages
+### Protected Pages
 
 | Path | Purpose |
 | --- | --- |
@@ -93,7 +97,7 @@ Therapist routes use first-name URLs for clarity and consistency.
 
 ## Design Assets
 
-Custom redesign artwork is kept in `assets/`, including:
+Custom redesign artwork is kept in `public/assets/`, including:
 
 | Asset | Usage |
 | --- | --- |
@@ -109,7 +113,7 @@ Therapist and gallery photographs are actual practice photos. Decorative non-sta
 
 ### Inherited Asset Cleanup
 
-The repository still contains many localized assets inherited from the original Squarespace scrape, including unused script/style bundles and duplicate image variants. At the time of this documentation update, `assets/` contains hundreds of tracked files and is significantly larger than the custom redesign requires.
+The repository still contains many localized assets inherited from the original Squarespace scrape, including unused script/style bundles and duplicate image variants. At the time of this documentation update, `public/assets/` contains hundreds of tracked files and is significantly larger than the custom redesign requires.
 
 A future maintenance pass should identify actively referenced assets, remove unused inherited files, and optimize large images for mobile performance without changing visible quality.
 
@@ -117,10 +121,10 @@ A future maintenance pass should identify actively referenced assets, remove unu
 
 | File | Behavior |
 | --- | --- |
-| `assets/after-hours-banner.js` | Displays an after-hours crisis-support banner outside general office hours |
-| `assets/therapist-filter.js` | Filters and smoothly rearranges therapist cards by area of support |
-| `assets/gallery-experience.js` | Controls the interactive photo tour, captions, thumbnails, and keyboard navigation |
-| `assets/about-experience.js` | Triggers About page line-art motion on scroll and rotates therapist callouts on refresh |
+| `public/assets/after-hours-banner.js` | Displays an after-hours crisis-support banner outside general office hours |
+| `public/assets/therapist-filter.js` | Filters and smoothly rearranges therapist cards by area of support |
+| `public/assets/gallery-experience.js` | Controls the interactive photo tour, captions, thumbnails, and keyboard navigation |
+| `public/assets/about-experience.js` | Triggers About page line-art motion on scroll and rotates therapist callouts on refresh |
 
 ### After-Hours Notice
 
@@ -182,13 +186,13 @@ The open project item `Confirm Bios` is intended to track clinical/profile conte
 
 ## Local Review
 
-Because pages use Jekyll includes and Liquid filters, opening the raw HTML files or serving the repository with a basic static file server does **not** render the complete templated site.
+Because the pages use Jekyll includes and Liquid filters, opening the raw HTML files or serving the repository with a basic static file server does **not** render the complete templated site.
 
-The authoritative preview is the GitHub Pages deployment from `redesign`:
+The authoritative preview is the authenticated ChatGPT Site:
 
-<https://jcsweatt.github.io/Bay-Area-Professional-Counseling-Site/>
+<https://bapc-redesign-previews.jcsweatt.chatgpt.site/>
 
-For future local rendering, add a supported Jekyll development setup (for example, a `Gemfile` and documented `bundle exec jekyll serve` workflow) rather than relying on an unrendered static-file preview.
+The standard local preview uses the Sites Vite plugin's local test identity. It is intended for development only; production access is determined by the private `ALLOWED_EMAILS` runtime variable.
 
 ## GitHub Project Workflow
 
